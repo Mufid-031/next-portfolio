@@ -2,39 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 400px;
-  padding-top: 100px;
-  transform: translateX(100%);
-  will-change: transform;
-  -webkit-transform: translateX(100%);
-  -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -o-transform: translateX(100%);
-}
-
-ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 15px;
-}
-
-li {
-  display: block;
-  transform-origin: -20px 50%;
-  font-weight: bold;
-  font-size: 40px;
-  padding: 10px;
-  will-change: transform, opacity, filter;
-}
-
 ul,
 li {
   list-style: none;
   margin: 0;
+}
+
+html {
+  scroll-snap-type: y mandatory;
 }

@@ -1,24 +1,26 @@
-import { motion } from "framer-motion";
+import * as React from "react";
 import Image from "next/image";
-import { ParallaxText } from "./parallaxtext";
+import { motion } from "framer-motion";
 import { Globe } from "../globe/globe";
+import ParallaxText from "./parallaxtext";
 
 export const Hero = () => {
+
   return (
     <section className="flex flex-col items-center justify-between px-10 py-20 relative">
       <div className="flex flex-col items-center">
         <div className="h-44 overflow-hidden">
-          <motion.h1 className="text-[100px] md:text-[150px] dark:text-white text-black font-extrabold" initial={{ y: 160 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
+          <motion.h1 className="text-[80px] md:text-[150px] dark:text-white text-black font-extrabold" initial={{ y: 160 }} animate={{ y: 0 }} transition={{ duration: 0.5 }} whileInView={{ y: 0 }}>
             AHMAD
           </motion.h1>
         </div>
-        <div className="h-44 overflow-hidden -mt-14 md:-mt-5">
-          <motion.h1 className="text-[100px] md:text-[150px] dark:text-white text-black font-extrabold" initial={{ y: 160 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
+        <div className="h-44 overflow-hidden -mt-20 md:-mt-5">
+          <motion.h1 className="text-[80px] md:text-[150px] dark:text-white text-black font-extrabold" initial={{ y: 160 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
             MUFID
           </motion.h1>
         </div>
-        <div className="h-44 overflow-hidden -mt-14 md:-mt-5">
-          <motion.h1 className="text-[100px] md:text-[150px] dark:text-white text-black font-extrabold" initial={{ y: 160 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
+        <div className="h-44 overflow-hidden -mt-20 md:-mt-5">
+          <motion.h1 className="text-[80px] md:text-[150px] dark:text-white text-black font-extrabold" initial={{ y: 160 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
             RISQI
           </motion.h1>
         </div>
@@ -45,8 +47,7 @@ export const Hero = () => {
         <Image src="/mufid2.jpg" width={300} height={300} alt="mufid" className="w-full h-full object-top object-cover rounded-3xl grayscale-[100%] hover:grayscale-0" />
       </motion.div>
 
-      <ParallaxText text="FRONTEND WEB DEVELOPER" animation="animate-infinite-scroll-left" />
-      <ParallaxText text="BACKEND WEB DEVELOPER" animation="animate-infinite-scroll-right" />
+      <ParallaxText />
     </section>
   );
 };

@@ -13,27 +13,27 @@ export function Menu() {
   }, [darkMode]);
 
   return (
-    <nav className="menu dark:bg-white bg-[#1a1a1a]">
-      <ul>
-        <li className="text-lg border-b-2 dark:text-black text-white">
+    <nav className="fixed top-0 right-0 bottom-0 pt-24 w-[400px] translate-x-[100%] dark:bg-white bg-[#1a1a1a]">
+      <ul className="flex flex-col p-4 gap-[10px]">
+        <li style={{ transformOrigin: "-20px 50%" }} className="text-lg border-b-2 dark:text-black text-white block font-bold p-2 text-[20px]">
           <h3>Navigation</h3>
         </li>
-        <motion.li whileHover={{ fontSize: "50px", paddingLeft: "10px" }} whileTap={{ fontSize: "40px" }} className="cursor-pointer dark:text-black text-white">
+        <motion.li style={{ transformOrigin: "-20px 50%" }} whileHover={{ fontSize: "50px", paddingLeft: "10px" }} whileTap={{ fontSize: "40px" }} className="cursor-pointer dark:text-black text-white block font-bold p-2 text-[40px]">
           Home
         </motion.li>
-        <motion.li whileHover={{ fontSize: "50px", paddingLeft: "10px" }} whileTap={{ fontSize: "40px" }} className="cursor-pointer dark:text-black text-white">
+        <motion.li style={{ transformOrigin: "-20px 50%" }} whileHover={{ fontSize: "50px", paddingLeft: "10px" }} whileTap={{ fontSize: "40px" }} className="cursor-pointer dark:text-black text-white block font-bold p-2 text-[40px]">
           About
         </motion.li>
-        <motion.li whileHover={{ fontSize: "50px", paddingLeft: "10px" }} whileTap={{ fontSize: "40px" }} className="cursor-pointer dark:text-black text-white">
+        <motion.li style={{ transformOrigin: "-20px 50%" }} whileHover={{ fontSize: "50px", paddingLeft: "10px" }} whileTap={{ fontSize: "40px" }} className="cursor-pointer dark:text-black text-white block font-bold p-2 text-[40px]">
           Project
         </motion.li>
-        <motion.li whileHover={{ fontSize: "50px", paddingLeft: "10px" }} whileTap={{ fontSize: "40px" }} className="cursor-pointer dark:text-black text-white">
+        <motion.li style={{ transformOrigin: "-20px 50%" }} whileHover={{ fontSize: "50px", paddingLeft: "10px" }} whileTap={{ fontSize: "40px" }} className="cursor-pointer dark:text-black text-white block font-bold p-2 text-[40px]">
           Contact
         </motion.li>
-        <li className="text-lg border-b-2 dark:text-black text-white">
+        <li style={{ transformOrigin: "-20px 50%" }} className="text-lg border-b-2 dark:text-black text-white block font-bold p-2 text-[20px]">
           <h3>Links</h3>
         </li>
-        <li className="dark:text-black text-white">
+        <li style={{ transformOrigin: "-20px 50%" }} className="dark:text-black text-white block font-bold p-2">
           <div className="flex gap-3">
             <motion.h3 className="text-sm cursor-pointer hover:underline" whileHover={{ fontSize: "15px", y: -5 }}>
               Github
@@ -49,7 +49,7 @@ export function Menu() {
             </motion.h3>
           </div>
         </li>
-        <li className="dark:text-black text-white">
+        <li style={{ transformOrigin: "-20px 50%" }} className="dark:text-black text-white block font-bold p-2">
           <div className="flex rounded-xl w-[89px] overflow-hidden border-2 border-slate-400 relative">
             <div className={`w-11 h-10 dark:bg-black bg-white absolute transition-all duration-500 z-0 ${darkMode ? 'translate-x-50' : 'translate-x-0'}`}></div>
             <div
