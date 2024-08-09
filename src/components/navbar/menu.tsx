@@ -50,33 +50,33 @@ export function Menu() {
           </div>
         </li>
         <li style={{ transformOrigin: "-20px 50%" }} className="dark:text-black text-white block font-bold p-2">
-          <div className="flex rounded-xl w-[89px] overflow-hidden border-2 border-slate-400 relative">
-            <div className={`w-11 h-10 dark:bg-black bg-white absolute transition-all duration-500 z-0 ${darkMode ? 'translate-x-50' : 'translate-x-0'}`}></div>
+          <div className="flex justify-around rounded-xl w-[89px] overflow-hidden border-2 border-slate-400 relative">
+            <div className={`w-11 h-10 dark:bg-black bg-white absolute transition-all duration-500 z-0 ${darkMode ? 'left-0' : 'right-0'}`}></div>
             <div
-              className="text-sm p-2 text-center cursor-pointer dark:text-white text-black z-10"
+              className="text-sm p-2 text-center cursor-pointer text-white z-10"
               onClick={() => {
                 setDarkMode(true);
               }}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M12.2256 2.00253C9.59172 1.94346 6.93894 2.9189 4.92893 4.92891C1.02369 8.83415 1.02369 15.1658 4.92893 19.071C8.83418 22.9763 15.1658 22.9763 19.0711 19.071C21.0811 17.061 22.0565 14.4082 21.9975 11.7743C21.9796 10.9772 21.8669 10.1818 21.6595 9.40643C21.0933 9.9488 20.5078 10.4276 19.9163 10.8425C18.5649 11.7906 17.1826 12.4053 15.9301 12.6837C14.0241 13.1072 12.7156 12.7156 12 12C11.2844 11.2844 10.8928 9.97588 11.3163 8.0699C11.5947 6.81738 12.2094 5.43511 13.1575 4.08368C13.5724 3.49221 14.0512 2.90664 14.5935 2.34046C13.8182 2.13305 13.0228 2.02041 12.2256 2.00253ZM17.6569 17.6568C18.9081 16.4056 19.6582 14.8431 19.9072 13.2186C16.3611 15.2643 12.638 15.4664 10.5858 13.4142C8.53361 11.362 8.73568 7.63895 10.7814 4.09281C9.1569 4.34184 7.59434 5.09193 6.34315 6.34313C3.21895 9.46732 3.21895 14.5326 6.34315 17.6568C9.46734 20.781 14.5327 20.781 17.6569 17.6568Z"
                   fill="currentColor"
                 />
               </svg>
             </div>
             <div
-              className="text-sm p-2 text-center cursor-pointer z-10 text-white dark:text-black"
+              className="text-sm p-2 text-center cursor-pointer z-10 text-black"
               onClick={() => {
                 setDarkMode(false);
               }}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
                   fill="currentColor"
                 />

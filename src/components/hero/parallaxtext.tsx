@@ -1,6 +1,6 @@
 import "../../app/globals.css";
 import { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform, useMotionValue, useVelocity, useAnimationFrame } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform, useMotionValue, useVelocity, useAnimationFrame, useInView } from "framer-motion";
 import { wrap } from "@motionone/utils";
 
 interface ParallaxProps {
@@ -46,6 +46,9 @@ function ParallaxTextComponent({ children, baseVelocity = 100 }: ParallaxProps) 
     baseX.set(baseX.get() + moveBy);
   });
 
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref);
+
   /**
    * The number of times to repeat the child text should be dynamically calculated
    * based on the size of the text and viewport. Likewise, the x motion value is
@@ -54,7 +57,11 @@ function ParallaxTextComponent({ children, baseVelocity = 100 }: ParallaxProps) 
    * dynamically generated number of children.
    */
   return (
-    <div className="overflow-hidden m-0 whitespace-nowrap flex flex-no-wrap">
+    <div ref={ref} style={{ 
+      transform: inView ? `translateX(${x}%)` : "none",
+      opacity: inView ? 1 : 0,
+      transition: "all 0.5s linear",
+     }} className="overflow-hidden m-0 whitespace-nowrap flex flex-no-wrap">
       <motion.div className="font-semibold uppercase text-6xl flex whitespace-nowrap flex-no-wrap flex-shrink-0" style={{ x }}>
         <span className="text-[50px] md:text-[100px] dark:text-white block mr-8">{children}</span>
         <span className="text-[50px] md:text-[100px] dark:text-white block mr-8">{children}</span>
