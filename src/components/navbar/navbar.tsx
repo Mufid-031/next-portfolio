@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { Divide as Hamburger } from "hamburger-react";
@@ -9,7 +7,7 @@ function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
 
   React.useEffect(() => {
-    const menuAnimations = isOpen
+    const menuAnimations: any = isOpen
       ? [
           ["nav", { transform: "translateX(0)" }, { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 }],
           ["li", { transform: "scale(1)", opacity: 1, filter: "blur(0px)" }, { delay: stagger(0.05), at: "-0.1" }],
@@ -25,12 +23,22 @@ function useMenuAnimation(isOpen: boolean) {
       ["path.bottom", { d: isOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346" }, { at: "<" }],
       ...menuAnimations,
     ]);
-  }, [animate,isOpen]);
+  }, [animate, isOpen]);
 
   return scope;
 }
 
-export const Navbar = () => {
+export const Navbar = ({
+  heroRef,
+  aboutRef,
+  projectRef,
+  contactRef,
+}: {
+  heroRef: React.RefObject<HTMLDivElement | any>;
+  aboutRef: React.RefObject<HTMLDivElement | any>;
+  projectRef: React.RefObject<HTMLDivElement | any>;
+  contactRef: React.RefObject<HTMLDivElement | any>;
+}) => {
   const [isHover, setIsHover] = React.useState<boolean | any>(false);
   const [isOpen, setIsOpen] = React.useState<boolean | any>(false);
   const [isHoverHamburger, setIsHoverHamburger] = React.useState<boolean | any>(false);
@@ -44,7 +52,7 @@ export const Navbar = () => {
       </motion.div>
 
       <div ref={scope} className="flex items-center gap-10">
-        <Menu />
+        <Menu heroRef={heroRef} aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
         <motion.div className="relative rounded-full" initial={{ x: "200%" }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
           <div className="w-full h-full bg-white shadow-lg rounded-full z-10 duration-300" onMouseEnter={() => setIsHoverHamburger(true)} onMouseLeave={() => setIsHoverHamburger(false)}>
             <Hamburger toggled={isOpen} toggle={setIsOpen} color="black" />
