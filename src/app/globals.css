@@ -5,3 +5,87 @@
 html {
   scroll-snap-type: y mandatory;
 }
+
+.card {
+  width: 1000px;
+  height: 500px;
+  background: #07182e;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card h2 {
+  z-index: 1;
+  color: white;
+  font-size: 2em;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(255, 48, 255));
+  height: 250%;
+  animation: rotBGimg 10s linear infinite;
+  transition: all 0.2s linear;
+  -webkit-animation: rotBGimg 10s linear infinite;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  background: #2a2a2a;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+
+.card-skills {
+  width: 60%;
+  height: 40%;
+  background: #07182e;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card-skills h2 {
+  z-index: 1;
+  color: white;
+  font-size: 50px;
+}
+
+.card-skills::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  height: 250%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+.card-skills::after {
+  content: "";
+  position: absolute;
+  background: #2a2a2a;
+  inset: 5px;
+  border-radius: 15px;
+}

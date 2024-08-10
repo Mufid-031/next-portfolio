@@ -3,6 +3,11 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 
+interface NavigationType {
+  name: string;
+  ref: React.RefObject<HTMLDivElement | any>;
+}
+
 export const Navigation = ({
   heroRef,
   aboutRef,
@@ -14,47 +19,44 @@ export const Navigation = ({
   projectRef: React.RefObject<HTMLDivElement | any>;
   contactRef: React.RefObject<HTMLDivElement | any>;
 }) => {
+  const navigations: NavigationType[] = [
+    {
+      name: "Home",
+      ref: heroRef,
+    },
+    {
+      name: "About",
+      ref: aboutRef,
+    },
+    {
+      name: "Project",
+      ref: projectRef,
+    },
+    {
+      name: "Contact",
+      ref: contactRef,
+    },
+  ];
+
   return (
     <>
       <li style={{ transformOrigin: "-20px 50%" }} className="text-lg border-b-2 dark:text-black text-white block font-bold p-2 text-[20px]">
         <h3>Navigation</h3>
       </li>
-      <motion.li
-        onClick={() => heroRef.current?.scrollIntoView({ behavior: "smooth" })}
-        style={{ transformOrigin: "-20px 50%" }}
-        whileHover={{ fontSize: "50px", paddingLeft: "10px" }}
-        whileTap={{ fontSize: "40px" }}
-        className="cursor-pointer dark:text-black text-white block font-bold p-2 text-[40px]"
-      >
-        Home
-      </motion.li>
-      <motion.li
-        onClick={() => aboutRef.current?.scrollIntoView({ behavior: "smooth" })}
-        style={{ transformOrigin: "-20px 50%" }}
-        whileHover={{ fontSize: "50px", paddingLeft: "10px" }}
-        whileTap={{ fontSize: "40px" }}
-        className="cursor-pointer dark:text-black text-white block font-bold p-2 text-[40px]"
-      >
-        About
-      </motion.li>
-      <motion.li
-        onClick={() => projectRef.current?.scrollIntoView({ behavior: "smooth" })}
-        style={{ transformOrigin: "-20px 50%" }}
-        whileHover={{ fontSize: "50px", paddingLeft: "10px" }}
-        whileTap={{ fontSize: "40px" }}
-        className="cursor-pointer dark:text-black text-white block font-bold p-2 text-[40px]"
-      >
-        Project
-      </motion.li>
-      <motion.li
-        onClick={() => contactRef.current?.scrollIntoView({ behavior: "smooth" })}
-        style={{ transformOrigin: "-20px 50%" }}
-        whileHover={{ fontSize: "50px", paddingLeft: "10px" }}
-        whileTap={{ fontSize: "40px" }}
-        className="cursor-pointer dark:text-black text-white block font-bold p-2 text-[40px]"
-      >
-        Contact
-      </motion.li>
+      {navigations.map((nav, index) => {
+        return (
+          <motion.li
+            key={index}
+            onClick={() => nav.ref.current?.scrollIntoView({ behavior: "smooth" })}
+            style={{ transformOrigin: "-20px 50%" }}
+            whileHover={{ fontSize: "50px", paddingLeft: "10px" }}
+            whileTap={{ fontSize: "40px" }}
+            className="cursor-pointer dark:text-black text-white block font-bold p-2 text-[40px]"
+          >
+            {nav.name}
+          </motion.li>
+        );
+      })}
     </>
   );
 };

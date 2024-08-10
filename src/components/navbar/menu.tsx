@@ -14,7 +14,7 @@ export function Menu({
   projectRef: React.RefObject<HTMLDivElement | any>;
   contactRef: React.RefObject<HTMLDivElement | any>;
 }) {
-  const [darkMode, setDarkMode] = React.useState(true);
+  const [darkMode, setDarkMode] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     if (darkMode) {

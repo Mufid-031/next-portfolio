@@ -1,5 +1,5 @@
 import * as React from "react";
-import Card3D from "../3D/card";
+import Card3D from "../3D/card.jsx";
 import { useInView } from "framer-motion";
 import { Input } from "./input";
 

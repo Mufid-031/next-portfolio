@@ -4,6 +4,7 @@ import * as React from "react";
 import { Navbar } from "@/components/navbar/navbar";
 import { Hero } from "@/components/hero/hero";
 import { About } from "@/components/about/about";
+import { Skills } from "@/components/skills/skills";
 import { Contact } from "@/components/contact/contact";
 import { Project } from "@/components/project/project";
 
@@ -19,6 +20,7 @@ export default function Home() {
       <Navbar heroRef={heroRef} aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
       <Hero heroRef={heroRef} />
       <About aboutRef={aboutRef} />
+      <Skills />
       <Project projectRef={projectRef} />
       <Contact contactRef={contactRef} />
     </>
