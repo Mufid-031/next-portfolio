@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${poppins.className} dark:bg-[#1a1a1a] bg-white overflow-x-hidden`}>{children}</body>
+      <body className={`${poppins.className || "font-sans"} dark:bg-[#1a1a1a] bg-white overflow-x-hidden`}>{children}</body>
     </html>
   );
 }

@@ -2,6 +2,7 @@ import * as React from "react";
 import Card3D from "../3D/card.jsx";
 import { useInView } from "framer-motion";
 import { Input } from "./input";
+import { MdOutlineMail } from "react-icons/md";
 
 export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivElement> }) => {
   const [name, setName] = React.useState<string>("");
@@ -20,6 +21,10 @@ export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivEle
           <Input label="Your email" input type="email" id="email" state={email} setState={setEmail} />
           <Input label="Subject" input type="text" id="subject" state={subject} setState={setSubject} />
           <Input label="Message" textarea type="text" id="message" state={message} setState={setMessage} />
+          <div className="flex justify-center items-center gap-1 w-[100px] bg-white dark:bg-[#0d0d0d] text-black dark:text-white font-bold py-2 px-4 rounded">
+            <MdOutlineMail size={20} />
+            <button>Send</button>
+          </div>
         </form>
       </div>
     </section>
