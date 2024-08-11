@@ -15,7 +15,7 @@ import Xarrow from "react-xarrows";
 import useScreenWidth from "@/hooks/usescreenwidth";
 import { motion } from "framer-motion";
 
-export const Skills = () => {
+export const Skills = ({ darkMode }: { darkMode: boolean }) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
 
@@ -29,6 +29,19 @@ export const Skills = () => {
   const [hoverTAIL, setHoverTAIL] = React.useState<string>("white");
   const [hoverNuxt, sethoverNuxt] = React.useState<string>("white");
   const [hoverBOOT, setHoverBOOT] = React.useState<string>("white");
+
+  React.useEffect(() => {
+    setHoverHTML(darkMode ? "white" : "black");
+    setHoverCSS(darkMode ? "white" : "black");
+    setHoverJS(darkMode ? "white" : "black");
+    setHoverTS(darkMode ? "white" : "black");
+    setHoverREACT(darkMode ? "white" : "black");
+    setHoverNEXT(darkMode ? "white" : "black");
+    setHoverVUE(darkMode ? "white" : "black");
+    setHoverTAIL(darkMode ? "white" : "black");
+    sethoverNuxt(darkMode ? "white" : "black");
+    setHoverBOOT(darkMode ? "white" : "black");
+  }, [darkMode]);
 
   const htmlRef = React.useRef<JSX.Element | any>(null);
   const cssRef = React.useRef<JSX.Element | any>(null);
@@ -81,59 +94,63 @@ export const Skills = () => {
   };
 
   React.useEffect(() => {
-   document.addEventListener("click", (e) => {
-    console.log(e.target);
-   }) 
-
-  }, [])
+    document.addEventListener("click", (e) => {
+      console.log(e.target);
+    });
+  }, []);
 
   return (
-    <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#2a2a2a] px-10 md:px-32 lg:px-52 relative">
+    <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#ecebeb] px-10 md:px-32 lg:px-52 relative">
       <div ref={ref} className="flex flex-col w-full mt-10 md:gap-5 z-10">
         <Icon
+          darkMode={darkMode}
           refOne={htmlRef}
           refTwo={cssRef}
           hoverOne={hoverHTML}
           hoverTwo={hoverCSS}
           isInView={isInView}
-          iconOne={<FaHtml5 size={size} color={hoverHTML} onMouseEnter={() => setHoverHTML("#E34F26")} onMouseLeave={() => setHoverHTML("white")} />}
-          iconTwo={<FaCss3Alt size={size} color={hoverCSS} onMouseEnter={() => setHoverCSS("#1572B6")} onMouseLeave={() => setHoverCSS("white")} />}
+          iconOne={<FaHtml5 size={size} color={hoverHTML} onMouseEnter={() => setHoverHTML("#E34F26")} onMouseLeave={() => setHoverHTML(darkMode ? "white" : "black")} />}
+          iconTwo={<FaCss3Alt size={size} color={hoverCSS} onMouseEnter={() => setHoverCSS("#1572B6")} onMouseLeave={() => setHoverCSS(darkMode ? "white" : "black")} />}
         />
         <Icon
+          darkMode={darkMode}
           refOne={jsRef}
           refTwo={tsRef}
           hoverOne={hoverJS}
           hoverTwo={hoverTS}
           isInView={isInView}
-          iconOne={<RiJavascriptFill size={size} color={hoverJS} onMouseEnter={() => setHoverJS("#F7DF1E")} onMouseLeave={() => setHoverJS("white")} />}
-          iconTwo={<BiLogoTypescript size={size} color={hoverTS} onMouseEnter={() => setHoverTS("#3178C6")} onMouseLeave={() => setHoverTS("white")} />}
+          iconOne={<RiJavascriptFill size={size} color={hoverJS} onMouseEnter={() => setHoverJS("#F7DF1E")} onMouseLeave={() => setHoverJS(darkMode ? "white" : "black")} />}
+          iconTwo={<BiLogoTypescript size={size} color={hoverTS} onMouseEnter={() => setHoverTS("#3178C6")} onMouseLeave={() => setHoverTS(darkMode ? "white" : "black")} />}
         />
         <Icon
+          darkMode={darkMode}
           refOne={reactRef}
           refTwo={nextRef}
           hoverOne={hoverREACT}
           hoverTwo={hoverNEXT}
           isInView={isInView}
-          iconOne={<SiReact size={size} color={hoverREACT} onMouseEnter={() => setHoverREACT("#61DAFB")} onMouseLeave={() => setHoverREACT("white")} />}
-          iconTwo={<SiNextdotjs size={size} color={hoverNEXT} onMouseEnter={() => setHoverNEXT("#000")} onMouseLeave={() => setHoverNEXT("white")} />}
+          iconOne={<SiReact size={size} color={hoverREACT} onMouseEnter={() => setHoverREACT("#61DAFB")} onMouseLeave={() => setHoverREACT(darkMode ? "white" : "black")} />}
+          iconTwo={<SiNextdotjs size={size} color={hoverNEXT} onMouseEnter={() => setHoverNEXT(darkMode ? "#000" : "white")} onMouseLeave={() => setHoverNEXT(darkMode ? "white" : "black")} />}
         />
         <Icon
+          darkMode={darkMode}
           refOne={vueRef}
           refTwo={nuxtRef}
           hoverOne={hoverVUE}
           hoverTwo={hoverNuxt}
           isInView={isInView}
-          iconOne={<RiVuejsFill size={size} color={hoverVUE} onMouseEnter={() => setHoverVUE("#41B883")} onMouseLeave={() => setHoverVUE("white")} />}
-          iconTwo={<SiNuxtdotjs size={size} color={hoverNuxt} onMouseEnter={() => sethoverNuxt("#41B883")} onMouseLeave={() => sethoverNuxt("white")} />}
+          iconOne={<RiVuejsFill size={size} color={hoverVUE} onMouseEnter={() => setHoverVUE("#41B883")} onMouseLeave={() => setHoverVUE(darkMode ? "white" : "black")} />}
+          iconTwo={<SiNuxtdotjs size={size} color={hoverNuxt} onMouseEnter={() => sethoverNuxt("#41B883")} onMouseLeave={() => sethoverNuxt(darkMode ? "white" : "black")} />}
         />
         <Icon
+          darkMode={darkMode}
           refOne={bootRef}
           refTwo={tailRef}
           hoverOne={hoverBOOT}
           hoverTwo={hoverTAIL}
           isInView={isInView}
-          iconOne={<FaBootstrap size={size} color={hoverBOOT} onMouseEnter={() => setHoverBOOT("#7952B3")} onMouseLeave={() => setHoverBOOT("white")} />}
-          iconTwo={<BiLogoTailwindCss size={size} color={hoverTAIL} onMouseEnter={() => setHoverTAIL("#38B2AC")} onMouseLeave={() => setHoverTAIL("white")} />}
+          iconOne={<FaBootstrap size={size} color={hoverBOOT} onMouseEnter={() => setHoverBOOT("#7952B3")} onMouseLeave={() => setHoverBOOT(darkMode ? "white" : "black")} />}
+          iconTwo={<BiLogoTailwindCss size={size} color={hoverTAIL} onMouseEnter={() => setHoverTAIL("#38B2AC")} onMouseLeave={() => setHoverTAIL(darkMode ? "white" : "black")} />}
         />
       </div>
 
@@ -143,16 +160,16 @@ export const Skills = () => {
           transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
         }}
       >
-        <Xarrow lineColor={`${hoverHTML === "white" ? "gray" : "white"}`} showHead={false} end={htmlRef} start="skills-top" />
-        <Xarrow lineColor={`${hoverCSS === "white" ? "gray" : "white"}`} showHead={false} end={cssRef} start="skills-top" />
-        <Xarrow lineColor={`${hoverJS === "white" ? "gray" : "white"}`} showHead={false} end={jsRef} start="skills-left" />
-        <Xarrow lineColor={`${hoverTS === "white" ? "gray" : "white"}`} showHead={false} end={tsRef} start="skills-right" />
-        <Xarrow lineColor={`${hoverREACT === "white" ? "gray" : "white"}`} showHead={false} end={reactRef} start="skills-center" />
-        <Xarrow lineColor={`${hoverNEXT === "white" ? "gray" : "white"}`} showHead={false} end={nextRef} start="skills-center" />
-        <Xarrow lineColor={`${hoverVUE === "white" ? "gray" : "white"}`} showHead={false} end={vueRef} start="skills-left" />
-        <Xarrow lineColor={`${hoverNuxt === "white" ? "gray" : "white"}`} showHead={false} end={nuxtRef} start="skills-right" />
-        <Xarrow lineColor={`${hoverBOOT === "white" ? "gray" : "white"}`} showHead={false} end={bootRef} start="skills-bottom" />
-        <Xarrow lineColor={`${hoverTAIL === "white" ? "gray" : "white"}`} showHead={false} end={tailRef} start="skills-bottom" />
+        <Xarrow lineColor={`${darkMode ? hoverHTML === "white" ? "gray" : "white" : hoverHTML === "black" ? "gray" : "black"}`} showHead={false} end={htmlRef} start="skills-top" />
+        <Xarrow lineColor={`${darkMode ? hoverCSS === "white" ? "gray" : "white" : hoverCSS === "black" ? "gray" : "black"}`} showHead={false} end={cssRef} start="skills-top" />
+        <Xarrow lineColor={`${darkMode ? hoverJS === "white" ? "gray" : "white" : hoverJS === "black" ? "gray" : "black"}`} showHead={false} end={jsRef} start="skills-left" />
+        <Xarrow lineColor={`${darkMode ? hoverTS === "white" ? "gray" : "white" : hoverTS === "black" ? "gray" : "black"}`} showHead={false} end={tsRef} start="skills-right" />
+        <Xarrow lineColor={`${darkMode ? hoverREACT === "white" ? "gray" : "white" : hoverREACT === "black" ? "gray" : "black"}`} showHead={false} end={reactRef} start="skills-center" />
+        <Xarrow lineColor={`${darkMode ? hoverNEXT === "white" ? "gray" : "white" : hoverNEXT === "black" ? "gray" : "black"}`} showHead={false} end={nextRef} start="skills-center" />
+        <Xarrow lineColor={`${darkMode ? hoverVUE === "white" ? "gray" : "white" : hoverVUE === "black" ? "gray" : "black"}`} showHead={false} end={vueRef} start="skills-left" />
+        <Xarrow lineColor={`${darkMode ? hoverNuxt === "white" ? "gray" : "white" : hoverNuxt === "black" ? "gray" : "black"}`} showHead={false} end={nuxtRef} start="skills-right" />
+        <Xarrow lineColor={`${darkMode ? hoverBOOT === "white" ? "gray" : "white" : hoverBOOT === "black" ? "gray" : "black"}`} showHead={false} end={bootRef} start="skills-bottom" />
+        <Xarrow lineColor={`${darkMode ? hoverTAIL === "white" ? "gray" : "white" : hoverTAIL === "black" ? "gray" : "black"}`} showHead={false} end={tailRef} start="skills-bottom" />
       </div>
 
       <div id="card-skills" className="w-1/2 h-1/3 md:w-1/3 md:h-1/2 absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">

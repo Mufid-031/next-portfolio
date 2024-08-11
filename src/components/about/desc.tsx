@@ -17,7 +17,7 @@ export const Desc = () => {
             opacity: isInView ? 1 : 0,
             transition: "all 0.5s linear",
           }}
-          className="text-white text-[60px] font-extrabold"
+          className="text-black dark:text-white text-[60px] font-extrabold"
         >
           About Me
         </h2>
@@ -42,7 +42,7 @@ export const Desc = () => {
           opacity: isInView ? 1 : 0,
           transition: "all 0.5s linear",
         }}
-        className="text-white text-2xl mt-10"
+        className="text-black dark:text-white text-2xl mt-10"
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vero minus dolorem rerum autem ea aspernatur ad, voluptatem quisquam corporis a voluptas neque veritatis voluptatibus minima reprehenderit. Totam quaerat maiores minima ea
         possimus et alias beatae magni, enim error nobis est modi, ad dolorum praesentium odio eius explicabo laborum magnam fugiat quia! Natus cupiditate, ducimus id molestiae vel nisi sed maxime suscipit, maiores omnis perferendis ad

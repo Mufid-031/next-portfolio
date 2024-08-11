@@ -23,7 +23,7 @@ export const Experience = () => {
 
   return (
     <section>
-      <h2 className="text-white text-[25px] font-extrabold mt-10">Exprerience</h2>
+      <h2 className="text-black dark:text-white text-[25px] font-extrabold mt-10">Exprerience</h2>
       <div
         onMouseEnter={(e) => {
           removeAnimate(e);
@@ -34,16 +34,16 @@ export const Experience = () => {
         className="flex gap-4 mt-10 overflow-hidden z-10"
       >
         <div className="flex gap-4 animate-infinite-scroll-left flex-shrink-0">
-          <div className="w-96 h-44 bg-slate-200 rounded-xl"></div>
-          <div className="w-96 h-44 bg-slate-200 rounded-xl"></div>
-          <div className="w-96 h-44 bg-slate-200 rounded-xl"></div>
-          <div className="w-96 h-44 bg-slate-200 rounded-xl"></div>
+          <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
+          <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
+          <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
+          <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
         </div>
         <div className="flex gap-4 animate-infinite-scroll-left flex-shrink-0">
-          <div className="w-96 h-44 bg-slate-200 rounded-xl"></div>
-          <div className="w-96 h-44 bg-slate-200 rounded-xl"></div>
-          <div className="w-96 h-44 bg-slate-200 rounded-xl"></div>
-          <div className="w-96 h-44 bg-slate-200 rounded-xl"></div>
+          <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
+          <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
+          <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
+          <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
         </div>
       </div>
     </section>

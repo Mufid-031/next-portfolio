@@ -29,11 +29,15 @@ function useMenuAnimation(isOpen: boolean) {
 }
 
 export const Navbar = ({
+  darkMode,
+  setDarkMode,
   heroRef,
   aboutRef,
   projectRef,
   contactRef,
 }: {
+  darkMode: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
   heroRef: React.RefObject<HTMLDivElement | any>;
   aboutRef: React.RefObject<HTMLDivElement | any>;
   projectRef: React.RefObject<HTMLDivElement | any>;
@@ -52,7 +56,7 @@ export const Navbar = ({
       </motion.div>
 
       <div ref={scope} className="flex items-center gap-10">
-        <Menu heroRef={heroRef} aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
+        <Menu darkMode={darkMode} setDarkMode={setDarkMode} heroRef={heroRef} aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
         <motion.div className="relative rounded-full" initial={{ x: "200%" }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
           <div className="w-full h-full bg-white shadow-lg rounded-full z-10 duration-300" onMouseEnter={() => setIsHoverHamburger(true)} onMouseLeave={() => setIsHoverHamburger(false)}>
             <Hamburger toggled={isOpen} toggle={setIsOpen} color="black" />
