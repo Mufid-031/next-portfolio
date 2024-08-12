@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Card } from "./card";
-import { Desc } from "./desc";
+import { Card } from "./Card";
+import { Desc } from "./Desc";
 
 export const Project = ({ projectRef }: { projectRef: React.RefObject<HTMLDivElement> }) => {
   return (

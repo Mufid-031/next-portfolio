@@ -1,8 +1,8 @@
 import * as React from "react";
-import ParallaxText from "./parallaxtext";
-import { Name } from "./name";
-import { Location } from "./location";
-import { HeroImage } from "./image";
+import ParallaxText from "./ParallaxText";
+import { Name } from "./Name";
+import { Location } from "./Location";
+import { HeroImage } from "./Image";
 
 export const Hero = ({ heroRef }: { heroRef: React.RefObject<HTMLDivElement> }) => {
   return (

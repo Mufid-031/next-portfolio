@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Experience } from "./experience";
-import { Desc } from "./desc";
-import { Github } from "./github";
+import { Experience } from "./Experience";
+import { Desc } from "./Desc";
+import { Github } from "./Github";
 
 export const About = ({ aboutRef }: { aboutRef: React.RefObject<HTMLDivElement> }) => {
   return (

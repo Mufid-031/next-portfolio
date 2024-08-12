@@ -1,8 +1,8 @@
 import * as React from "react";
-import Card3D from "../3D/card.jsx";
 import { useInView } from "framer-motion";
-import { Input } from "./input";
 import { MdOutlineMail } from "react-icons/md";
+import Card3D from "../3D/Card.jsx";
+import { Input } from "./Input";
 import emailjs from "@emailjs/browser";
 
 export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivElement> }) => {
@@ -25,21 +25,19 @@ export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivEle
 
     emailjs
       .sendForm(serviceID, templateID, form.current, publicKey)
-      .then(
-        () => {
-          setName("");
-          setEmail("");
-          setSubject("");
-          setMessage("");
-        },
-      )
+      .then(() => {
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      })
       .catch((error) => {
         console.log(error);
       })
       .finally(() => {
         setTimeout(() => {
           setIsLoading(false);
-        }, 1000)
+        }, 1000);
       });
   };
 

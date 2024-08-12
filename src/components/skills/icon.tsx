@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useAnimation, motion, cubicBezier } from "framer-motion";
 
 export const Icon = ({
   darkMode,
@@ -19,32 +20,77 @@ export const Icon = ({
   hoverOne?: string;
   hoverTwo?: string;
 }) => {
+
+  const ctrls = useAnimation();
+
+  React.useEffect(() => {
+    if (isInView) {
+      ctrls.start("visible");
+    } else {
+      ctrls.start("hidden");
+    }
+  },[ctrls, isInView]);
+
+  const iconOneAnimation = {
+    hidden: {
+      opacity: 0,
+      x: -50,
+      transition: {
+        duration: 0.5,
+        ease: "linear",
+      }
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "linear",
+      }
+    }
+  }
+
+  const iconTwoAnimation = {
+    hidden: {
+      opacity: 0,
+      x: 50,
+      transition: {
+        duration: 0.5,
+        ease: "linear",
+      }
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "linear",
+      }
+    }
+  }
+
   return (
     <div className="flex justify-between items-center w-full h-[150px] -z-10">
-      <div
+      <motion.div
         ref={refOne}
-        style={{
-          transform: isInView ? "none" : "translateX(-50px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
-        }}
+        initial="hidden"
+        animate={ctrls}
+        variants={iconOneAnimation}
         className={`w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full flex justify-center items-center ${darkMode ? (hoverOne === "white" ? "bg-[#0d0d0d]" : "bg-[#ecebeb]") : hoverOne === "black" ? "bg-[#ecebeb]" : "bg-[#0d0d0d]"} `}
       >
         {iconOne}
-      </div>
-      <div
+      </motion.div>
+      <motion.div
         ref={refTwo}
-        style={{
-          transform: isInView ? "none" : "translateX(50px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
-        }}
+        initial="hidden"
+        animate={ctrls}
+        variants={iconTwoAnimation}
         className={`w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full flex justify-center items-center  ${
           darkMode ? (hoverTwo === "white" ? "bg-[#0d0d0d]" : "bg-[#ecebeb]") : hoverTwo === "black" ? "bg-[#ecebeb]" : "bg-[#0d0d0d]"
         } `}
       >
         {iconTwo}
-      </div>
+      </motion.div>
     </div>
   );
 };

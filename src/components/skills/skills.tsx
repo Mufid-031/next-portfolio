@@ -10,9 +10,9 @@ import { RiVuejsFill } from "react-icons/ri";
 import { BiLogoTailwindCss } from "react-icons/bi";
 import { SiNuxtdotjs } from "react-icons/si";
 import { FaBootstrap } from "react-icons/fa";
-import { Icon } from "./icon";
+import { Icon } from "./Icon";
 import Xarrow from "react-xarrows";
-import useScreenWidth from "@/hooks/usescreenwidth";
+import useScreenWidth from "@/hooks/useScreenWidth";
 import { motion } from "framer-motion";
 
 export const Skills = ({ darkMode }: { darkMode: boolean }) => {
@@ -132,7 +132,7 @@ export const Skills = ({ darkMode }: { darkMode: boolean }) => {
   const mobileWidth = 768;
 
   return (
-    <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#ecebeb] px-10 md:px-32 lg:px-32 relative">
+    <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#ecebeb] px-10 md:px-32 relative">
       <div ref={ref} className="flex flex-col w-full mt-10 md:gap-1 z-10">
         <Icon
           darkMode={darkMode}
@@ -192,16 +192,16 @@ export const Skills = ({ darkMode }: { darkMode: boolean }) => {
           transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
         }}
       >
-        <Xarrow curveness={0.4} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverHTML === "white" ? "gray" : "white") : hoverHTML === "black" ? "gray" : "black"}`} showHead={false} end={htmlRef} start="skills-top" />
-        <Xarrow curveness={0.4} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverCSS === "white" ? "gray" : "white") : hoverCSS === "black" ? "gray" : "black"}`} showHead={false} end={cssRef} start="skills-bottom" />
+        <Xarrow curveness={0.35} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverHTML === "white" ? "gray" : "white") : hoverHTML === "black" ? "gray" : "black"}`} showHead={false} end={htmlRef} start="skills-top" />
+        <Xarrow curveness={0.35} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverCSS === "white" ? "gray" : "white") : hoverCSS === "black" ? "gray" : "black"}`} showHead={false} end={cssRef} start="skills-bottom" />
         <Xarrow curveness={0.4} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverJS === "white" ? "gray" : "white") : hoverJS === "black" ? "gray" : "black"}`} showHead={false} end={jsRef} start="skills-left" />
         <Xarrow curveness={0.4} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverTS === "white" ? "gray" : "white") : hoverTS === "black" ? "gray" : "black"}`} showHead={false} end={tsRef} start="skills-right" />
         <Xarrow curveness={0.4} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverREACT === "white" ? "gray" : "white") : hoverREACT === "black" ? "gray" : "black"}`} showHead={false} end={reactRef} start="skills-center" />
         <Xarrow curveness={0.4} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverNEXT === "white" ? "gray" : "white") : hoverNEXT === "black" ? "gray" : "black"}`} showHead={false} end={nextRef} start="skills-center" />
         <Xarrow curveness={0.4} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverVUE === "white" ? "gray" : "white") : hoverVUE === "black" ? "gray" : "black"}`} showHead={false} end={vueRef} start="skills-left" />
         <Xarrow curveness={0.4} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverNuxt === "white" ? "gray" : "white") : hoverNuxt === "black" ? "gray" : "black"}`} showHead={false} end={nuxtRef} start="skills-right" />
-        <Xarrow curveness={0.4} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverBOOT === "white" ? "gray" : "white") : hoverBOOT === "black" ? "gray" : "black"}`} showHead={false} end={bootRef} start="skills-top" />
-        <Xarrow curveness={0.4} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverTAIL === "white" ? "gray" : "white") : hoverTAIL === "black" ? "gray" : "black"}`} showHead={false} end={tailRef} start="skills-bottom" />
+        <Xarrow curveness={0.35} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverBOOT === "white" ? "gray" : "white") : hoverBOOT === "black" ? "gray" : "black"}`} showHead={false} end={bootRef} start="skills-top" />
+        <Xarrow curveness={0.35} strokeWidth={2} path="smooth" lineColor={`${darkMode ? (hoverTAIL === "white" ? "gray" : "white") : hoverTAIL === "black" ? "gray" : "black"}`} showHead={false} end={tailRef} start="skills-bottom" />
       </div>
 
       <div id="card-skills" className="w-1/2 h-1/3 md:w-1/3 md:h-1/2 absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-55%]">
@@ -218,7 +218,9 @@ export const Skills = ({ darkMode }: { darkMode: boolean }) => {
             }}
             className="card-skills w-[90%] h-[40%] md:w-[55%] md:h-[30%] relative flex place-content-center place-items-center overflow-hidden rounded-[20px] before:content-[''] before:absolute before:w-[100px] before:h-[230%] before:animate-[rotBGimg_3s_linear_infinite] before:transition-all before:duration-[0.2s] before:ease-linear after:content-[''] after:absolute after:rounded-[15px] after:inset-[5px]"
           >
-            <h2 className="text-white text-[30px] md:text-[80px] font-extrabold z-20 after:absolute after:w-[90%] after:h-[30%] after:bg-[#2a2a2a] after:bottom-5 after:left-[50%] after:translate-x-[-50%] after:z-10 after:opacity-50">Skills</h2>
+            <h2 className="text-white text-[30px] md:text-[80px] font-extrabold z-20 after:absolute after:w-[90%] after:h-[30%] after:bg-[#2a2a2a] after:bottom-5 after:left-[50%] after:translate-x-[-50%] after:z-10 after:opacity-60">
+              Skills
+            </h2>
           </motion.div>
         </div>
       </div>
