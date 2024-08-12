@@ -17,9 +17,9 @@ export const Desc = () => {
             opacity: isInView ? 1 : 0,
             transition: "all 0.5s linear",
           }}
-          className="text-black dark:text-white text-[60px] font-extrabold"
+          className="text-black dark:text-white text-[40px] md:text-[60px] font-extrabold"
         >
-          About Me
+          About me
         </h2>
         <div
           style={{
@@ -42,12 +42,11 @@ export const Desc = () => {
           opacity: isInView ? 1 : 0,
           transition: "all 0.5s linear",
         }}
-        className="text-black dark:text-white text-2xl mt-10"
+        className="text-black dark:text-white text-xl mt-5 mb-10"
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vero minus dolorem rerum autem ea aspernatur ad, voluptatem quisquam corporis a voluptas neque veritatis voluptatibus minima reprehenderit. Totam quaerat maiores minima ea
-        possimus et alias beatae magni, enim error nobis est modi, ad dolorum praesentium odio eius explicabo laborum magnam fugiat quia! Natus cupiditate, ducimus id molestiae vel nisi sed maxime suscipit, maiores omnis perferendis ad
-        ullam consectetur dolorum eaque minima? Molestiae, et iusto. Praesentium facere quod, eaque harum quis est id ad accusamus doloribus ex perspiciatis placeat, nostrum consectetur veniam aperiam, cumque a? Error id maxime ea pariatur
-        blanditiis.
+        Saya Mufid seorang fullstack web developer yang juga sedang menempuh pendidikan di bidang Teknik Informatika di Universitas Trunojoyo Madura. Dengan latar belakang pendidikan yang kuat dan keahlian dalam pengembangan web, Mufid
+        memiliki pemahaman yang mendalam tentang teknologi backend dan frontend. Berasal dari Bangkalan, Jawa Timur, Mufid telah menunjukkan komitmen dan dedikasi dalam dunia pengembangan web, membawa semangat dan keterampilan dari tanah
+        Madura ke dalam setiap proyek yang dikerjakannya.
       </p>
     </section>
   );

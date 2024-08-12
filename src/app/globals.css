@@ -7,8 +7,6 @@ html {
 }
 
 .card {
-  width: 1000px;
-  height: 500px;
   background: #07182e;
   position: relative;
   display: flex;
