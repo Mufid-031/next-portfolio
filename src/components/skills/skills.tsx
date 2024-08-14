@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
@@ -12,8 +12,7 @@ import { SiNuxtdotjs } from "react-icons/si";
 import { FaBootstrap } from "react-icons/fa";
 import { Icon } from "./Icon";
 import Xarrow from "react-xarrows";
-import useScreenWidth from "@/hooks/useScreenWidth";
-import { motion } from "framer-motion";
+// import useScreenWidth from "@/hooks/useScreenWidth";
 
 export const Skills = ({ darkMode }: { darkMode: boolean }) => {
   const ref = React.useRef<HTMLDivElement>(null);
@@ -42,79 +41,6 @@ export const Skills = ({ darkMode }: { darkMode: boolean }) => {
   const bootRef = React.useRef<JSX.Element | any>(null);
   const [size, setSize] = React.useState<number>(50);
 
-  const iconsArray = [
-    {
-      iconOne: {
-        ref: htmlRef,
-        hover: hoverHTML,
-        icon: <FaHtml5 size={size} color={hoverHTML} onMouseEnter={() => setHoverHTML("#E34F26")} onMouseLeave={() => setHoverHTML(darkMode ? "white" : "black")} />,
-        start: "skills-top",
-      },
-      iconTwo: {
-        ref: cssRef,
-        hover: hoverCSS,
-        icon: <FaCss3Alt size={size} color={hoverCSS} onMouseEnter={() => setHoverCSS("#264de4")} onMouseLeave={() => setHoverCSS(darkMode ? "white" : "black")} />,
-        start: "skills-bottom",
-      },
-    },
-    {
-      iconOne: {
-        ref: jsRef,
-        hover: hoverJS,
-        icon: <RiJavascriptFill size={size} color={hoverJS} onMouseEnter={() => setHoverJS("#F7DE3F")} onMouseLeave={() => setHoverJS(darkMode ? "white" : "black")} />,
-        start: "skills-left",
-      },
-      iconTwo: {
-        ref: tsRef,
-        hover: hoverTS,
-        icon: <BiLogoTypescript size={size} color={hoverTS} onMouseEnter={() => setHoverTS("#007ACC")} onMouseLeave={() => setHoverTS(darkMode ? "white" : "black")} />,
-        start: "skills-right",
-      },
-    },
-    {
-      iconOne: {
-        ref: reactRef,
-        hover: hoverREACT,
-        icon: <SiReact size={size} color={hoverREACT} onMouseEnter={() => setHoverREACT("#61DAFB")} onMouseLeave={() => setHoverREACT(darkMode ? "white" : "black")} />,
-        start: "skills-center",
-      },
-      iconTwo: {
-        ref: nextRef,
-        hover: hoverNEXT,
-        icon: <SiNextdotjs size={size} color={hoverNEXT} onMouseEnter={() => setHoverNEXT("#000000")} onMouseLeave={() => setHoverNEXT(darkMode ? "white" : "black")} />,
-        start: "skills-center",
-      },
-    },
-    {
-      iconOne: {
-        ref: vueRef,
-        hover: hoverVUE,
-        icon: <RiVuejsFill size={size} color={hoverVUE} onMouseEnter={() => setHoverVUE("#4FC08D")} onMouseLeave={() => setHoverVUE(darkMode ? "white" : "black")} />,
-        start: "skills-left",
-      },
-      iconTwo: {
-        ref: nextRef,
-        hover: hoverNuxt,
-        icon: <SiNuxtdotjs size={size} color={hoverTAIL} onMouseEnter={() => sethoverNuxt("#4FC08D")} onMouseLeave={() => sethoverNuxt(darkMode ? "white" : "black")} />,
-        start: "skills-right",
-      },
-    },
-    {
-      iconOne: {
-        ref: bootRef,
-        hover: hoverBOOT,
-        icon: <FaBootstrap size={size} color={hoverBOOT} onMouseEnter={() => setHoverBOOT("#7952B3")} onMouseLeave={() => setHoverBOOT(darkMode ? "white" : "black")} />,
-        start: "skills-top",
-      },
-      iconTwo: {
-        ref: tailRef,
-        hover: hoverTAIL,
-        icon: <BiLogoTailwindCss size={size} color={hoverTAIL} onMouseEnter={() => setHoverTAIL("#38B2AC")} onMouseLeave={() => setHoverTAIL(darkMode ? "white" : "black")} />,
-        start: "skills-bottom",
-      },
-    },
-  ];
-
   React.useEffect(() => {
     setHoverHTML(darkMode ? "white" : "black");
     setHoverCSS(darkMode ? "white" : "black");
@@ -128,8 +54,8 @@ export const Skills = ({ darkMode }: { darkMode: boolean }) => {
     setHoverBOOT(darkMode ? "white" : "black");
   }, [darkMode]);
 
-  const widthSize = useScreenWidth();
-  const mobileWidth = 768;
+  // const widthSize = useScreenWidth();
+  // const mobileWidth = 768;
 
   return (
     <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#ecebeb] px-10 md:px-32 relative">

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Globe } from "../globe/globe";
+import { Globe } from "../globe/Globe";
 import { useInView } from "framer-motion";
 
 export const Desc = () => {

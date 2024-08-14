@@ -1,7 +1,7 @@
 import * as React from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { Divide as Hamburger } from "hamburger-react";
-import { Menu } from "./menu";
+import { Menu } from "./Menu";
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();

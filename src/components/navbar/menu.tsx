@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Navigation } from "./navigation";
-import { LinkNav } from "./link";
-import { ToggleDarkMode } from "./toggle";
+import { Navigation } from "./Navigation";
+import { LinkNav } from "./Link";
+import { ToggleDarkMode } from "./Toggle";
 
 export function Menu({
   darkMode,

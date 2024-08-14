@@ -1,5 +1,20 @@
 import * as React from "react";
-import { useAnimation, motion, cubicBezier } from "framer-motion";
+import { useAnimation, motion } from "framer-motion";
+import { useControllsAnimation } from "@/hooks/useControllsAnimation";
+import { ControllsAnimationType } from "@/types/controllsAnimation.type";
+import { VariantAnimationProps } from "@/types/variantAnimation.type";
+import { useVariantAnimation } from "@/hooks/useVariantAnimation";
+
+interface IconProps {
+  darkMode: boolean;
+  isInView: boolean;
+  iconOne: JSX.Element;
+  iconTwo: JSX.Element;
+  refOne?: React.RefObject<HTMLDivElement | any>;
+  refTwo?: React.RefObject<HTMLDivElement | any>;
+  hoverOne?: string;
+  hoverTwo?: string;
+}
 
 export const Icon = ({
   darkMode,
@@ -10,64 +25,29 @@ export const Icon = ({
   refTwo,
   hoverOne,
   hoverTwo,
-}: {
-  darkMode: boolean;
-  isInView: boolean;
-  iconOne: JSX.Element;
-  iconTwo: JSX.Element;
-  refOne?: React.RefObject<HTMLDivElement | any>;
-  refTwo?: React.RefObject<HTMLDivElement | any>;
-  hoverOne?: string;
-  hoverTwo?: string;
-}) => {
+}: IconProps) => {
 
   const ctrls = useAnimation();
 
-  React.useEffect(() => {
-    if (isInView) {
-      ctrls.start("visible");
-    } else {
-      ctrls.start("hidden");
-    }
-  },[ctrls, isInView]);
+  const controllsAnimation: ControllsAnimationType = {
+    ctrls,
+    isInView
+  } 
 
-  const iconOneAnimation = {
-    hidden: {
-      opacity: 0,
-      x: -50,
-      transition: {
-        duration: 0.5,
-        ease: "linear",
-      }
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 1,
-        ease: "linear",
-      }
-    }
+  useControllsAnimation(controllsAnimation);
+
+  const animationOneProps: VariantAnimationProps = {
+    isX: true,
+    value: -50
   }
 
-  const iconTwoAnimation = {
-    hidden: {
-      opacity: 0,
-      x: 50,
-      transition: {
-        duration: 0.5,
-        ease: "linear",
-      }
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 1,
-        ease: "linear",
-      }
-    }
+  const animationTwoProps: VariantAnimationProps = {
+    isX: true,
+    value: 50
   }
+
+  const iconOneAnimation = useVariantAnimation(animationOneProps);
+  const iconTwoAnimation = useVariantAnimation(animationTwoProps);
 
   return (
     <div className="flex justify-between items-center w-full h-[150px] -z-10">

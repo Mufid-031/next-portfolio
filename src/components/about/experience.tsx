@@ -1,76 +1,87 @@
 import * as React from "react";
 import "../../app/globals.css";
 import { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform, useMotionValue, useVelocity, useAnimationFrame, useInView } from "framer-motion";
+import { motion, useInView, useAnimation, AnimationControls } from "framer-motion";
 import { wrap } from "@motionone/utils";
+import { useControllsAnimation } from "@/hooks/useControllsAnimation";
+import { ControllsAnimationType } from "@/types/controllsAnimation.type";
+import { VariantAnimationProps, VariantAnimationXType, VariantAnimationYType } from "@/types/variantAnimation.type";
+import { useVariantAnimation } from "@/hooks/useVariantAnimation";
+import { useParallaxAnimation } from "@/hooks/useParallaxAnimation";
 
 interface ParallaxProps {
   baseVelocity: number;
+  animation: VariantAnimationXType | VariantAnimationYType;
+  ctrls: AnimationControls;
 }
 
-function ParallaxExperience({ baseVelocity = 100 }: ParallaxProps) {
+function ParallaxExperience({ baseVelocity = 100, animation, ctrls }: ParallaxProps) {
   const [isHover, setIsHover] = React.useState<boolean>(false);
-  const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400,
-  });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false,
-  });
 
-  /**
-   * This is a magic wrapping for the length of the text - you
-   * have to replace for wrapping that works for you or dynamically
-   * calculate
-   */
-  const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
+  const parallaxProps = {
+    baseVelocity,
+    isHover,
+  }
 
-  const directionFactor = useRef<number>(1);
-  useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-    if (isHover) return;
-    directionFactor.current = -1;
-    baseX.set(baseX.get() + moveBy);
-  });
-
-  const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref);
+  const x = useParallaxAnimation(parallaxProps);
 
   return (
     <motion.div
-      ref={ref}
-      style={{
-        transform: inView ? `translateX(${x}%)` : "none",
-        opacity: inView ? 1 : 0,
-        transition: "all 0.5s linear",
-      }}
+      initial="hidden"
+      variants={animation}
+      animate={ctrls}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      className="overflow-hidden whitespace-nowrap flex gap-3"
+      className="overflow-hidden whitespace-nowrap flex gap-3 relative"
     >
+      <div className="w-[5px] h-full bg-black opacity-40 absolute left-0 top-[50%] -translate-y-[50%] z-10"></div>
       <motion.div className="font-semibold uppercase text-6xl flex whitespace-nowrap flex-shrink-0 gap-3" style={{ x }}>
-        <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
-        <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
-        <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
-        <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
+        <div className="w-96 h-44 dark:bg-[#1a1a1a] bg-[#2a2a2a] border-[1px] border-violet-500 border-opacity-50 rounded-xl"></div>
+        <div className="w-96 h-44 dark:bg-[#1a1a1a] bg-[#2a2a2a] border-[1px] border-violet-500 border-opacity-50 rounded-xl"></div>
+        <div className="w-96 h-44 dark:bg-[#1a1a1a] bg-[#2a2a2a] border-[1px] border-violet-500 border-opacity-50 rounded-xl"></div>
+        <div className="w-96 h-44 dark:bg-[#1a1a1a] bg-[#2a2a2a] border-[1px] border-violet-500 border-opacity-50 rounded-xl"></div>
       </motion.div>
       <motion.div className="font-semibold uppercase text-6xl flex whitespace-nowrap flex-shrink-0 gap-3" style={{ x }}>
-        <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
-        <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
-        <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
-        <div className="w-96 h-44 dark:bg-slate-200 bg-[#1a1a1a] rounded-xl"></div>
+        <div className="w-96 h-44 dark:bg-[#1a1a1a] bg-[#2a2a2a] border-[1px] border-violet-500 border-opacity-50 rounded-xl"></div>
+        <div className="w-96 h-44 dark:bg-[#1a1a1a] bg-[#2a2a2a] border-[1px] border-violet-500 border-opacity-50 rounded-xl"></div>
+        <div className="w-96 h-44 dark:bg-[#1a1a1a] bg-[#2a2a2a] border-[1px] border-violet-500 border-opacity-50 rounded-xl"></div>
+        <div className="w-96 h-44 dark:bg-[#1a1a1a] bg-[#2a2a2a] border-[1px] border-violet-500 border-opacity-50 rounded-xl"></div>
       </motion.div>
+      <div className="w-[5px] h-full bg-black opacity-40 absolute right-0 top-[50%] -translate-y-[50%] z-10"></div>
     </motion.div>
   );
 }
 
 export const Experience = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const ctrls = useAnimation();
+  const inView = useInView(ref);
+
+  const controllsAnimation: ControllsAnimationType = {
+    ctrls: ctrls,
+    isInView: inView,
+  };
+
+  useControllsAnimation(controllsAnimation);
+
+  const animationProps: VariantAnimationProps = {
+    isX: false,
+    value: 50,
+  };
+
+  const animation = useVariantAnimation(animationProps);
+
   return (
-    <section className="flex flex-col items-center justify-center mt-5 overflow-hidden">
-      <ParallaxExperience baseVelocity={-1} />
-    </section>
+    <motion.section ref={ref} className="flex flex-col justify-center mt-5 overflow-hidden">
+      <motion.h3
+        initial="hidden"
+        variants={animation}
+        animate={ctrls}
+        className="text-white text-[30px] font-bold mb-5"
+      >
+        Experience
+      </motion.h3>
+      <ParallaxExperience baseVelocity={-1} ctrls={ctrls} animation={animation} />
+    </motion.section>
   );
 };
