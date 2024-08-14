@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
+import { sectionRefType } from "@/types/sectionRef.type";
 
 interface NavigationType {
   name: string;
@@ -13,12 +14,7 @@ export const Navigation = ({
   aboutRef,
   projectRef,
   contactRef,
-}: {
-  heroRef: React.RefObject<HTMLDivElement | any>;
-  aboutRef: React.RefObject<HTMLDivElement | any>;
-  projectRef: React.RefObject<HTMLDivElement | any>;
-  contactRef: React.RefObject<HTMLDivElement | any>;
-}) => {
+}: sectionRefType) => {
   const navigations: NavigationType[] = [
     {
       name: "Home",

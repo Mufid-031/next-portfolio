@@ -1,5 +1,15 @@
 import * as React from "react";
 
+interface InputProps {
+  label?: string;
+  input?: boolean;
+  textarea?: boolean;
+  id: string;
+  type: string;
+  state: string;
+  setState: React.Dispatch<React.SetStateAction<string>>;
+}
+
 export const Input = ({
   label,
   input = false,
@@ -8,15 +18,7 @@ export const Input = ({
   type,
   state,
   setState,
-}: React.PropsWithChildren<{
-  label?: string;
-  input?: boolean;
-  textarea?: boolean;
-  id: string;
-  type: string;
-  state: string;
-  setState: React.Dispatch<React.SetStateAction<string>>;
-}>) => {
+}: InputProps) => {
   if (label && input) {
     return (
       <div className="relative z-0 mb-10 w-full group">

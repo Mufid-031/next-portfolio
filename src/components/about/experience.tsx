@@ -2,16 +2,15 @@ import * as React from "react";
 import "../../app/globals.css";
 import { useRef } from "react";
 import { motion, useInView, useAnimation, AnimationControls } from "framer-motion";
-import { wrap } from "@motionone/utils";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
-import { VariantAnimationProps, VariantAnimationXType, VariantAnimationYType } from "@/types/variantAnimation.type";
+import { VariantAnimationProps, VariantAnimationType } from "@/types/variantAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { useParallaxAnimation } from "@/hooks/useParallaxAnimation";
 
 interface ParallaxProps {
   baseVelocity: number;
-  animation: VariantAnimationXType | VariantAnimationYType;
+  animation: VariantAnimationType | undefined;
   ctrls: AnimationControls;
 }
 

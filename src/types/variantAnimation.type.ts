@@ -1,32 +1,21 @@
 export type VariantAnimationProps = {
-  isX: boolean;
+  isX?: boolean;
+  isScale?: boolean;
   value: number | any;
 };
 
-type AnimationX = {
-  x: number | string | any;
-  opacity: number;
+type Animation = {
+  x?: number | string | any;
+  y?: number | string | any;
+  scale?: number | string | any;
+  opacity?: number;
   transition: {
     duration: number;
-    ease: string;
+    ease?: string;
   };
 };
 
-export type VariantAnimationXType = {
-  hidden: AnimationX;
-  visible: AnimationX;
-};
-
-type AnimationY = {
-  y: number | string | any;
-  opacity: number;
-  transition: {
-    duration: number;
-    ease: string;
-  };
-};
-
-export type VariantAnimationYType = {
-  hidden: AnimationY;
-  visible: AnimationY;
+export type VariantAnimationType = {
+  hidden: Animation;
+  visible: Animation;
 };

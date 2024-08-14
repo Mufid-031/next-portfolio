@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { Divide as Hamburger } from "hamburger-react";
 import { Menu } from "./Menu";
+import { sectionRefType } from "@/types/sectionRef.type";
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
@@ -28,6 +29,11 @@ function useMenuAnimation(isOpen: boolean) {
   return scope;
 }
 
+interface NavbarProps extends sectionRefType {
+  darkMode: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 export const Navbar = ({
   darkMode,
   setDarkMode,
@@ -35,14 +41,7 @@ export const Navbar = ({
   aboutRef,
   projectRef,
   contactRef,
-}: {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-  heroRef: React.RefObject<HTMLDivElement | any>;
-  aboutRef: React.RefObject<HTMLDivElement | any>;
-  projectRef: React.RefObject<HTMLDivElement | any>;
-  contactRef: React.RefObject<HTMLDivElement | any>;
-}) => {
+}: NavbarProps) => {
   const [isHover, setIsHover] = React.useState<boolean | any>(false);
   const [isOpen, setIsOpen] = React.useState<boolean | any>(false);
   const [isHoverHamburger, setIsHoverHamburger] = React.useState<boolean | any>(false);

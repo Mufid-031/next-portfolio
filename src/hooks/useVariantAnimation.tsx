@@ -1,9 +1,8 @@
-import { VariantAnimationProps, VariantAnimationXType, VariantAnimationYType } from "@/types/variantAnimation.type";
+import { VariantAnimationProps, VariantAnimationType } from "@/types/variantAnimation.type";
 
-export const useVariantAnimation = ({ isX, value }: VariantAnimationProps) => {
-  let animation : VariantAnimationXType | VariantAnimationYType;
+export const useVariantAnimation = ({ isX, isScale, value }: VariantAnimationProps) => {
   if (isX) {
-    animation = {
+    const animation: VariantAnimationType = {
       hidden: {
         x: value,
         opacity: 0,
@@ -21,8 +20,10 @@ export const useVariantAnimation = ({ isX, value }: VariantAnimationProps) => {
         },
       },
     };
-  } else {
-    animation = {
+
+    return animation;
+  } else if (!isX) {
+    const animation: VariantAnimationType = {
       hidden: {
         y: value,
         opacity: 0,
@@ -40,7 +41,26 @@ export const useVariantAnimation = ({ isX, value }: VariantAnimationProps) => {
         },
       },
     };
-  }
 
-  return animation;
+    return animation;
+  } else if (isScale) {
+    const animation: VariantAnimationType = {
+      hidden: {
+        scale: value,
+        transition: {
+          duration: 0.5,
+          ease: "linear",
+        },
+      },
+      visible: {
+        scale: 1,
+        transition: {
+          duration: 0.5,
+          ease: "linear",
+        },
+      },
+    };
+
+    return animation;
+  }
 };

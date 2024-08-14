@@ -4,6 +4,8 @@ import { FaGithub } from "react-icons/fa";
 import { useAnimation, useInView, motion } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
+import { useVariantAnimation } from "@/hooks/useVariantAnimation";
+import { VariantAnimationProps } from "@/types/variantAnimation.type";
 
 export const Github = () => {
 
@@ -18,24 +20,12 @@ export const Github = () => {
 
   useControllsAnimation(controllsAnimation);
 
-  const animation = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      transition: {
-        duration: 0.5,
-        ease: "linear",
-      }
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "linear",
-      }
-    }
+  const animationProps: VariantAnimationProps = {
+    isX: false,
+    value: 50
   }
+
+  const animation = useVariantAnimation(animationProps)
 
   return (
     <motion.div ref={ref} initial="hidden" variants={animation} animate={ctrls} className="flex flex-col md:flex-row gap-4 mt-10">
