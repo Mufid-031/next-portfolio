@@ -1,6 +1,6 @@
 import React from "react";
 
-export type sectionRefType = {
+export type SectionRefType = {
   heroRef: React.RefObject<HTMLDivElement | any>;
   aboutRef: React.RefObject<HTMLDivElement | any>;
   projectRef: React.RefObject<HTMLDivElement | any>;

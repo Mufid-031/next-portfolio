@@ -2,7 +2,7 @@ import * as React from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { Divide as Hamburger } from "hamburger-react";
 import { Menu } from "./Menu";
-import { sectionRefType } from "@/types/sectionRef.type";
+import { SectionRefType } from "@/types/sectionRef.type";
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
@@ -29,19 +29,12 @@ function useMenuAnimation(isOpen: boolean) {
   return scope;
 }
 
-interface NavbarProps extends sectionRefType {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
 export const Navbar = ({
-  darkMode,
-  setDarkMode,
   heroRef,
   aboutRef,
   projectRef,
   contactRef,
-}: NavbarProps) => {
+}: SectionRefType) => {
   const [isHover, setIsHover] = React.useState<boolean | any>(false);
   const [isOpen, setIsOpen] = React.useState<boolean | any>(false);
   const [isHoverHamburger, setIsHoverHamburger] = React.useState<boolean | any>(false);
@@ -55,7 +48,7 @@ export const Navbar = ({
       </motion.div>
 
       <div ref={scope} className="flex items-center gap-10">
-        <Menu darkMode={darkMode} setDarkMode={setDarkMode} heroRef={heroRef} aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
+        <Menu heroRef={heroRef} aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
         <motion.div className="relative rounded-full" initial={{ x: "200%" }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
           <div className="w-full h-full bg-white shadow-lg rounded-full z-10 duration-300" onMouseEnter={() => setIsHoverHamburger(true)} onMouseLeave={() => setIsHoverHamburger(false)}>
             <Hamburger toggled={isOpen} toggle={setIsOpen} color="black" />

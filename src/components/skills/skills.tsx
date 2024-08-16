@@ -1,33 +1,30 @@
 import * as React from "react";
 import { useInView, motion } from "framer-motion";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { RiJavascriptFill } from "react-icons/ri";
-import { BiLogoTypescript } from "react-icons/bi";
-import { SiReact } from "react-icons/si";
-import { SiNextdotjs } from "react-icons/si";
-import { RiVuejsFill } from "react-icons/ri";
-import { BiLogoTailwindCss } from "react-icons/bi";
-import { SiNuxtdotjs } from "react-icons/si";
-import { FaBootstrap } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaBootstrap } from "react-icons/fa";
+import { RiJavascriptFill, RiVuejsFill } from "react-icons/ri";
+import { BiLogoTypescript, BiLogoTailwindCss } from "react-icons/bi";
+import { SiReact, SiNextdotjs, SiNuxtdotjs } from "react-icons/si";
 import { Icon } from "./Icon";
 import Xarrow from "react-xarrows";
-// import useScreenWidth from "@/hooks/useScreenWidth";
+import { useDarkModeContext } from "@/contexts/darkModeContext";
+// import useScreenWidth from "@/hooks/useScreenWidth";`
 
-export const Skills = ({ darkMode }: { darkMode: boolean }) => {
-  const ref = React.useRef<HTMLDivElement>(null);
+export const Skills = () => {
+  const { darkMode } = useDarkModeContext();
+
+  const ref = React.useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref);
 
-  const [hoverHTML, setHoverHTML] = React.useState<string>("white");
-  const [hoverCSS, setHoverCSS] = React.useState<string>("white");
-  const [hoverJS, setHoverJS] = React.useState<string>("white");
-  const [hoverTS, setHoverTS] = React.useState<string>("white");
-  const [hoverREACT, setHoverREACT] = React.useState<string>("white");
-  const [hoverNEXT, setHoverNEXT] = React.useState<string>("white");
-  const [hoverVUE, setHoverVUE] = React.useState<string>("white");
-  const [hoverTAIL, setHoverTAIL] = React.useState<string>("white");
-  const [hoverNuxt, sethoverNuxt] = React.useState<string>("white");
-  const [hoverBOOT, setHoverBOOT] = React.useState<string>("white");
+  const [hoverHTML, setHoverHTML] = React.useState<string>(darkMode ? "white" : "black");
+  const [hoverCSS, setHoverCSS] = React.useState<string>(darkMode ? "white" : "black");
+  const [hoverJS, setHoverJS] = React.useState<string>(darkMode ? "white" : "black");
+  const [hoverTS, setHoverTS] = React.useState<string>(darkMode ? "white" : "black");
+  const [hoverREACT, setHoverREACT] = React.useState<string>(darkMode ? "white" : "black");
+  const [hoverNEXT, setHoverNEXT] = React.useState<string>(darkMode ? "white" : "black");
+  const [hoverVUE, setHoverVUE] = React.useState<string>(darkMode ? "white" : "black");
+  const [hoverTAIL, setHoverTAIL] = React.useState<string>(darkMode ? "white" : "black");
+  const [hoverNuxt, sethoverNuxt] = React.useState<string>(darkMode ? "white" : "black");
+  const [hoverBOOT, setHoverBOOT] = React.useState<string>(darkMode ? "white" : "black");
 
   const htmlRef = React.useRef<JSX.Element | any>(null);
   const cssRef = React.useRef<JSX.Element | any>(null);
@@ -40,19 +37,6 @@ export const Skills = ({ darkMode }: { darkMode: boolean }) => {
   const nuxtRef = React.useRef<JSX.Element | any>(null);
   const bootRef = React.useRef<JSX.Element | any>(null);
   const [size, setSize] = React.useState<number>(50);
-
-  React.useEffect(() => {
-    setHoverHTML(darkMode ? "white" : "black");
-    setHoverCSS(darkMode ? "white" : "black");
-    setHoverJS(darkMode ? "white" : "black");
-    setHoverTS(darkMode ? "white" : "black");
-    setHoverREACT(darkMode ? "white" : "black");
-    setHoverNEXT(darkMode ? "white" : "black");
-    setHoverVUE(darkMode ? "white" : "black");
-    setHoverTAIL(darkMode ? "white" : "black");
-    sethoverNuxt(darkMode ? "white" : "black");
-    setHoverBOOT(darkMode ? "white" : "black");
-  }, [darkMode]);
 
   // const widthSize = useScreenWidth();
   // const mobileWidth = 768;

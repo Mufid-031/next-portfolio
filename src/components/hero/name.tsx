@@ -5,7 +5,12 @@ import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { VariantAnimationProps } from "@/types/variantAnimation.type";
 
-export const Name = ({ className, children }: React.PropsWithChildren<{ className?: string }>) => {
+interface NameProps {
+  className?: string;
+  children: React.ReactNode;
+}
+
+export const Name = ({ className, children, ...props }: NameProps) => {
   const ref = React.useRef<HTMLElement | null>(null);
   const ctrls = useAnimation();
   const isInView = useInView(ref);
@@ -25,7 +30,7 @@ export const Name = ({ className, children }: React.PropsWithChildren<{ classNam
   const animation = useVariantAnimation(animationProps);
 
   return (
-    <section ref={ref} className={className}>
+    <section ref={ref} className={className} {...props}>
       <motion.h1
         initial="hidden"
         variants={animation}

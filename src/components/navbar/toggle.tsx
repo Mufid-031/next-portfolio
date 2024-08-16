@@ -1,6 +1,9 @@
+import { useDarkModeContext } from "@/contexts/darkModeContext";
 import * as React from "react";
 
-export const ToggleDarkMode = ({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: React.Dispatch<React.SetStateAction<boolean>> }) => {
+export const ToggleDarkMode = () => {
+  const { darkMode, toggleDarkMode } = useDarkModeContext();
+
   return (
     <li style={{ transformOrigin: "-20px 50%" }} className="dark:text-black text-white block font-bold p-2">
       <div className="flex justify-around rounded-xl w-[89px] overflow-hidden border-2 border-slate-400 relative">
@@ -8,7 +11,7 @@ export const ToggleDarkMode = ({ darkMode, setDarkMode }: { darkMode: boolean; s
         <div
           className="text-sm p-2 text-center cursor-pointer text-white z-10"
           onClick={() => {
-            setDarkMode(true);
+            toggleDarkMode(true);
           }}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +26,7 @@ export const ToggleDarkMode = ({ darkMode, setDarkMode }: { darkMode: boolean; s
         <div
           className="text-sm p-2 text-center cursor-pointer z-10 text-black"
           onClick={() => {
-            setDarkMode(false);
+            toggleDarkMode(false);
           }}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
