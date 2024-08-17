@@ -2,36 +2,19 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { sectionRefType } from "@/types/sectionRef.type";
+import { SectionRefType } from "@/types/sectionRef.type";
 
 interface NavigationType {
   name: string;
   ref: React.RefObject<HTMLDivElement | any>;
 }
 
-export const Navigation = ({
-  heroRef,
-  aboutRef,
-  projectRef,
-  contactRef,
-}: sectionRefType) => {
+export const Navigation = ({ heroRef, aboutRef, projectRef, contactRef }: SectionRefType) => {
   const navigations: NavigationType[] = [
-    {
-      name: "Home",
-      ref: heroRef,
-    },
-    {
-      name: "About",
-      ref: aboutRef,
-    },
-    {
-      name: "Project",
-      ref: projectRef,
-    },
-    {
-      name: "Contact",
-      ref: contactRef,
-    },
+    { name: "Home", ref: heroRef },
+    { name: "About", ref: aboutRef },
+    { name: "Project", ref: projectRef },
+    { name: "Contact", ref: contactRef },
   ];
 
   return (

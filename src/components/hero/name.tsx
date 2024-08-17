@@ -4,6 +4,7 @@ import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { VariantAnimationProps } from "@/types/variantAnimation.type";
+import { cn } from "@/lib/utils";
 
 interface NameProps {
   className?: string;
@@ -30,7 +31,7 @@ export const Name = ({ className, children, ...props }: NameProps) => {
   const animation = useVariantAnimation(animationProps);
 
   return (
-    <section ref={ref} className={className} {...props}>
+    <section ref={ref} className={cn(['h-44 overflow-hidden', className])} {...props}>
       <motion.h1
         initial="hidden"
         variants={animation}
