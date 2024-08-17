@@ -14,6 +14,7 @@ export const Location = () => {
   const controllsAnimation: ControllsAnimationType = {
     ctrls,
     isInView,
+    once: true,
   };
 
   useControllsAnimation(controllsAnimation);

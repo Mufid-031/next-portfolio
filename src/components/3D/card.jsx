@@ -14,7 +14,7 @@ useTexture.preload('/Coding-with-Mufid.png')
 export default function Card3D() {
 
   return (
-    <Canvas camera={{ position: [0, 0, 18], fov: 15 }} style={{ height: 700 }}>
+    <Canvas camera={{ position: [0, 0, 15], fov: 20 }} style={{ height: 700 }}>
       <ambientLight intensity={Math.PI} />
       <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
         <Band />
