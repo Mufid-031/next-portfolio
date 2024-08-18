@@ -5,7 +5,7 @@ import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { VariantAnimationProps } from "@/types/variantAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 
-interface IconProps {
+interface IconProps extends React.ComponentPropsWithRef<"div"> {
   darkMode: boolean;
   isInView: boolean;
   iconOne: JSX.Element;

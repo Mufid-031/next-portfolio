@@ -15,7 +15,10 @@ export const HoverEffect = ({
   items: {
     title: string;
     description: string;
-    link: string;
+    slug: string;
+    writed: string;
+    views: string;
+    time: string;
   }[];
   className?: string;
 }) => {
@@ -30,8 +33,8 @@ export const HoverEffect = ({
     >
       {items.map((item, idx) => (
         <Link
-          href={item?.link}
-          key={item?.link}
+          href={`/blog/${item?.slug}`}
+          key={item?.slug}
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -58,11 +61,11 @@ export const HoverEffect = ({
             <CardTitle className="pl-4 pt-2">{item.title}</CardTitle>
             <div className="flex items-center px-2 pb-4">
                 <IoMdTime className="pt-2" size={30} color="#fff" />
-                <span className="text-sm dark:text-green-400 text-black pt-2 mr-3">2h ago</span>
+                <span className="text-sm dark:text-green-400 text-black pt-2 mr-3">{item.time}</span>
                 <IoEyeOutline className="pt-2" size={30} color="#fff" />
-                <span className="text-sm dark:text-green-400 text-black pt-2">2k views</span>
+                <span className="text-sm dark:text-green-400 text-black pt-2">{item.views}</span>
             </div>
-            <CardDescription className="px-4 py-1 font-bold text-white">1 Jan 2022</CardDescription>
+            <CardDescription className="px-4 py-1 font-bold text-white">{item.writed}</CardDescription>
             <CardDescription className="px-4 pt-1 pb-5">{item.description.substring(0, 100)}...</CardDescription>
           </Card>
         </Link>

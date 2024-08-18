@@ -8,6 +8,7 @@ export const useControllsAnimation = ({ ctrls, isInView, once }: ControllsAnimat
     } else {
       ctrls.start("hidden");
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [once ? null : ctrls, once ? null : isInView]);
 
   useEffect(() => {
