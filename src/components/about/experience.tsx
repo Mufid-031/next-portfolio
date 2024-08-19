@@ -20,6 +20,7 @@ function ParallaxExperience({ baseVelocity = 100, animation, ctrls }: ParallaxPr
   const parallaxProps = {
     baseVelocity,
     isHover,
+    infinite: true,
   }
 
   const x = useParallaxAnimation(parallaxProps);
@@ -59,6 +60,7 @@ export const Experience = () => {
   const controllsAnimation: ControllsAnimationType = {
     ctrls: ctrls,
     isInView: inView,
+    once: true,
   };
 
   useControllsAnimation(controllsAnimation);

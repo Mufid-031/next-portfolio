@@ -16,6 +16,7 @@ function ParallaxTextComponent({ children, baseVelocity = 100 }: ParallaxProps) 
 
   const parallaxProps = {
     baseVelocity,
+    infinite: false,
   }
 
   const x = useParallaxAnimation(parallaxProps);
@@ -27,6 +28,7 @@ function ParallaxTextComponent({ children, baseVelocity = 100 }: ParallaxProps) 
   const controllsAnimation: ControllsAnimationType = {
     ctrls: ctrls,
     isInView: inView,
+    once: true,
   };
 
   useControllsAnimation(controllsAnimation);
@@ -40,7 +42,7 @@ function ParallaxTextComponent({ children, baseVelocity = 100 }: ParallaxProps) 
 
   return (
     <motion.div 
-      ref={ref} 
+      ref={ref}
       initial="hidden" 
       variants={animation} 
       animate={ctrls} 

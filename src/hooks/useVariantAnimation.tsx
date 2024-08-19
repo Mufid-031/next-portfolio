@@ -1,22 +1,22 @@
 import { VariantAnimationProps, VariantAnimationType } from "@/types/variantAnimation.type";
 
-export const useVariantAnimation = ({ isX, isScale, value }: VariantAnimationProps) => {
+export const useVariantAnimation = ({ isX, isScale, value, duration, ease }: VariantAnimationProps) => {
   if (isX) {
     const animation: VariantAnimationType = {
       hidden: {
         x: value,
         opacity: 0,
         transition: {
-          duration: 0.5,
-          ease: "linear",
+          duration: duration || 0.5,
+          ease: ease || "linear",
         },
       },
       visible: {
         x: 0,
         opacity: 1,
         transition: {
-          duration: 0.5,
-          ease: "linear",
+          duration: duration || 0.5,
+          ease:  ease || "linear",
         },
       },
     };
@@ -28,16 +28,16 @@ export const useVariantAnimation = ({ isX, isScale, value }: VariantAnimationPro
         y: value,
         opacity: 0,
         transition: {
-          duration: 0.5,
-          ease: "linear",
+          duration: duration || 0.5,
+          ease:  ease || "linear",
         },
       },
       visible: {
         y: 0,
         opacity: 1,
         transition: {
-          duration: 0.5,
-          ease: "linear",
+          duration: duration || 0.5,
+          ease:  ease || "linear",
         },
       },
     };
@@ -48,15 +48,15 @@ export const useVariantAnimation = ({ isX, isScale, value }: VariantAnimationPro
       hidden: {
         scale: value,
         transition: {
-          duration: 0.5,
-          ease: "linear",
+          duration: duration || 0.5,
+          ease:  ease || "linear",
         },
       },
       visible: {
         scale: 1,
         transition: {
-          duration: 0.5,
-          ease: "linear",
+          duration: duration || 0.5,
+          ease:  ease || "linear",
         },
       },
     };

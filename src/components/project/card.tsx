@@ -38,6 +38,7 @@ export const Card = () => {
   const controllsAnimation: ControllsAnimationType = {
     ctrls,
     isInView,
+    once: true,
   };
 
   useControllsAnimation(controllsAnimation);

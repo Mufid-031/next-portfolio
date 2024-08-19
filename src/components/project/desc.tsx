@@ -14,7 +14,8 @@ export const Desc = () => {
 
   const controllsAnimation: ControllsAnimationType = {
     ctrls,
-    isInView
+    isInView,
+    once: true,
   }
 
   useControllsAnimation(controllsAnimation);

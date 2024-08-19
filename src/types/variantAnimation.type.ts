@@ -2,6 +2,8 @@ export type VariantAnimationProps = {
   isX?: boolean;
   isScale?: boolean;
   value: number | any;
+  duration?: number;
+  ease?: string | Array<number> | any;
 };
 
 type Animation = {

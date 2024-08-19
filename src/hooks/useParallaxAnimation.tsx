@@ -5,9 +5,10 @@ import { wrap } from "@motionone/utils";
 interface ParallaxProps {
   baseVelocity?: number;
   isHover?: boolean;
+  infinite?: boolean;
 }
 
-export const useParallaxAnimation = ({ baseVelocity = 100, isHover }: ParallaxProps) => {
+export const useParallaxAnimation = ({ baseVelocity = 100, isHover, infinite }: ParallaxProps) => {
   const { scrollY } = useScroll();
   const baseX = useMotionValue(0);
   const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
@@ -28,10 +29,12 @@ export const useParallaxAnimation = ({ baseVelocity = 100, isHover }: ParallaxPr
 
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
-    if (velocityFactor.get() < 0) {
-      directionFactor.current = -1;
-    } else if (velocityFactor.get() > 0) {
-      directionFactor.current = 1;
+    if (!infinite) {
+      if (velocityFactor.get() < 0) {
+        directionFactor.current = -1;
+      } else if (velocityFactor.get() > 0) {
+        directionFactor.current = 1;
+      }
     }
 
     moveBy += directionFactor.current * moveBy * velocityFactor.get();

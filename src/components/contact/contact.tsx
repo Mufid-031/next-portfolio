@@ -1,9 +1,13 @@
 import * as React from "react";
-import { useInView } from "framer-motion";
+import { useAnimation, useInView, motion } from "framer-motion";
 import { MdOutlineMail } from "react-icons/md";
 import Card3D from "../3D/Card.jsx";
 import { Input } from "./Input";
 import emailjs from "@emailjs/browser";
+import { ControllsAnimationType } from "@/types/controllsAnimation.type.js";
+import { useControllsAnimation } from "@/hooks/useControllsAnimation";
+import { VariantAnimationProps } from "@/types/variantAnimation.type.js";
+import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 
 export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivElement> }) => {
   const [name, setName] = React.useState<string>("");
@@ -11,8 +15,26 @@ export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivEle
   const [subject, setSubject] = React.useState<string>("");
   const [message, setMessage] = React.useState<string>("");
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+
   const isInView = useInView(contactRef);
+  const ctrls = useAnimation();
   const form = React.useRef<any>(null);
+
+  const controllsAnimation: ControllsAnimationType = {
+    ctrls,
+    isInView,
+    once: true,
+  };
+
+  useControllsAnimation(controllsAnimation);
+
+  const animationProps: VariantAnimationProps = {
+    isX: true,
+    value: 0,
+    duration: 1,
+  };
+
+  const animation = useVariantAnimation(animationProps);
 
   const serviceID: any = process.env.SERVICE_ID_EMAILJS;
   const templateID: any = process.env.TEMPLATE_ID_EMAILJS;
@@ -44,7 +66,7 @@ export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivEle
   return (
     <section ref={contactRef} className="mt-10 min-h-screen flex flex-col md:flex-row dark:bg-white bg-[#1a1a1a]">
       {isInView && <Card3D />}
-      <div className="flex flex-col justify-center h-screen w-[80%] mx-auto md:mx-0">
+      <motion.div initial="hidden" variants={animation} animate={ctrls} className="flex flex-col justify-center h-screen w-[80%] mx-auto md:mx-0">
         <h1 className="text-[60px] dark:text-black text-white font-bold">Contact</h1>
         <form ref={form} onSubmit={sendEmail} className="w-full max-w-xl mt-20">
           <Input label="Your name" input type="text" id="name" state={name} setState={setName} />
@@ -56,7 +78,7 @@ export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivEle
             <p>{isLoading ? "Sending..." : "Send"}</p>
           </button>
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 };

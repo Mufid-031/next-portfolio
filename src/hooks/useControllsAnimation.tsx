@@ -12,8 +12,8 @@ export const useControllsAnimation = ({ ctrls, isInView, once }: ControllsAnimat
   }, [once ? null : ctrls, once ? null : isInView]);
 
   useEffect(() => {
-    if (once) {
+    if (once && isInView) {
       ctrls.start("visible");
     }
-  }, [once, ctrls]);
+  }, [once, isInView, ctrls]);
 };
