@@ -1,66 +1,61 @@
 import { VariantAnimationProps, VariantAnimationType } from "@/types/variantAnimation.type";
 
-export const useVariantAnimation = ({ isX, isScale, value, duration, ease }: VariantAnimationProps) => {
-  if (isX) {
-    const animation: VariantAnimationType = {
-      hidden: {
-        x: value,
-        opacity: 0,
-        transition: {
-          duration: duration || 0.5,
-          ease: ease || "linear",
-        },
+export const useVariantAnimation = ({ isX, isScale, value, duration = 0.5, ease = "linear", delay = 0, stanggerChildren = 0, delayChildren = 0, type = "spring" }: VariantAnimationProps) => {
+  const variantAnimation: VariantAnimationType = {
+    hidden: {
+      [isX ? "x" : "y"]: value,
+      opacity: 0,
+      transition: {
+        duration,
+        ease,
+        stanggerChildren,
+        delayChildren,
+        delay,
       },
-      visible: {
-        x: 0,
-        opacity: 1,
-        transition: {
-          duration: duration || 0.5,
-          ease:  ease || "linear",
-        },
+      type,
+    },
+    visible: {
+      [isX ? "x" : "y"]: 0,
+      opacity: 1,
+      transition: {
+        duration,
+        ease,
+        stanggerChildren,
+        delayChildren,
+        delay,
       },
-    };
+      type,
+    },
+  };
 
-    return animation;
-  } else if (!isX) {
-    const animation: VariantAnimationType = {
-      hidden: {
-        y: value,
-        opacity: 0,
-        transition: {
-          duration: duration || 0.5,
-          ease:  ease || "linear",
-        },
-      },
-      visible: {
-        y: 0,
-        opacity: 1,
-        transition: {
-          duration: duration || 0.5,
-          ease:  ease || "linear",
-        },
-      },
-    };
-
-    return animation;
-  } else if (isScale) {
-    const animation: VariantAnimationType = {
+  if (isScale) {
+    const variantAnimation: VariantAnimationType = {
       hidden: {
         scale: value,
         transition: {
-          duration: duration || 0.5,
-          ease:  ease || "linear",
+          duration,
+          ease,
+          stanggerChildren,
+          delayChildren,
+          delay,
         },
+        type,
       },
       visible: {
         scale: 1,
         transition: {
-          duration: duration || 0.5,
-          ease:  ease || "linear",
+          duration,
+          ease,
+          stanggerChildren,
+          delayChildren,
+          delay,
         },
+        type,
       },
     };
 
-    return animation;
+    return variantAnimation;
   }
+
+  return variantAnimation;
 };

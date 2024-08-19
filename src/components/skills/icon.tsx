@@ -16,36 +16,26 @@ interface IconProps extends React.ComponentPropsWithRef<"div"> {
   hoverTwo?: string;
 }
 
-export const Icon = ({
-  darkMode,
-  isInView,
-  iconOne,
-  iconTwo,
-  refOne,
-  refTwo,
-  hoverOne,
-  hoverTwo,
-}: IconProps) => {
-
+export const Icon = ({ darkMode, isInView, iconOne, iconTwo, refOne, refTwo, hoverOne, hoverTwo }: IconProps) => {
   const ctrls = useAnimation();
 
   const controllsAnimation: ControllsAnimationType = {
     ctrls,
     isInView,
     once: true,
-  } 
+  };
 
   useControllsAnimation(controllsAnimation);
 
   const animationOneProps: VariantAnimationProps = {
     isX: true,
-    value: -50
-  }
+    value: -50,
+  };
 
   const animationTwoProps: VariantAnimationProps = {
     isX: true,
-    value: 50
-  }
+    value: 50,
+  };
 
   const iconOneAnimation = useVariantAnimation(animationOneProps);
   const iconTwoAnimation = useVariantAnimation(animationTwoProps);
@@ -57,7 +47,7 @@ export const Icon = ({
         initial="hidden"
         animate={ctrls}
         variants={iconOneAnimation}
-        className={`w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full flex justify-center items-center ${darkMode ? (hoverOne === "white" ? "bg-[#0d0d0d]" : "bg-[#ecebeb]") : hoverOne === "black" ? "bg-[#ecebeb]" : "bg-[#0d0d0d]"} `}
+        className={`w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full flex justify-center items-center ${darkMode ? (hoverOne === "white" ? "bg-[#0d0d0d]" : "bg-[#ecebeb]") : hoverOne === "black" ? "bg-[#ecebeb]" : "bg-[#0d0d0d]"}`}
       >
         {iconOne}
       </motion.div>
@@ -66,9 +56,7 @@ export const Icon = ({
         initial="hidden"
         animate={ctrls}
         variants={iconTwoAnimation}
-        className={`w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full flex justify-center items-center  ${
-          darkMode ? (hoverTwo === "white" ? "bg-[#0d0d0d]" : "bg-[#ecebeb]") : hoverTwo === "black" ? "bg-[#ecebeb]" : "bg-[#0d0d0d]"
-        } `}
+        className={`w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full flex justify-center items-center  ${darkMode ? (hoverTwo === "white" ? "bg-[#0d0d0d]" : "bg-[#ecebeb]") : hoverTwo === "black" ? "bg-[#ecebeb]" : "bg-[#0d0d0d]"} `}
       >
         {iconTwo}
       </motion.div>

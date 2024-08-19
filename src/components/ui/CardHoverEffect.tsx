@@ -2,8 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMdTime } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
 
@@ -19,19 +20,29 @@ export const HoverEffect = ({
     writed: string;
     views: string;
     time: string;
+    image: string;
   }[];
   className?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+    console.log(items)
+  }, [items])
+
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
+        `grid grid-cols-1 ${items.length === 0 ? "md:grid-cols-1 lg:grid-cols-1" : "md:grid-cols-2 lg:grid-cols-3"} py-10`,
         className
       )}
     >
-      {items.map((item, idx) => (
+
+      {items.length === 0 ?
+        <div className="w-full h-full">
+          <p className="text-black dark:text-white text-center text-6xl font-bold leading-[50vh]">No Blogs found</p>
+        </div>
+      : items.map((item, idx) => (
         <Link
           href={`/blog/${item?.slug}`}
           key={item?.slug}
@@ -57,7 +68,9 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <div className="h-[150px] w-full bg-neutral-200 dark:bg-slate-800/[0.8] block"></div>
+            <div className="h-[150px] w-full bg-neutral-200 dark:bg-slate-800/[0.8] block">
+              <Image width={300} height={300} src={`/${item.image}`} alt={`${item.title}`} className="w-full h-full object-cover" />
+            </div>
             <CardTitle className="pl-4 pt-2">{item.title}</CardTitle>
             <div className="flex items-center px-2 pb-4">
                 <IoMdTime className="pt-2" size={30} color="#fff" />
