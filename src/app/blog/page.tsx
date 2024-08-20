@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/Button";
 import { HoverEffect } from "@/components/ui/CardHoverEffect";
 import { ChangeEvent, useState } from "react";
 
+
 export default function BlogPage() {
+  
 
   const [search, setSearch] = useState<string>("");
 
@@ -12,17 +14,41 @@ export default function BlogPage() {
     <main className="flex flex-col h-screen py-10 px-60">
       <div className="flex flex-col w-full">
         <h2 className="text-black dark:text-white text-[30px] md:text-[50px] font-extrabold">Blog</h2>
-        <input onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} value={search} className="dark:text-white dark:bg-[#1a1a1a] border-slate-600 w-full h-10 rounded-md mt-3 border p-3" type="search" name="search" id="search" placeholder="Search" />
+        <input
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+          value={search}
+          className="dark:text-white dark:bg-[#1a1a1a] border-slate-600 w-full h-10 rounded-md mt-3 border p-3"
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Search"
+        />
         <div className="flex items-center mt-3 gap-2">
           <p className="text-black dark:text-white text-sm font-bold mr-3">Recent Search:</p>
-          <Button onClick={() => setSearch("nextjs")} className="px-1 bg-slate-700">nextjs</Button>
-          <Button onClick={() => setSearch("typescript")} className="px-1 bg-slate-700">typescript</Button>
-          <Button onClick={() => setSearch("javascript")} className="px-1 bg-slate-700">javascript</Button>
-          <Button onClick={() => setSearch("python")} className="px-1 bg-slate-700">python</Button>
-          <Button onClick={() => setSearch("react")} className="px-1 bg-slate-700">react</Button>
-          <Button onClick={() => setSearch("framework")} className="px-1 bg-slate-700">framework</Button>
-          <Button onClick={() => setSearch("tailwind")} className="px-1 bg-slate-700">tailwind</Button>
-          <Button onClick={() => setSearch("vue")} className="px-1 bg-slate-700">vue</Button>
+          <Button onClick={() => setSearch("nextjs")} className="px-1 bg-slate-700">
+            nextjs
+          </Button>
+          <Button onClick={() => setSearch("typescript")} className="px-1 bg-slate-700">
+            typescript
+          </Button>
+          <Button onClick={() => setSearch("javascript")} className="px-1 bg-slate-700">
+            javascript
+          </Button>
+          <Button onClick={() => setSearch("python")} className="px-1 bg-slate-700">
+            python
+          </Button>
+          <Button onClick={() => setSearch("react")} className="px-1 bg-slate-700">
+            react
+          </Button>
+          <Button onClick={() => setSearch("framework")} className="px-1 bg-slate-700">
+            framework
+          </Button>
+          <Button onClick={() => setSearch("tailwind")} className="px-1 bg-slate-700">
+            tailwind
+          </Button>
+          <Button onClick={() => setSearch("vue")} className="px-1 bg-slate-700">
+            vue
+          </Button>
         </div>
       </div>
 
@@ -37,7 +63,7 @@ export const projects = [
   {
     title: "JavaScript",
     description: "A high-level, interpreted, or just-in-time compiled programming language.",
-    slug: "blog-javascript",
+    slug: "javascript",
     writed: "1 Jan 2022",
     views: "2k",
     time: "2h",
