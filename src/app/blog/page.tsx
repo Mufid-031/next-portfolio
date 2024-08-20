@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/Button";
 import { HoverEffect } from "@/components/ui/CardHoverEffect";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export default function BlogPage() {
 
@@ -12,7 +12,7 @@ export default function BlogPage() {
     <main className="flex flex-col h-screen py-10 px-60">
       <div className="flex flex-col w-full">
         <h2 className="text-black dark:text-white text-[30px] md:text-[50px] font-extrabold">Blog</h2>
-        <input onChange={(e) => setSearch(e.target.value)} value={search} className="dark:text-white dark:bg-[#1a1a1a] border-slate-600 w-full h-10 rounded-md mt-3 border p-3" type="search" name="search" id="search" placeholder="Search" />
+        <input onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} value={search} className="dark:text-white dark:bg-[#1a1a1a] border-slate-600 w-full h-10 rounded-md mt-3 border p-3" type="search" name="search" id="search" placeholder="Search" />
         <div className="flex items-center mt-3 gap-2">
           <p className="text-black dark:text-white text-sm font-bold mr-3">Recent Search:</p>
           <Button onClick={() => setSearch("nextjs")} className="px-1 bg-slate-700">nextjs</Button>

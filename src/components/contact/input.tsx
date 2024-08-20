@@ -1,5 +1,3 @@
-import * as React from "react";
-
 interface InputProps {
   label?: string;
   input?: boolean;

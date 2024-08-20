@@ -1,12 +1,16 @@
-import * as React from "react";
+"use client";
+
 import ParallaxText from "./ParallaxText";
 import { Name } from "./Name";
 import { Location } from "./Location";
 import { HeroImage } from "./Image";
+import { useSectionRefContext } from "@/contexts/sectionRefContext";
 
-export const Hero = ({ heroRef }: { heroRef: React.RefObject<HTMLDivElement> }) => {
+const Hero = () => {
+  const { heroRef } = useSectionRefContext();
+
   return (
-    <section ref={heroRef} className="flex flex-col items-center justify-between px-10 py-0 md:py-20 relative">
+    <div ref={heroRef} className="flex flex-col items-center justify-between px-10 py-20 relative">
       <div className="flex flex-col items-center">
         <Name>AHMAD</Name>
         <Name className="-mt-20 md:-mt-5">MUFID</Name>
@@ -15,6 +19,8 @@ export const Hero = ({ heroRef }: { heroRef: React.RefObject<HTMLDivElement> }) 
       </div>
       <HeroImage width={300} height={300} className="rounded-3xl grayscale-[100%] hover:grayscale-0" />
       <ParallaxText />
-    </section>
+    </div>
   );
 };
+
+export default Hero;

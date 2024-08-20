@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { useDarkModeContext } from "@/contexts/darkModeContext";
 import { FaRegMoon } from "react-icons/fa";
@@ -16,7 +18,7 @@ export const ToggleDarkMode = () => {
             toggleDarkMode(true);
           }}
         >
-          <FaRegMoon size={25} />
+          <FaRegMoon size={25} className={`${darkMode ? "" : "rotate-90"} transition-all duration-500`} />
         </div>
         <div
           className="text-sm p-2 text-center cursor-pointer z-10 text-black"
@@ -24,7 +26,7 @@ export const ToggleDarkMode = () => {
             toggleDarkMode(false);
           }}
         >
-          <FiSun size={25} />
+          <FiSun size={25} className={`${!darkMode ? "" : "rotate-90"} transition-all duration-500`} />
         </div>
       </div>
     </li>

@@ -2,14 +2,16 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { SectionRefType } from "@/types/sectionRef.type";
+import { useSectionRefContext } from "@/contexts/sectionRefContext";
 
 interface NavigationType {
   name: string;
   ref: React.RefObject<HTMLDivElement | any>;
 }
 
-export const Navigation = ({ heroRef, aboutRef, projectRef, contactRef }: SectionRefType) => {
+export const Navigation = () => {
+  const { heroRef, aboutRef, projectRef, contactRef } = useSectionRefContext();
+
   const navigations: NavigationType[] = [
     { name: "Home", ref: heroRef },
     { name: "About", ref: aboutRef },

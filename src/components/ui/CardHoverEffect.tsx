@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IoMdTime } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
 
@@ -25,10 +25,6 @@ export const HoverEffect = ({
   className?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    console.log(items)
-  }, [items])
 
   return (
     <div

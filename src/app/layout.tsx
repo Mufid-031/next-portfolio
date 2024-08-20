@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { DarkModeContextProvider } from "@/contexts/darkModeContext";
+import { SectionRefContextProvider } from "@/contexts/sectionRefContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${poppins.className || "font-sans"} dark:bg-[#1a1a1a] bg-white overflow-x-hidden`}>
-        <DarkModeContextProvider>{children}</DarkModeContextProvider>
+        <SectionRefContextProvider>
+          <DarkModeContextProvider>{children}</DarkModeContextProvider>
+        </SectionRefContextProvider>
       </body>
     </html>
   );

@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import "../../app/globals.css";
 import { useRef } from "react";

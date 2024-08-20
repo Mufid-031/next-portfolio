@@ -1,8 +1,9 @@
+"use client";
+
 import { useDarkModeContext } from "@/contexts/darkModeContext";
 import { VariantAnimationType } from "@/types/variantAnimation.type";
 import { AnimationControls, motion } from "framer-motion";
 import { useIconsHoverState } from "@/hooks/useIconsHoverState";
-import * as React from "react";
 import Xarrow from "react-xarrows";
 
 interface XarrowsProps {

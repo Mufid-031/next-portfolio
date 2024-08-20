@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@motionone/utils": "^10.18.0",
     "@react-three/drei": "^9.0.1",
     "@react-three/fiber": "^8.16.8",

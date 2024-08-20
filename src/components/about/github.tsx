@@ -1,6 +1,7 @@
+"use client";
+
 import * as React from "react";
 import Image from "next/image";
-import { FaGithub } from "react-icons/fa";
 import { useAnimation, useInView, motion } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";

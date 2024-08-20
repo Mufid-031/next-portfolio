@@ -1,15 +1,18 @@
+"use client";
+
 import * as React from "react";
 import { useAnimation, useInView, motion } from "framer-motion";
 import { MdOutlineMail } from "react-icons/md";
 import Card3D from "../3D/Card.jsx";
 import { Input } from "./Input";
-import emailjs from "@emailjs/browser";
-import { ControllsAnimationType } from "@/types/controllsAnimation.type.js";
+import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
-import { VariantAnimationProps } from "@/types/variantAnimation.type.js";
+import { VariantAnimationProps } from "@/types/variantAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
+import { useSectionRefContext } from "@/contexts/sectionRefContext";
 
-export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivElement> }) => {
+const Contact = () => {
+  const { contactRef } = useSectionRefContext();
   const [name, setName] = React.useState<string>("");
   const [email, setEmail] = React.useState<string>("");
   const [subject, setSubject] = React.useState<string>("");
@@ -36,39 +39,12 @@ export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivEle
 
   const animation = useVariantAnimation(animationProps);
 
-  const serviceID: any = process.env.SERVICE_ID_EMAILJS;
-  const templateID: any = process.env.TEMPLATE_ID_EMAILJS;
-  const publicKey: any = process.env.PUBLIC_KEY_EMAILJS;
-
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("sending email...");
-    e.preventDefault();
-    setIsLoading(true);
-
-    emailjs
-      .sendForm(serviceID, templateID, form.current, publicKey)
-      .then(() => {
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 1000);
-      });
-  };
-
   return (
     <section ref={contactRef} className="mt-10 min-h-screen flex flex-col md:flex-row dark:bg-white bg-[#1a1a1a]">
       {isInView && <Card3D />}
       <motion.div initial="hidden" variants={animation} animate={ctrls} className="flex flex-col justify-center h-screen w-[80%] mx-auto md:mx-0">
         <h1 className="text-[60px] dark:text-black text-white font-bold">Contact</h1>
-        <form ref={form} onSubmit={sendEmail} className="w-full max-w-xl mt-20">
+        <form ref={form} className="w-full max-w-xl mt-20">
           <Input label="Your name" input type="text" id="name" state={name} setState={setName} />
           <Input label="Your email" input type="email" id="email" state={email} setState={setEmail} />
           <Input label="Subject" input type="text" id="subject" state={subject} setState={setSubject} />
@@ -82,3 +58,5 @@ export const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLDivEle
     </section>
   );
 };
+
+export default Contact;

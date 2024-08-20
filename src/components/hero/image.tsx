@@ -1,4 +1,3 @@
-import * as React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";

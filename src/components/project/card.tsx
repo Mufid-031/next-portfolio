@@ -1,10 +1,12 @@
+"use client";
+
+import * as React from "react";
+import Image from "next/image";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { VariantAnimationProps } from "@/types/variantAnimation.type";
 import { useAnimation, useInView, motion } from "framer-motion";
-import Image from "next/image";
-import * as React from "react";
 
 type ProjectType = {
   name: string;
@@ -12,7 +14,7 @@ type ProjectType = {
   img: string;
 }
 
-export const Card = ({ projectRef }: { projectRef: React.RefObject<HTMLDivElement | any> }) => {
+export const Card = () => {
   const projects: ProjectType[] = [
     {
       name: "Next Panda Store",
@@ -31,8 +33,9 @@ export const Card = ({ projectRef }: { projectRef: React.RefObject<HTMLDivElemen
     },
   ];
 
+  const ref = React.useRef<HTMLDivElement | null>(null);
   const ctrls = useAnimation();
-  const isInView = useInView(projectRef);
+  const isInView = useInView(ref);
 
   const controllsAnimation: ControllsAnimationType = {
     ctrls,
@@ -51,7 +54,7 @@ export const Card = ({ projectRef }: { projectRef: React.RefObject<HTMLDivElemen
   const animation = useVariantAnimation(animationProps);
 
   return (
-    <motion.div className="flex flex-col gap-5 mt-5" ref={projectRef} animate={ctrls} variants={animation}>
+    <motion.section className="flex flex-col gap-5 mt-5" ref={ref} animate={ctrls} variants={animation}>
       {projects.map((project, index) => {
         return (
           <motion.div initial="hidden" key={index} className="flex lg:w-full lg:h-[500px] p-3 bg-[#2a2a2a] rounded-xl relative overflow-hidden card">
@@ -65,6 +68,6 @@ export const Card = ({ projectRef }: { projectRef: React.RefObject<HTMLDivElemen
           </motion.div>
         );
       })}
-    </motion.div>
+    </motion.section>
   );
 };

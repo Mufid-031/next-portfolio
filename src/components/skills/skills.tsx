@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { useInView, useAnimation } from "framer-motion";
 import { FaHtml5, FaCss3Alt, FaBootstrap } from "react-icons/fa";
@@ -14,9 +16,8 @@ import { Xarrows } from "./Xarrows";
 import { useIconsRef } from "@/hooks/useIconsRef";
 import { Card } from "./Card";
 import { useIconsHoverState } from "@/hooks/useIconsHoverState";
-// import useScreenWidth from "@/hooks/useScreenWidth";`
 
-export const Skills = () => {
+const Skills = () => {
   const { darkMode } = useDarkModeContext();
 
   const ref = React.useRef<HTMLDivElement | null>(null);
@@ -63,9 +64,6 @@ export const Skills = () => {
 
   const { htmlRef, cssRef, jsRef, tsRef, reactRef, nextRef, vueRef, tailRef, nuxtRef, bootRef } = useIconsRef();
   const [size, setSize] = React.useState<number>(50);
-
-  // const widthSize = useScreenWidth();
-  // const mobileWidth = 768;
 
   return (
     <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#ecebeb] px-10 md:px-32 relative">
@@ -128,3 +126,5 @@ export const Skills = () => {
     </section>
   );
 };
+
+export default Skills;

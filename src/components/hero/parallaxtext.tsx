@@ -1,3 +1,5 @@
+"use client";
+
 import "../../app/globals.css";
 import { useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
@@ -66,7 +68,7 @@ function ParallaxTextComponent({ children, baseVelocity = 100 }: ParallaxProps) 
 
 export default function ParallaxText() {
   return (
-    <section className="flex flex-col items-center justify-center mt-5">
+    <section className="mt-0 md:mt-5">
       <ParallaxTextComponent baseVelocity={-2}>Frontend Web Developer</ParallaxTextComponent>
       <ParallaxTextComponent baseVelocity={2}>Backend Web Developer</ParallaxTextComponent>
     </section>
