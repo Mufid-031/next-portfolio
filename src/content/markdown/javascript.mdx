@@ -4,16 +4,18 @@ description: A high-level, interpreted, or just-in-time compiled programming lan
 writed: 20 Agustus 2024
 views: 2k
 time: 2h
-image: blog/javascript.jpg
+image: https://images.unsplash.com/photo-1653387137517-fbc54d488ed8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+query: [javascript, java, script, js]
 ---
-
 # JavaScript
 
-# **Apa itu JavaScript?**
+## **Apa itu JavaScript?**
+
+---
 
 JavaScript adalah bahasa pemrograman yang digunakan developer untuk membuat halaman web yang interaktif. Dari menyegarkan umpan media sosial hingga menampilkan animasi dan peta interaktif, fungsi JavaScript dapat meningkatkan pengalaman pengguna situs web. Sebagai bahasa skrip sisi klien, JavaScript adalah salah satu teknologi inti dari World Wide Web. Misalnya, saat menjelajah internet, kapan pun Anda melihat carousel gambar, menu tarik-turun klik untuk menampilkan, atau warna elemen yang berubah secara dinamis di halaman web, Anda melihat efek JavaScript.
 
-# Program Hello World
+## Program Hello World
 
 ```jsx
 console.log("Hello World"); // Menampilkan Hello World di console
@@ -22,7 +24,7 @@ document.write("Hello World"); // Menampilkan Hello World di halaman web
 
 Dari contoh diatas javascript dapat menampilkan Hello World di dua tempat yang berbeda console.log() akan menampilkan di console, sedangkan document.write() akan menampilkan ke halaman web.
 
-# Variabel dan Tipe data
+## Variabel dan Tipe data
 
 ---
 
@@ -36,11 +38,11 @@ Variabel sendiri merupakan tempat untuk menyimpan suatu value/data, sedangkan ti
 - Null,
 - Undifined
 
-## Variabel
+### Variabel
 
 Cara mendeklarasikan variabel sendiri ada dua cara yaitu menggunakan syntax let untuk variabel yang dapat diubah valuenya dan const untuk variabel constant.
 
-## String | ‘ ‘ | “ ”
+### String | ‘ ‘ | “ ”
 
 String merupakan tipe data yang mewakilkan kata/kalimat, untuk mendeklarasikan tipe data string kita bisa menggunakan tanda petik satu ‘ ’ ataupun petik dua “ ” value dari tipe data string bisa kita masukkan di antara petik satu ataupun petik dua.
 
@@ -51,7 +53,7 @@ const name = "your name"; // variabel const yang constant
 name = "jonh doe"; // menambahkan string ke variabel
 ```
 
-## Number | Int | Float
+### Number | Int | Float
 
 Number terbagi menjadi dua yaitu integer dan float. Integer adalah angka/bilangan bulat, sedangkan float adalah angka/bilangan pecahan.
 
@@ -60,7 +62,7 @@ let age = 19; // integer
 const PI = 3.14; // float
 ```
 
-## Boolean | true | false
+### Boolean | true | false
 
 Boolean adalah tipe data yang memiliki dua nilai yaitu true dan false. true merepresentasikan nilai benar, sedangkan false merepresentasikan nilai salah.
 
@@ -69,7 +71,7 @@ const isJavaScript = true;
 const isPhp = false;
 ```
 
-## Array | [ ]
+### Array | [ ]
 
 Array adalah tipe data yang menampung tipe data lain bahkan kita bisa menambahkan tipe data array lagi, adapun untuk membuat array kita bisa menggunakan kurung siku [ ], index array di javascript di mulai dari 0.
 
@@ -83,7 +85,7 @@ console.log(data[2]); // true
 console.log(data[3][0]) // nested array 1
 ```
 
-## Object | { }
+### Object | { }
 
 Object adalah tipe data yang memiliki kesamaan dengan array yaitu tipe data yang dapat menampung tipe data lain bahkan tipe data object itu sendiri, adapun untuk membuat object kita bisa menggunakan kurung kurawal { }, perbedaan array dengan object yaitu array menggunakan index untuk mengakses suatu value didalam array, sedangkan object menggunakan key untuk mengakses sebuah value, jadi setiap data yang ada didalam object memiliki key yang merupakan kunci untuk mendapat value yang ada di object tersebut.
 
@@ -105,7 +107,7 @@ console.log(obj.skills); // {frontEnd: ["html", "css", "javascript"], backEnd: [
 console.log(obj.skills.fontEnd); // ["html", "css", "javascript"]
 ```
 
-## Null | kosong
+### Null | kosong
 
 Null merupakan tipe data yang tidak memiliki nilai alias kosong, berbeda dengan nol, nol sendiri memiliki nilai yaitu 0.
 
@@ -114,7 +116,7 @@ const kosong = null;
 const nol = 0;
 ```
 
-## Undefined | tidak didefinisikan
+### Undefined | tidak didefinisikan
 
 Undefined adalah tipe data yang tidak terdefinisi, undefined berbeda dengan null dimana undefined memiliki nilai tetapi nilainya tidak terdefinisikan.
 
@@ -123,22 +125,45 @@ const defined = "defined";
 const notDefined = undefined;
 ```
 
-# Operator Perbandingan
+## Operator Aritmatika
+
+---
+
+Operator aritmatika adalah operator matematika, di javascript kita dapat melakukan operasi penjumlahan, pengurangan, perkalian, dll. Berikut operator aritmatika yang ada di javascript:
+
+```jsx
+// +  ~ Penjumlahan dapat digunakan menjumlahkan angka dan juga menggabungkan string
+// -  ~ Pengurangan dapat digunakan untuk menguragi angka
+// /  ~ Pembagian dapat digunakan untuk membagi angka
+// %  ~ Modulus dapat digunakan untuk mengetahui sisa bagi
+// *  ~ Perkalian dapat digunakan untuk mengkalikan angka
+// ** ~ Pangkat
+
+console.log(1 + 1); // 2
+console.log("Hello" + "World"); // Hello World
+console.log(2 - 1); // 1
+console.log(5 / 2.5); // 2
+console.log(10 % 2); // 0
+console.log(5 * 5); // 25
+console.log(5 * 2); // 25
+```
+
+## Operator Perbandingan
 
 ---
 
 Operator perbandingan digunakan untuk membandingkan 2 buah nilai atau lebih yang akan menghasikan nilai boolean. adapun operator perbandingan sebagai berikut:
 
-- <              Lebih kecil dari
-- >              Lebih besar dari
-- ≤              Lebih kecil sama dengan
-- ≥              Lebih besar sama dengan
-- ==           Sama dengan (dalam kontexts nilai tanpa melibatkan tipe data)
-- ≠              Tidak sama dengan (dalam kontexts nilai tanpa melibatkan tipe data)
-- ===        Sama dengan (dalam kontexts nilai dan tipe data)
-- !==          Sama dengan (dalam kontexts nilai dan tipe data)
-
 ```jsx
+// <    ~ Lebih kecil dari
+// >    ~ Lebih besar dari
+// ≤    ~ Lebih kecil sama dengan
+// ≥    ~ Lebih besar sama dengan
+// ==   ~ Sama dengan (dalam kontexts nilai tanpa melibatkan tipe data)
+// ≠    ~ Tidak sama dengan (dalam kontexts nilai tanpa melibatkan tipe data)
+// ===  ~ Sama dengan (dalam kontexts nilai dan tipe data)
+// !==  ~ Sama dengan (dalam kontexts nilai dan tipe data)
+
 console.log(1 < 2); // true
 console.log(1 > 2); // false
 console.log(1 <= 2); // true
@@ -149,23 +174,23 @@ console.log(1 === "1"); // false
 console.log(1 !== "1"); // true
 ```
 
-# Operator Logika/Gerbang Logika
+## Operator Logika/Gerbang Logika
 
 ---
 
 Operator Logika akan menghasikan nilai boolean samahalnya dengan operator perbandingan, tetapi ada sedikit perbedaan antara lain:
 
-- &&          Kedua nilai yang dibandingkan harus bernilai true agar mendapatkan hasil true
-- |  |            Salah satu nilai yang dibandingkan harus bernilai true agar mendapatkan hasil true
-- !               Mengubah nilai true menjadi false begitupun sebaliknya
-
 ```jsx
+// &&  ~ Kedua nilai yang dibandingkan harus bernilai true agar mendapatkan hasil true
+// ||  ~ Salah satu nilai yang dibandingkan harus bernilai true agar mendapatkan hasil true
+// !   ~ Mengubah nilai true menjadi false begitupun sebaliknya
+
 console.log(true && true); // true
 console.log(true || false); // true
 console.log(!true); // false
 ```
 
-# Perkondisian/Percabangan
+## Perkondisian/Percabangan
 
 ---
 
@@ -174,7 +199,7 @@ perkondisian adalah block code yang akan dieksekusi/dijalankan ketika kondisi be
 - IF ~ Else if ~ Else
 - Switch
 
-## IF ~ Else If ~ Else
+### IF ~ Else If ~ Else
 
 ```jsx
 const name = "jonh doe";
@@ -188,7 +213,7 @@ if (name === "jonh doe") {
 }
 ```
 
-## Switch
+### Switch
 
 ```jsx
 const nilai = 90;
@@ -207,7 +232,7 @@ switch (nilai) {
 };
 ```
 
-# Perulangan/Pengulangan
+## Perulangan/Pengulangan
 
 ---
 
@@ -217,7 +242,7 @@ Perulangan adalah blok code yang akan diulang sebanyak yang kita tentukan atau y
 - While
 - Do ~ While
 
-## For
+### For
 
 ```jsx
 for(let i = 1; i <= 10; i++) {
@@ -225,7 +250,7 @@ for(let i = 1; i <= 10; i++) {
 };
 ```
 
-## While
+### While
 
 ```jsx
 let i = 1;
@@ -235,7 +260,7 @@ while(i <= 10) {
 };
 ```
 
-## Do ~ While
+### Do ~ While
 
 ```jsx
 let i = 1;
@@ -245,7 +270,7 @@ do {
 } while(i <= 10);
 ```
 
-# Function
+## Function
 
 ---
 
@@ -277,7 +302,7 @@ funcHoisting();
 ArrowFunc();
 ```
 
-## Parameter
+### Parameter
 
 Parameter adalah data yang di tangkap oleh function, value dari parameter bisa kita gunakan di dalam sebuah function asalkan parameternya dikirim pada saat pemanggilan function.
 

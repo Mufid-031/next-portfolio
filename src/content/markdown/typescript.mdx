@@ -1,0 +1,238 @@
+---
+title: TypeScript
+description: A typed superset of JavaScript that compiles to plain JavaScript.
+writed: 20 Agustus 2024
+views: 2k
+time: 2h
+image: https://images.unsplash.com/photo-1653387137517-fbc54d488ed8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+query: [typescript, type, script, ts]
+---
+
+# TypeScript
+
+
+# Panduan Lengkap TypeScript
+
+---
+
+TypeScript adalah bahasa pemrograman yang dibangun di atas JavaScript. Dengan menambahkan tipe statis, TypeScript membantu Anda menulis kode yang lebih aman dan terukur. Dalam blog ini, kita akan membahas langkah demi langkah cara menginstal TypeScript, menulis unit test menggunakan Jest, serta memahami beberapa konsep kunci seperti tipe data, function type, inheritance, interface, dan generics. Mari kita mulai!
+
+## Instalasi TypeScript
+
+### Prasyarat
+
+Sebelum Anda dapat menginstal TypeScript, pastikan bahwa Node.js dan npm (Node Package Manager) telah terpasang di sistem Anda. Ini adalah prasyarat utama karena TypeScript diinstal sebagai paket npm.
+
+### Instalasi TypeScript
+
+Setelah Node.js dan npm terpasang, Anda dapat menginstal TypeScript secara global menggunakan perintah berikut:
+
+```bash
+npm install -g typescript
+
+```
+
+Dengan perintah ini, TypeScript akan terinstal secara global, memungkinkan Anda untuk mengakses perintah `tsc` dari mana saja di sistem Anda.
+
+### Verifikasi Instalasi
+
+Setelah instalasi selesai, sangat penting untuk memverifikasi bahwa TypeScript telah terpasang dengan benar. Anda dapat melakukannya dengan menjalankan perintah berikut:
+
+```bash
+tsc --version
+
+```
+
+Perintah ini akan menampilkan versi TypeScript yang terpasang, menandakan bahwa Anda siap untuk mulai menggunakan TypeScript.
+
+## Memahami Tipe Data di TypeScript
+
+---
+
+Salah satu fitur utama TypeScript adalah kemampuan untuk mendefinisikan tipe data secara eksplisit. Ini membantu dalam menangkap kesalahan lebih awal dalam proses pengembangan.
+
+### Tipe Data Dasar
+
+TypeScript mendukung berbagai tipe data dasar seperti:
+
+- `string`: untuk teks
+- `number`: untuk angka
+- `boolean`: untuk nilai benar/salah
+- `array`: untuk daftar elemen
+- `tuple`: untuk array dengan jumlah elemen tetap
+- `enum`: untuk mendefinisikan himpunan nilai konstan
+- `any`: untuk tipe data yang bisa berupa apa saja
+- `void`: untuk fungsi yang tidak mengembalikan nilai
+- `null` dan `undefined`: untuk nilai yang tidak ada atau belum ditentukan
+
+### Contoh Penggunaan Tipe Data
+
+Berikut adalah contoh bagaimana Anda dapat mendefinisikan dan menggunakan tipe data di TypeScript:
+
+```tsx
+let nama: string = "John";
+let umur: number = 25;
+let isStudent: boolean = false;
+let hobi: string[] = ["membaca", "berenang"];
+let alamat: [string, number] = ["Jalan Merdeka", 123];
+
+```
+
+## Function Type
+
+---
+
+Di TypeScript, Anda dapat mendefinisikan tipe untuk fungsi, termasuk tipe untuk parameter yang diterima dan tipe untuk nilai yang dikembalikan oleh fungsi tersebut. Ini memastikan bahwa fungsi digunakan dengan cara yang benar.
+
+### Contoh Function Type
+
+Berikut adalah contoh bagaimana mendefinisikan fungsi dengan tipe di TypeScript:
+
+```tsx
+function tambah(a: number, b: number): number {
+    return a + b;
+}
+
+```
+
+Dalam contoh di atas, fungsi `tambah` menerima dua parameter bertipe `number` dan mengembalikan nilai bertipe `number`.
+
+## Inheritance
+
+---
+
+Inheritance atau pewarisan memungkinkan Anda membuat hierarki antar kelas. Dengan inheritance, Anda dapat mendefinisikan kelas baru yang mewarisi properti dan metode dari kelas yang sudah ada.
+
+### Contoh Inheritance
+
+Berikut adalah contoh bagaimana mengimplementasikan inheritance di TypeScript:
+
+```tsx
+class Hewan {
+    bergerak(): void {
+        console.log("Hewan bergerak");
+    }
+}
+
+class Anjing extends Hewan {
+    menggonggong(): void {
+        console.log("Anjing menggonggong");
+    }
+}
+
+let anjing = new Anjing();
+anjing.bergerak();   // Output: Hewan bergerak
+anjing.menggonggong(); // Output: Anjing menggonggong
+
+```
+
+Dalam contoh ini, kelas `Anjing` mewarisi metode `bergerak` dari kelas `Hewan`.
+
+## Interface
+
+---
+
+Interface di TypeScript digunakan untuk mendefinisikan kontrak dalam kode Anda. Ini adalah cara untuk menentukan struktur objek, termasuk tipe dari properti dan metode yang harus dimiliki oleh objek tersebut.
+
+### Contoh Interface
+
+Berikut adalah contoh penggunaan interface di TypeScript:
+
+```tsx
+interface Kendaraan {
+    roda: number;
+    bergerak(): void;
+}
+
+let mobil: Kendaraan = {
+    roda: 4,
+    bergerak: () => {
+        console.log("Mobil bergerak");
+    }
+};
+
+```
+
+Dalam contoh ini, objek `mobil` harus memiliki properti `roda` dan metode `bergerak`, sesuai dengan kontrak yang ditentukan oleh interface `Kendaraan`.
+
+## Generics
+
+---
+
+Generics memungkinkan Anda membuat komponen yang dapat bekerja dengan berbagai tipe data, memberikan fleksibilitas yang lebih besar dan kemampuan untuk menulis kode yang dapat digunakan kembali.
+
+### Contoh Penggunaan Generics
+
+Berikut adalah contoh bagaimana menggunakan generics di TypeScript:
+
+```tsx
+function identitas<T>(arg: T): T {
+    return arg;
+}
+
+let output = identitas<string>("Hello");
+let angka = identitas<number>(123);
+
+```
+
+Dalam contoh ini, fungsi `identitas` bersifat generik, yang berarti dapat menerima dan mengembalikan nilai dari tipe apa pun yang ditentukan saat memanggil fungsi.
+
+## Unit Test dengan Jest
+
+---
+
+Jest adalah framework pengujian yang populer untuk JavaScript dan TypeScript. Dengan Jest, Anda dapat menulis dan menjalankan tes untuk memastikan bahwa kode Anda berfungsi sebagaimana mestinya.
+
+### Instalasi Jest
+
+Untuk menggunakan Jest dengan TypeScript, Anda perlu menginstal Jest dan `ts-jest`, serta tipe untuk Jest:
+
+```bash
+npm install --save-dev jest ts-jest @types/jest
+
+```
+
+### Konfigurasi Jest
+
+Setelah menginstal Jest, Anda harus membuat file konfigurasi untuk mengatur Jest dan `ts-jest`. Gunakan perintah berikut untuk membuat file konfigurasi:
+
+```bash
+npx ts-jest config:init
+
+```
+
+### Contoh Pengujian dengan Jest
+
+Berikut adalah contoh bagaimana menulis dan menjalankan tes menggunakan Jest:
+
+```tsx
+// tambah.ts
+export function tambah(a: number, b: number): number {
+    return a + b;
+}
+
+// tambah.test.ts
+import { tambah } from './tambah';
+
+test('menambahkan 1 + 2 menjadi 3', () => {
+    expect(tambah(1, 2)).toBe(3);
+});
+
+```
+
+Dalam contoh ini, kita menulis tes untuk fungsi `tambah` untuk memastikan bahwa menambahkan 1 dan 2 menghasilkan 3.
+
+### Menjalankan Tes
+
+---
+
+Untuk menjalankan semua tes, gunakan perintah berikut:
+
+```bash
+npm test
+
+```
+
+Dengan perintah ini, Jest akan menjalankan semua tes yang ditemukan di proyek Anda dan memberikan laporan hasil pengujian.
+
+Dengan panduan ini, Anda seharusnya dapat memulai dengan TypeScript dan memanfaatkan fitur-fiturnya untuk membuat aplikasi yang lebih baik dan lebih dapat diandalkan. Semoga bermanfaat!

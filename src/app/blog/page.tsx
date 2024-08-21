@@ -73,7 +73,7 @@ export const projects = [
   {
     title: "TypeScript",
     description: "A typed superset of JavaScript that compiles to plain JavaScript.",
-    slug: "blog-typescript",
+    slug: "typescript",
     writed: "1 Jan 2022",
     views: "2k",
     time: "2h",
@@ -83,7 +83,7 @@ export const projects = [
   {
     title: "Python",
     description: "A high-level, interpreted, or just-in-time compiled programming language.",
-    slug: "blog-python",
+    slug: "python",
     writed: "1 Jan 2022",
     views: "2k",
     time: "2h",

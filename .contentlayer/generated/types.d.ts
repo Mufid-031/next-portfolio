@@ -19,6 +19,7 @@ export type Doc = {
   views: string
   time: string
   image: string
+  query: string[]
   /** MDX file body */
   body: MDX
   slug: string

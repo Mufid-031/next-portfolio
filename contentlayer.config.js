@@ -2,7 +2,7 @@ import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
-import remarkGfm from "remark-gfm";
+// import remarkGfm from "remark-gfm";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -45,6 +45,11 @@ export const Doc = defineDocumentType(() => ({
             type: "string",
             required: true,
         },
+        query: {
+            type: "list",
+            of: { type: "string" },
+            required: true,
+        },
     },
     computedFields,
 }))
@@ -53,7 +58,7 @@ export default makeSource({
     contentDirPath: "src/content",
     documentTypes: [Doc],
     mdx: {
-        remarkPlugins: [remarkGfm],
+        // remarkPlugins: [remarkGfm],
         rehypePlugins: [
             rehypeSlug,
             [

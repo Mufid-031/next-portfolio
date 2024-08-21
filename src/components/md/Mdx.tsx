@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const components = {
     h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h1
-            className={cn('mt-2 scroll-m-20 text-4xl font-bold tracking-tight', className)}
+            className={cn('mt-5 scroll-m-20 text-4xl font-bold tracking-tight', className)}
             {...props}
         />
     ),
