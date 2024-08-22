@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { useInView, useAnimation, motion } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";

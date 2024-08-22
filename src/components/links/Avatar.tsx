@@ -1,8 +1,8 @@
 "use client";
 
 import { useDarkModeContext } from "@/contexts/darkModeContext";
-import Image from "next/image";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
+import Image from "next/image";
 
 export const Avatar = () => {
   const { darkMode, toggleDarkMode } = useDarkModeContext();

@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { DarkModeContextProvider } from "@/contexts/darkModeContext";
 import { SectionRefContextProvider } from "@/contexts/sectionRefContext";
+import { SearchBlogContextProvider } from "@/contexts/searchBlogContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${poppins.className || "font-sans"} dark:bg-[#1a1a1a] bg-white overflow-x-hidden`}>
-        <SectionRefContextProvider>
-          <DarkModeContextProvider>{children}</DarkModeContextProvider>
-        </SectionRefContextProvider>
+        <DarkModeContextProvider>
+          <SectionRefContextProvider>
+            <SearchBlogContextProvider>{children}</SearchBlogContextProvider>
+          </SectionRefContextProvider>
+        </DarkModeContextProvider>
       </body>
     </html>
   );

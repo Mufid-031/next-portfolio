@@ -1,20 +1,19 @@
 "use client";
 
-import * as React from "react";
 import "../../app/globals.css";
-import { useRef } from "react";
+import * as React from "react";
+import Link from "next/link";
 import { motion, useInView, useAnimation, AnimationControls } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
-import { ControllsAnimationType } from "@/types/controllsAnimation.type";
-import { VariantAnimationProps, VariantAnimationType } from "@/types/variantAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { useParallaxAnimation } from "@/hooks/useParallaxAnimation";
+import { ControllsAnimationType } from "@/types/controllsAnimation.type";
+import { VariantAnimationProps, VariantAnimationType } from "@/types/variantAnimation.type";
 import { ImBook } from "react-icons/im";
 import { VscGithubAlt } from "react-icons/vsc";
 import { BiLogoTypescript } from "react-icons/bi";
 import { RiJavascriptFill, RiVuejsFill } from "react-icons/ri";
 import { FaArrowRight } from "react-icons/fa";
-import Link from "next/link";
 
 interface ParallaxProps {
   baseVelocity: number;
@@ -124,7 +123,7 @@ function ParallaxRepo({ baseVelocity = 100, animation, ctrls }: ParallaxProps) {
 }
 
 export const Repo = () => {
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = React.useRef<HTMLDivElement | null>(null);
   const ctrls = useAnimation();
   const inView = useInView(ref);
 
