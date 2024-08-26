@@ -36,7 +36,7 @@ export const Name = ({ className, children, ...props }: NameProps) => {
         initial="hidden"
         variants={animation}
         animate={ctrls}
-        className="text-[80px] md:text-[150px] dark:text-white text-black font-extrabold"
+        className="text-[80px] md:text-[9.5rem] dark:text-white text-black font-extrabold"
       >
         {children}
       </motion.h1>

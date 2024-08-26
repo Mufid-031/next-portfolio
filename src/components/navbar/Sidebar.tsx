@@ -12,7 +12,7 @@ export const Sidebar = () => {
 
   return (
     <div ref={scope} className="flex items-center gap-10">
-      <Menu />
+      <Menu setIsOpen={setIsOpen} />
       <motion.div className="relative rounded-full" initial={{ x: "200%" }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
         <div className="w-full h-full bg-white shadow-lg rounded-full z-10 duration-300" onMouseEnter={() => setIsHoverHamburger(true)} onMouseLeave={() => setIsHoverHamburger(false)}>
           <Hamburger toggled={isOpen} toggle={setIsOpen} color="black" />

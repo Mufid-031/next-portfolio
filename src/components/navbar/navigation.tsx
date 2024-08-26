@@ -7,7 +7,7 @@ interface NavigationType {
   ref: React.RefObject<HTMLDivElement | any>;
 }
 
-export const Navigation = () => {
+export const Navigation = ({ setIsOpen }: { setIsOpen: React.Dispatch<React.SetStateAction<boolean>> }) => {
   const { heroRef, aboutRef, projectRef, contactRef } = useSectionRefContext();
 
   const navigations: NavigationType[] = [
@@ -16,6 +16,11 @@ export const Navigation = () => {
     { name: "Project", ref: projectRef },
     { name: "Contact", ref: contactRef },
   ];
+
+  const handleClickLink = (ref: React.RefObject<HTMLDivElement | any>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  }
 
   return (
     <>
@@ -26,7 +31,7 @@ export const Navigation = () => {
         return (
           <motion.li
             key={index}
-            onClick={() => nav.ref.current?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => handleClickLink(nav.ref)}
             style={{ transformOrigin: "-20px 50%" }}
             whileHover={{ fontSize: "50px", paddingLeft: "10px" }}
             whileTap={{ fontSize: "40px" }}

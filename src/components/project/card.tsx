@@ -55,13 +55,13 @@ export const Card = () => {
 
   return (
     <motion.section className="flex flex-col gap-5 mt-5" ref={ref} animate={ctrls} variants={animation}>
-      <CardWithMovingBorder duration={5000}>
+      <CardWithMovingBorder duration={10000}>
         tes
       </CardWithMovingBorder>
-      <CardWithMovingBorder duration={5000}>
+      <CardWithMovingBorder duration={10000}>
         tes
       </CardWithMovingBorder>
-      <CardWithMovingBorder duration={5000}>
+      <CardWithMovingBorder duration={10000}>
         tes
       </CardWithMovingBorder>
     </motion.section>

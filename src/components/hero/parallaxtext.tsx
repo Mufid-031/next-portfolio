@@ -49,16 +49,16 @@ function ParallaxTextComponent({ children, baseVelocity = 100 }: ParallaxProps) 
       className="overflow-hidden m-0 whitespace-nowrap flex flex-no-wrap"
     >
       <motion.div className="font-semibold uppercase text-6xl flex whitespace-nowrap flex-no-wrap flex-shrink-0" style={{ x }}>
-        <span className="text-[50px] md:text-[100px] dark:text-white block mr-8">{children}</span>
-        <span className="text-[50px] md:text-[100px] dark:text-white block mr-8">{children}</span>
-        <span className="text-[50px] md:text-[100px] dark:text-white block mr-8">{children}</span>
-        <span className="text-[50px] md:text-[100px] dark:text-white block mr-8">{children}</span>
+        <span className="text-[70px] md:text-[100px] dark:text-white block mr-8">{children}</span>
+        <span className="text-[70px] md:text-[100px] dark:text-white block mr-8">{children}</span>
+        <span className="text-[70px] md:text-[100px] dark:text-white block mr-8">{children}</span>
+        <span className="text-[70px] md:text-[100px] dark:text-white block mr-8">{children}</span>
       </motion.div>
       <motion.div className="font-semibold uppercase text-6xl flex whitespace-nowrap flex-no-wrap flex-shrink-0" style={{ x }}>
-        <span className="text-[50px] md:text-[100px] dark:text-white block mr-8">{children}</span>
-        <span className="text-[50px] md:text-[100px] dark:text-white block mr-8">{children}</span>
-        <span className="text-[50px] md:text-[100px] dark:text-white block mr-8">{children}</span>
-        <span className="text-[50px] md:text-[100px] dark:text-white block mr-8">{children}</span>
+        <span className="text-[70px] md:text-[100px] dark:text-white block mr-8">{children}</span>
+        <span className="text-[70px] md:text-[100px] dark:text-white block mr-8">{children}</span>
+        <span className="text-[70px] md:text-[100px] dark:text-white block mr-8">{children}</span>
+        <span className="text-[70px] md:text-[100px] dark:text-white block mr-8">{children}</span>
       </motion.div>
     </motion.div>
   );
