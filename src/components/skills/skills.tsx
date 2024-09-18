@@ -67,7 +67,7 @@ const Skills = () => {
 
   return (
     <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#ecebeb] px-10 md:px-32 relative">
-      <div ref={ref} className="flex flex-col w-full mt-10 md:gap-1 z-10">
+      <div ref={ref} className="flex flex-col w-full mt-10 gap-0 md:gap-1 z-10">
         <Icon
           darkMode={darkMode}
           refOne={htmlRef}

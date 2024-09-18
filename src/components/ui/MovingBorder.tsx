@@ -33,7 +33,7 @@ export function CardWithMovingBorder({
   return (
     <Component
       className={cn(
-        "bg-transparent relative text-xl h-[500px] w-full p-[1px] overflow-hidden ",
+        "bg-transparent relative text-xl h-[500px] w-[90%] p-[1px] overflow-hidden ",
         containerClassName
       )}
       style={{
