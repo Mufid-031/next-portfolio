@@ -35,12 +35,12 @@ export const Github = () => {
 
   return (
     <motion.div ref={ref} initial="hidden" variants={animation} animate={ctrls} className="flex flex-col items-center md:flex-row gap-4 mt-10 p-4 bg-[#1a1a1a] rounded-xl">
-      <Link href="https://github.com/Mufid-031" className="w-[30%] flex items-center justify-center flex-col gap-4 p-4">
+      <Link href="https://github.com/Mufid-031" className="w-full lg:w-[30%] flex items-center justify-center flex-col gap-4 p-4">
         <Image src="/github.jpeg" alt="github" width={200} height={200} className="rounded-lg" />
         <h3 className="text-white text-xl font-semibold cursor-pointer">Mufid-031</h3>
       </Link>
 
-      <div className="w-1 h-40 bg-white"></div>
+      <div className="w-full h-1 lg:w-1 lg:h-40 bg-white"></div>
 
       <GithubCalendar
         username="Mufid-031"
