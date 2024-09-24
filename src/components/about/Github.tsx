@@ -49,7 +49,7 @@ export const Github = () => {
         blockSize={13}
         showWeekdayLabels
         colorScheme="dark"
-        fontSize={10}
+        fontSize={15}
         style={{
           color: darkMode ? "white" : "black",
         }}

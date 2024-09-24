@@ -10,6 +10,7 @@ import { CardWithMovingBorder } from "../ui/MovingBorder";
 import Image from "next/image";
 import { FiGithub } from "react-icons/fi";
 import { PiLinkSimpleBold } from "react-icons/pi";
+import Link from "next/link";
 
 
 export const Card = () => {
@@ -38,12 +39,12 @@ export const Card = () => {
       <CardWithMovingBorder duration={10000}>
         <motion.div className="absolute top-10 left-10 flex flex-col">
           <motion.div className="flex gap-5">
-            <motion.div className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full">
+            <Link href="https://github.com/Mufid-031" className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full hover:bg-slate-400 cursor-pointer">
               <FiGithub size={30} color="black" />
-            </motion.div>
-            <motion.div className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full">
+            </Link>
+            <Link href="https://github.com/Mufid-031" className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full hover:bg-slate-400 cursor-pointer">
               <PiLinkSimpleBold size={30} color="black" />
-            </motion.div>
+            </Link>
           </motion.div>
           <motion.div className="flex flex-col mt-10">
             <h3 className="text-white text-3xl font-semibold">Epic Games Clone</h3>
@@ -55,12 +56,12 @@ export const Card = () => {
       <CardWithMovingBorder duration={10000}>
       <motion.div className="absolute top-10 left-10 flex flex-col">
           <motion.div className="flex gap-5">
-            <motion.div className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full">
+            <Link href="https://github.com/Mufid-031" className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full hover:bg-slate-400 cursor-pointer">
               <FiGithub size={30} color="black" />
-            </motion.div>
-            <motion.div className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full">
+            </Link>
+            <Link href="https://github.com/Mufid-031" className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full hover:bg-slate-400 cursor-pointer">
               <PiLinkSimpleBold size={30} color="black" />
-            </motion.div>
+            </Link>
           </motion.div>
           <motion.div className="flex flex-col mt-10">
             <h3 className="text-white text-3xl font-semibold">Next Panda Store</h3>
@@ -72,12 +73,12 @@ export const Card = () => {
       <CardWithMovingBorder duration={10000}>
       <motion.div className="absolute top-10 left-10 flex flex-col">
           <motion.div className="flex gap-5">
-            <motion.div className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full">
+            <Link href="https://github.com/Mufid-031" className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full hover:bg-slate-400 cursor-pointer">
               <FiGithub size={30} color="black" />
-            </motion.div>
-            <motion.div className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full">
+            </Link>
+            <Link href="https://github.com/Mufid-031" className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full hover:bg-slate-400 cursor-pointer">
               <PiLinkSimpleBold size={30} color="black" />
-            </motion.div>
+            </Link>
           </motion.div>
           <motion.div className="flex flex-col mt-10">
             <h3 className="text-white text-3xl font-semibold">HM Putra</h3>

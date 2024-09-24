@@ -67,11 +67,11 @@ function InfiniteMovingRepo({ baseVelocity = 100, animation, ctrls }: ParallaxPr
 export const Repo = () => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const ctrls = useAnimation();
-  const inView = useInView(ref);
+  const isInView = useInView(ref);
 
   const controllsAnimation: ControllsAnimationType = {
-    ctrls: ctrls,
-    isInView: inView,
+    ctrls,
+    isInView,
     once: true,
   };
 
