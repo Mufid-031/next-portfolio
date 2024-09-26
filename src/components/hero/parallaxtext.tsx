@@ -13,11 +13,10 @@ interface ParallaxProps {
 }
 
 function ParallaxTextComponent({ children, baseVelocity = 100 }: ParallaxProps) {
-
   const parallaxProps = {
     baseVelocity,
     infinite: false,
-  }
+  };
 
   const x = useParallaxAnimation(parallaxProps);
 
@@ -35,19 +34,13 @@ function ParallaxTextComponent({ children, baseVelocity = 100 }: ParallaxProps) 
 
   const animationProps: VariantAnimationProps = {
     isX: true,
-    value: x
-  }
+    value: x,
+  };
 
   const animation = useVariantAnimation(animationProps);
 
   return (
-    <motion.div 
-      ref={ref}
-      initial="hidden" 
-      variants={animation} 
-      animate={ctrls} 
-      className="overflow-hidden m-0 whitespace-nowrap flex flex-no-wrap"
-    >
+    <motion.div ref={ref} initial="hidden" variants={animation} animate={ctrls} className="overflow-hidden m-0 whitespace-nowrap flex flex-no-wrap">
       <motion.div className="font-semibold uppercase text-6xl flex whitespace-nowrap flex-no-wrap flex-shrink-0" style={{ x }}>
         <span className="text-[70px] md:text-[100px] dark:text-white block mr-8">{children}</span>
         <span className="text-[70px] md:text-[100px] dark:text-white block mr-8">{children}</span>
@@ -67,8 +60,8 @@ function ParallaxTextComponent({ children, baseVelocity = 100 }: ParallaxProps) 
 export default function ParallaxText() {
   return (
     <section className="mt-0 md:mt-5">
-      <ParallaxTextComponent baseVelocity={-2}>Frontend Web Developer</ParallaxTextComponent>
-      <ParallaxTextComponent baseVelocity={2}>Backend Web Developer</ParallaxTextComponent>
+      <ParallaxTextComponent baseVelocity={-1}>Frontend Web Developer</ParallaxTextComponent>
+      <ParallaxTextComponent baseVelocity={1}>Backend Web Developer</ParallaxTextComponent>
     </section>
   );
 }

@@ -18,26 +18,22 @@ export const Name = ({ className, children, ...props }: NameProps) => {
 
   const controllsAnimation: ControllsAnimationType = {
     ctrls,
-    isInView
-  }
+    isInView,
+  };
 
   useControllsAnimation(controllsAnimation);
 
   const animationProps: VariantAnimationProps = {
     isX: false,
-    value: 150
-  }
+    value: 150,
+    duration: 0.5,
+  };
 
   const animation = useVariantAnimation(animationProps);
 
   return (
-    <section ref={ref} className={cn(['h-44 overflow-hidden', className])} {...props}>
-      <motion.h1
-        initial="hidden"
-        variants={animation}
-        animate={ctrls}
-        className="text-[80px] md:text-[9.5rem] dark:text-white text-black font-extrabold"
-      >
+    <section ref={ref} className={cn(["h-44 overflow-hidden", className])} {...props}>
+      <motion.h1 initial="hidden" variants={animation} animate={ctrls} className="text-[80px] md:text-[9.5rem] dark:text-white text-black font-extrabold">
         {children}
       </motion.h1>
     </section>

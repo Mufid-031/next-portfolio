@@ -22,7 +22,7 @@
     "leva": "^0.9.35",
     "mdast-util-gfm-table": "^2.0.0",
     "meshline": "^3.3.1",
-    "next": "14.2.5",
+    "next": "^14.2.13",
     "next-contentlayer": "^0.3.4",
     "react": "^18",
     "react-dom": "^18",

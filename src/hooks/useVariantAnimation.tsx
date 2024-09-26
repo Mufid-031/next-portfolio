@@ -1,6 +1,6 @@
 import { VariantAnimationProps, VariantAnimationType } from "@/types/variantAnimation.type";
 
-export const useVariantAnimation = ({ isX, isScale, value, duration = 0.5, ease = "linear", delay = 0, stanggerChildren = 0, delayChildren = 0, type = "spring" }: VariantAnimationProps) => {
+export const useVariantAnimation = ({ isX, isScale, value, duration = 1, ease = "linear", delay = 0, stanggerChildren = 0, delayChildren = 0, type = "spring" }: VariantAnimationProps) => {
   const variantAnimation: VariantAnimationType = {
     hidden: {
       [isX ? "x" : "y"]: value,
