@@ -1,3 +1,5 @@
+"use strict";
+
 import { useRef } from "react";
 import { useAnimationFrame, useMotionValue, useScroll, useSpring, useTransform, useVelocity } from "framer-motion";
 import { wrap } from "@motionone/utils";

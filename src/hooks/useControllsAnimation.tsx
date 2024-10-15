@@ -1,3 +1,5 @@
+"use client";
+
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { useEffect } from "react";
 

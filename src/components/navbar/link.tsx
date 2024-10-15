@@ -1,8 +1,10 @@
+"use client";
+
 import * as React from "react";
 import { motion } from "framer-motion";
 
 export const LinkNav = () => {
-  
+
   const links: string[] = ["Github", "Instagram", "Tiktok", "Email"];
 
   return (

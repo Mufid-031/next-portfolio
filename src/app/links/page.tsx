@@ -1,3 +1,5 @@
+"use client";
+
 import { Background } from "@/components/links/Background";
 import { Avatar } from "@/components/links/Avatar";
 import { Bio } from "@/components/links/Bio";

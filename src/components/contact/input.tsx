@@ -1,3 +1,5 @@
+"use client";
+
 interface InputProps {
   label?: string;
   input?: boolean;

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { CgMail } from "react-icons/cg";
 import { FaDiscord, FaInstagram, FaTiktok } from "react-icons/fa";

@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { Globe } from "../globe/Globe";
 import { useAnimation, useInView, motion } from "framer-motion";

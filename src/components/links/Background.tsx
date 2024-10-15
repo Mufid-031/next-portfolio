@@ -1,3 +1,5 @@
+"use client";
+
 import { Boxes } from "../ui/BackgroundBoxes";
 
 export const Background = () => {

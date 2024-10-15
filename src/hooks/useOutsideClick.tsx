@@ -1,3 +1,5 @@
+"use strict";
+
 import { RefObject, useEffect } from "react";
 
 export const useOutsideClick = (
