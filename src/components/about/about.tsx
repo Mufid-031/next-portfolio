@@ -5,7 +5,7 @@ import { Desc } from "./Desc";
 import { Github } from "./Github";
 import { useSectionRefContext } from "@/contexts/sectionRefContext";
 
-const About = () => {
+export const About = () => {
   const { aboutRef } = useSectionRefContext();
 
   return (
@@ -16,5 +16,3 @@ const About = () => {
     </section>
   );
 };
-
-export default About;

@@ -11,7 +11,7 @@ import { VariantAnimationProps } from "@/types/variantAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { useSectionRefContext } from "@/contexts/sectionRefContext";
 
-const Contact = () => {
+export const Contact = () => {
   const { contactRef } = useSectionRefContext();
   const [name, setName] = React.useState<string>("");
   const [email, setEmail] = React.useState<string>("");
@@ -59,4 +59,3 @@ const Contact = () => {
   );
 };
 
-export default Contact;

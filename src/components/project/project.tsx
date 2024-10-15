@@ -5,7 +5,7 @@ import { Desc } from "./Desc";
 import { useSectionRefContext } from "@/contexts/sectionRefContext";
 import { ViewMore } from "./ViewMore";
 
-const Project = () => {
+export const Project = () => {
   const { projectRef } = useSectionRefContext();
 
   return (
@@ -17,4 +17,3 @@ const Project = () => {
   );
 };
 
-export default Project;

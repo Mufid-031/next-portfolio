@@ -17,7 +17,7 @@ import { useIconsRef } from "@/hooks/useIconsRef";
 import { Card } from "./Card";
 import { useIconsHoverState } from "@/hooks/useIconsHoverState";
 
-const Skills = () => {
+export const Skills = () => {
   const { darkMode } = useDarkModeContext();
 
   const ref = React.useRef<HTMLDivElement | null>(null);
@@ -126,5 +126,3 @@ const Skills = () => {
     </section>
   );
 };
-
-export default Skills;

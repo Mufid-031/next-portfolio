@@ -6,7 +6,7 @@ import { Location } from "./Location";
 import { HeroImage } from "./Image";
 import { useSectionRefContext } from "@/contexts/sectionRefContext";
 
-const Hero = () => {
+export const Hero = () => {
   const { heroRef } = useSectionRefContext();
 
   return (
@@ -23,4 +23,3 @@ const Hero = () => {
   );
 };
 
-export default Hero;
