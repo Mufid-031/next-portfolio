@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useAnimation, useInView, motion } from "framer-motion";
 import { MdOutlineMail } from "react-icons/md";
-import Card3D from "../3D/Card.jsx";
+import Card3D from "../3D/Card";
 import { Input } from "./Input";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";

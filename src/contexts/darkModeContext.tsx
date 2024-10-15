@@ -14,9 +14,11 @@ export const DarkModeContextProvider = ({ children }: { children: React.ReactNod
 
   React.useEffect(() => {
     if (darkMode) {
-      document.querySelector("html")?.classList.add("dark");
+      // document.querySelector("html")?.classList.add("dark");
+      console.log("dark");
     } else {
-      document.querySelector("html")?.classList.remove("dark");
+      // document.querySelector("html")?.classList.remove("dark");
+      console.log("light");
     }
   }, [darkMode]);
 

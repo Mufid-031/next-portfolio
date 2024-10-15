@@ -30,15 +30,15 @@ export default function Card3D() {
 }
 
 function Band({ maxSpeed = 50, minSpeed = 10 }) {
-  const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef() // prettier-ignore
-  const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3() // prettier-ignore
-  const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 }
-  const { nodes, materials } = useGLTF('/glb/mufid-card.glb')
-  const texture = useTexture('/Coding-with-Mufid.png')
-  const { width, height } = useThree((state) => state.size)
+  const band: any = useRef(), fixed: any = useRef(), j1: any = useRef(), j2: any = useRef(), j3: any = useRef(), card: any = useRef() // prettier-ignore
+  const vec: any = new THREE.Vector3(), ang: any = new THREE.Vector3(), rot: any = new THREE.Vector3(), dir: any = new THREE.Vector3() // prettier-ignore
+  const segmentProps: any = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 }
+  const { nodes, materials }: any = useGLTF('/glb/mufid-card.glb')
+  const texture: any = useTexture('/Coding-with-Mufid.png')
+  const { width, height }: any = useThree((state) => state.size)
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]))
-  const [dragged, drag] = useState(false)
-  const [hovered, hover] = useState(false)
+  const [dragged, drag]: any = useState(false)
+  const [hovered, hover]: any = useState(false)
 
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
@@ -57,7 +57,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
       vec.set(state.pointer.x, state.pointer.y, 0.5).unproject(state.camera)
       dir.copy(vec).sub(state.camera.position).normalize()
       vec.add(dir.multiplyScalar(state.camera.position.length()))
-      ;[card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp())
+      ;[card, j1, j2, j3, fixed].forEach((ref: any) => ref.current?.wakeUp())
       card.current?.setNextKinematicTranslation({ x: vec.x - dragged.x, y: vec.y - dragged.y, z: vec.z - dragged.z })
     }
     if (fixed.current) {
@@ -103,8 +103,8 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
-            onPointerUp={(e) => (e.target?.releasePointerCapture(e.pointerId), drag(false))}
-            onPointerDown={(e) => (e.target?.setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation()))))}>
+            onPointerUp={(e: any) => (e.target?.releasePointerCapture(e.pointerId), drag(false))}
+            onPointerDown={(e: any) => (e.target?.setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation()))))}>
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial map={materials.base.map} map-anisotropy={16} clearcoat={1} clearcoatRoughness={0.15} roughness={0.3} metalness={0.5} />
             </mesh>

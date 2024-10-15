@@ -1,4 +1,4 @@
-"use strict";
+"use client";
 
 import { useRef } from "react";
 import { useAnimationFrame, useMotionValue, useScroll, useSpring, useTransform, useVelocity } from "framer-motion";
