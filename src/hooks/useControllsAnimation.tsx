@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
@@ -10,7 +11,7 @@ export const useControllsAnimation = ({ ctrls, isInView, once }: ControllsAnimat
     } else {
       ctrls.start("hidden");
     }
-  }, [once ? null : ctrls, isInView]);
+  }, [once ? null : ctrls, once ? null : isInView]);
 
   useEffect(() => {
     if (once && isInView) {
