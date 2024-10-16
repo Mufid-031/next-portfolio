@@ -6,7 +6,7 @@ import { Location } from "./Location";
 import { HeroImage } from "./Image";
 import { useSectionRefContext } from "@/contexts/sectionRefContext";
 
-export const Hero = () => {
+export default function Hero() {
   const { heroRef } = useSectionRefContext();
 
   return (

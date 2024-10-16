@@ -10,7 +10,7 @@ import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { VariantAnimationProps } from "@/types/variantAnimation.type";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 
-export const Footer = () => {
+export default function Footer() {
   const { darkMode } = useDarkModeContext();
 
   const ref = useRef<HTMLDivElement | null>(null);

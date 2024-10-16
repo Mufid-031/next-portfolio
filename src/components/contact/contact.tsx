@@ -11,7 +11,7 @@ import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { useSectionRefContext } from "@/contexts/sectionRefContext";
 import { useRef, useState } from "react";
 
-export const Contact = () => {
+export default function Contact() {
   const { contactRef } = useSectionRefContext();
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");

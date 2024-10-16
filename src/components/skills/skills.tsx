@@ -17,7 +17,7 @@ import { Card } from "./Card";
 import { useIconsHoverState } from "@/hooks/useIconsHoverState";
 import { useRef } from "react";
 
-export const Skills = () => {
+export default function Skills() {
   const { darkMode } = useDarkModeContext();
 
   const ref = useRef<HTMLDivElement | null>(null);

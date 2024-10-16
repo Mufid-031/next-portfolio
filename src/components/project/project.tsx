@@ -5,7 +5,7 @@ import { Desc } from "./Desc";
 import { useSectionRefContext } from "@/contexts/sectionRefContext";
 import { ViewMore } from "./ViewMore";
 
-export const Project = () => {
+export default function Project() {
   const { projectRef } = useSectionRefContext();
 
   return (
