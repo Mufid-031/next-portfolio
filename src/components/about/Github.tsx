@@ -1,15 +1,18 @@
 "use client";
 
 import { useAnimation, useInView, motion } from "framer-motion";
-import { useControllsAnimation } from "@/hooks/useControllsAnimation";
-import { ControllsAnimationType } from "@/types/controllsAnimation.type";
-import { useVariantAnimation } from "@/hooks/useVariantAnimation";
-import { VariantAnimationProps } from "@/types/variantAnimation.type";
-import GithubCalendar from "react-github-calendar";
 import { useDarkModeContext } from "@/contexts/darkModeContext";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
+import { useControllsAnimation } from "@/hooks/useControllsAnimation";
+import { useVariantAnimation } from "@/hooks/useVariantAnimation";
+import { VariantAnimationType } from "@/types/variantAnimation.type";
+import { ControllsAnimationType } from "@/types/controllsAnimation.type";
+
+const DynamicGithubCalendar = dynamic(() => import("react-github-calendar"), { ssr: false });
+
 
 export const Github = () => {
   const { darkMode } = useDarkModeContext();
@@ -26,12 +29,10 @@ export const Github = () => {
 
   useControllsAnimation(controllsAnimation);
 
-  const animationProps: VariantAnimationProps = {
+  const animation: VariantAnimationType = useVariantAnimation({
     isX: false,
     value: 50,
-  };
-
-  const animation = useVariantAnimation(animationProps);
+  });
 
   return (
     <motion.div ref={ref} initial="hidden" variants={animation} animate={ctrls} className="flex flex-col items-center md:flex-row gap-4 mt-10 p-4 bg-[#1a1a1a] rounded-xl">
@@ -42,18 +43,20 @@ export const Github = () => {
 
       <div className="w-full h-1 lg:w-1 lg:h-40 bg-white"></div>
 
-      <GithubCalendar
-        username="Mufid-031"
-        year={2024}
-        blockMargin={5}
-        blockSize={13}
-        showWeekdayLabels
-        colorScheme="dark"
-        fontSize={15}
-        style={{
-          color: darkMode ? "white" : "black",
-        }}
-      />
+      <Suspense fallback={null}>
+        <DynamicGithubCalendar
+          username="Mufid-031"
+          year={2024}
+          blockMargin={5}
+          blockSize={13}
+          showWeekdayLabels
+          colorScheme="dark"
+          fontSize={15}
+          style={{
+            color: darkMode ? "white" : "black",
+          }}
+        />
+      </Suspense>
     </motion.div>
   );
 };

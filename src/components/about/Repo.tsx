@@ -18,16 +18,6 @@ interface ParallaxProps {
 }
 
 function InfiniteMovingRepo({ baseVelocity = 100, animation, ctrls }: ParallaxProps) {
-  const [isHover, setIsHover] = useState<boolean>(false);
-
-  const parallaxProps = {
-    baseVelocity,
-    isHover,
-    infinite: true,
-  };
-
-  const x = useParallaxAnimation(parallaxProps);
-
   const items = [
     {
       title: "Weboo-web",
@@ -57,7 +47,7 @@ function InfiniteMovingRepo({ baseVelocity = 100, animation, ctrls }: ParallaxPr
   ]
 
   return (
-    <motion.div initial="hidden" variants={animation} animate={ctrls} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className="overflow-hidden whitespace-nowrap flex gap-3 relative">
+    <motion.div initial="hidden" variants={animation} animate={ctrls} className="overflow-hidden whitespace-nowrap flex gap-3 relative">
       <InfiniteMovingCards items={items} />
     </motion.div>
   );

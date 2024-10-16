@@ -46,9 +46,11 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.45, 0]]) // prettier-ignore
 
   useEffect(() => {
-    if (hovered) {
-      document.body.style.cursor = dragged ? 'grabbing' : 'grab'
-      return () => void (document.body.style.cursor = 'auto')
+    if (typeof window !== 'undefined') {
+      if (hovered) {
+        document.body.style.cursor = dragged ? 'grabbing' : 'grab'
+        return () => void (document.body.style.cursor = 'auto')
+      }
     }
   }, [hovered, dragged])
 

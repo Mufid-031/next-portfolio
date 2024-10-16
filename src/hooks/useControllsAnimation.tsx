@@ -10,7 +10,7 @@ export const useControllsAnimation = ({ ctrls, isInView, once }: ControllsAnimat
     } else {
       ctrls.start("hidden");
     }
-  }, [isInView, ctrls]);
+  }, [once ? null : ctrls, isInView]);
 
   useEffect(() => {
     if (once && isInView) {
