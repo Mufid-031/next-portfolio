@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { useInView, useAnimation } from "framer-motion";
 import { FaHtml5, FaCss3Alt, FaBootstrap } from "react-icons/fa";
 import { RiJavascriptFill, RiVuejsFill } from "react-icons/ri";
@@ -16,11 +15,12 @@ import { Xarrows } from "./Xarrows";
 import { useIconsRef } from "@/hooks/useIconsRef";
 import { Card } from "./Card";
 import { useIconsHoverState } from "@/hooks/useIconsHoverState";
+import { useRef } from "react";
 
 export const Skills = () => {
   const { darkMode } = useDarkModeContext();
 
-  const ref = React.useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const ctrls = useAnimation();
   const isInView = useInView(ref);
 
@@ -63,7 +63,6 @@ export const Skills = () => {
   } = useIconsHoverState();
 
   const { htmlRef, cssRef, jsRef, tsRef, reactRef, nextRef, vueRef, tailRef, nuxtRef, bootRef } = useIconsRef();
-  const [size, setSize] = React.useState<number>(50);
 
   return (
     <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#ecebeb] px-10 md:px-32 relative">
@@ -75,8 +74,8 @@ export const Skills = () => {
           hoverOne={hoverHTML}
           hoverTwo={hoverCSS}
           isInView={isInView}
-          iconOne={<FaHtml5 size={size} color={hoverHTML} onMouseEnter={() => setHoverHTML("#E34F26")} onMouseLeave={() => setHoverHTML(darkMode ? "white" : "black")} />}
-          iconTwo={<FaCss3Alt size={size} color={hoverCSS} onMouseEnter={() => setHoverCSS("#1572B6")} onMouseLeave={() => setHoverCSS(darkMode ? "white" : "black")} />}
+          iconOne={<FaHtml5 size={50} color={hoverHTML} onMouseEnter={() => setHoverHTML("#E34F26")} onMouseLeave={() => setHoverHTML(darkMode ? "white" : "black")} />}
+          iconTwo={<FaCss3Alt size={50} color={hoverCSS} onMouseEnter={() => setHoverCSS("#1572B6")} onMouseLeave={() => setHoverCSS(darkMode ? "white" : "black")} />}
         />
         <Icon
           darkMode={darkMode}
@@ -85,8 +84,8 @@ export const Skills = () => {
           hoverOne={hoverJS}
           hoverTwo={hoverTS}
           isInView={isInView}
-          iconOne={<RiJavascriptFill size={size} color={hoverJS} onMouseEnter={() => setHoverJS("#F7DF1E")} onMouseLeave={() => setHoverJS(darkMode ? "white" : "black")} />}
-          iconTwo={<BiLogoTypescript size={size} color={hoverTS} onMouseEnter={() => setHoverTS("#3178C6")} onMouseLeave={() => setHoverTS(darkMode ? "white" : "black")} />}
+          iconOne={<RiJavascriptFill size={50} color={hoverJS} onMouseEnter={() => setHoverJS("#F7DF1E")} onMouseLeave={() => setHoverJS(darkMode ? "white" : "black")} />}
+          iconTwo={<BiLogoTypescript size={50} color={hoverTS} onMouseEnter={() => setHoverTS("#3178C6")} onMouseLeave={() => setHoverTS(darkMode ? "white" : "black")} />}
         />
         <Icon
           darkMode={darkMode}
@@ -95,8 +94,8 @@ export const Skills = () => {
           hoverOne={hoverREACT}
           hoverTwo={hoverNEXT}
           isInView={isInView}
-          iconOne={<SiReact size={size} color={hoverREACT} onMouseEnter={() => setHoverREACT("#61DAFB")} onMouseLeave={() => setHoverREACT(darkMode ? "white" : "black")} />}
-          iconTwo={<SiNextdotjs size={size} color={hoverNEXT} onMouseEnter={() => setHoverNEXT(darkMode ? "#000" : "white")} onMouseLeave={() => setHoverNEXT(darkMode ? "white" : "black")} />}
+          iconOne={<SiReact size={50} color={hoverREACT} onMouseEnter={() => setHoverREACT("#61DAFB")} onMouseLeave={() => setHoverREACT(darkMode ? "white" : "black")} />}
+          iconTwo={<SiNextdotjs size={50} color={hoverNEXT} onMouseEnter={() => setHoverNEXT(darkMode ? "#000" : "white")} onMouseLeave={() => setHoverNEXT(darkMode ? "white" : "black")} />}
         />
         <Icon
           darkMode={darkMode}
@@ -105,8 +104,8 @@ export const Skills = () => {
           hoverOne={hoverVUE}
           hoverTwo={hoverNuxt}
           isInView={isInView}
-          iconOne={<RiVuejsFill size={size} color={hoverVUE} onMouseEnter={() => setHoverVUE("#41B883")} onMouseLeave={() => setHoverVUE(darkMode ? "white" : "black")} />}
-          iconTwo={<SiNuxtdotjs size={size} color={hoverNuxt} onMouseEnter={() => setHoverNuxt("#41B883")} onMouseLeave={() => setHoverNuxt(darkMode ? "white" : "black")} />}
+          iconOne={<RiVuejsFill size={50} color={hoverVUE} onMouseEnter={() => setHoverVUE("#41B883")} onMouseLeave={() => setHoverVUE(darkMode ? "white" : "black")} />}
+          iconTwo={<SiNuxtdotjs size={50} color={hoverNuxt} onMouseEnter={() => setHoverNuxt("#41B883")} onMouseLeave={() => setHoverNuxt(darkMode ? "white" : "black")} />}
         />
         <Icon
           darkMode={darkMode}
@@ -115,8 +114,8 @@ export const Skills = () => {
           hoverOne={hoverBOOT}
           hoverTwo={hoverTAIL}
           isInView={isInView}
-          iconOne={<FaBootstrap size={size} color={hoverBOOT} onMouseEnter={() => setHoverBOOT("#7952B3")} onMouseLeave={() => setHoverBOOT(darkMode ? "white" : "black")} />}
-          iconTwo={<BiLogoTailwindCss size={size} color={hoverTAIL} onMouseEnter={() => setHoverTAIL("#38B2AC")} onMouseLeave={() => setHoverTAIL(darkMode ? "white" : "black")} />}
+          iconOne={<FaBootstrap size={50} color={hoverBOOT} onMouseEnter={() => setHoverBOOT("#7952B3")} onMouseLeave={() => setHoverBOOT(darkMode ? "white" : "black")} />}
+          iconTwo={<BiLogoTailwindCss size={50} color={hoverTAIL} onMouseEnter={() => setHoverTAIL("#38B2AC")} onMouseLeave={() => setHoverTAIL(darkMode ? "white" : "black")} />}
         />
       </div>
 

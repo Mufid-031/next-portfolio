@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useRef } from "react";
 import { useInView, useAnimation, motion } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
@@ -14,7 +15,7 @@ interface NameProps {
 }
 
 export const Name = ({ className, children, ...props }: NameProps) => {
-  const ref = React.useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLElement | null>(null);
   const ctrls = useAnimation();
   const isInView = useInView(ref);
 

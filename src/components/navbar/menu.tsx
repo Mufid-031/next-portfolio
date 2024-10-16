@@ -1,6 +1,3 @@
-"use client";
-
-import * as React from "react";
 import { Navigation } from "./Navigation";
 import { LinkNav } from "./Link";
 import { ToggleDarkMode } from "./Toggle";

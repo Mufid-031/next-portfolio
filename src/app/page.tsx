@@ -7,10 +7,11 @@ import { Skills } from "@/components/skills/Skills";
 import { Contact } from "@/components/contact/Contact";
 import { Project } from "@/components/project/Project";
 import { Footer } from "@/components/footer/Footer";
+import { Suspense } from "react";
 
 export default function HomePage() {
   return (
-    <>
+    <Suspense fallback={<>Loading...</>}>
       <Navbar />
       <Hero />
       <About />
@@ -18,6 +19,6 @@ export default function HomePage() {
       <Project />
       <Contact />
       <Footer />
-    </>
+    </Suspense>
   );
 }

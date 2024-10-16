@@ -1,16 +1,15 @@
 "use client";
 
-import * as React from "react";
 import { Globe } from "../globe/Globe";
 import { useAnimation, useInView, motion } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { VariantAnimationProps } from "@/types/variantAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
+import { useRef } from "react";
 
 export const Desc = () => {
-
-  const ref = React.useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const ctrls = useAnimation();
   const isInView = useInView(ref);
 
@@ -18,14 +17,14 @@ export const Desc = () => {
     ctrls,
     isInView,
     once: true,
-  }
+  };
 
   useControllsAnimation(controllsAnimation);
 
   const animationProps: VariantAnimationProps = {
     isX: false,
-    value: 50
-  }
+    value: 50,
+  };
 
   const animation = useVariantAnimation(animationProps);
 

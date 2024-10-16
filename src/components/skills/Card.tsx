@@ -1,5 +1,3 @@
-"use client";
-
 import { VariantAnimationType } from "@/types/variantAnimation.type";
 import { AnimationControls, motion } from "framer-motion";
 

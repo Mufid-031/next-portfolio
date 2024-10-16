@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { useAnimation, useInView, motion } from "framer-motion";
 import { MdOutlineMail } from "react-icons/md";
 import Card3D from "../3D/Card";
@@ -10,18 +9,19 @@ import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { VariantAnimationProps } from "@/types/variantAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { useSectionRefContext } from "@/contexts/sectionRefContext";
+import { useRef, useState } from "react";
 
 export const Contact = () => {
   const { contactRef } = useSectionRefContext();
-  const [name, setName] = React.useState<string>("");
-  const [email, setEmail] = React.useState<string>("");
-  const [subject, setSubject] = React.useState<string>("");
-  const [message, setMessage] = React.useState<string>("");
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [subject, setSubject] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const isInView = useInView(contactRef);
   const ctrls = useAnimation();
-  const form = React.useRef<any>(null);
+  const form = useRef<any>(null);
 
   const controllsAnimation: ControllsAnimationType = {
     ctrls,

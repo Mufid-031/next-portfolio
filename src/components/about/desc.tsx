@@ -1,15 +1,15 @@
 "use client";
 
-import * as React from "react";
 import { Globe } from "../globe/Globe";
 import { useAnimation, useInView, motion } from "framer-motion";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { VariantAnimationProps } from "@/types/variantAnimation.type";
+import { useRef } from "react";
 
 export const Desc = () => {
-  const ref = React.useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLElement | null>(null);
   const ctrls = useAnimation();
   const isInView = useInView(ref);
 

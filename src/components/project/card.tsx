@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
@@ -11,10 +10,11 @@ import Image from "next/image";
 import { FiGithub } from "react-icons/fi";
 import { PiLinkSimpleBold } from "react-icons/pi";
 import Link from "next/link";
+import { useRef } from "react";
 
 
 export const Card = () => {
-  const ref = React.useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const ctrls = useAnimation();
   const isInView = useInView(ref);
 

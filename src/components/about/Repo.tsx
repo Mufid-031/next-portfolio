@@ -1,7 +1,5 @@
 "use client";
 
-import "../../app/globals.css";
-import * as React from "react";
 import { motion, useInView, useAnimation, AnimationControls } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
@@ -11,6 +9,7 @@ import { VariantAnimationProps, VariantAnimationType } from "@/types/variantAnim
 import { BiLogoTypescript } from "react-icons/bi";
 import { RiJavascriptFill, RiVuejsFill } from "react-icons/ri";
 import { InfiniteMovingCards } from "../ui/InfiniteMovingCards";
+import { useRef, useState } from "react";
 
 interface ParallaxProps {
   baseVelocity: number;
@@ -19,7 +18,7 @@ interface ParallaxProps {
 }
 
 function InfiniteMovingRepo({ baseVelocity = 100, animation, ctrls }: ParallaxProps) {
-  const [isHover, setIsHover] = React.useState<boolean>(false);
+  const [isHover, setIsHover] = useState<boolean>(false);
 
   const parallaxProps = {
     baseVelocity,
@@ -65,7 +64,7 @@ function InfiniteMovingRepo({ baseVelocity = 100, animation, ctrls }: ParallaxPr
 }
 
 export const Repo = () => {
-  const ref = React.useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const ctrls = useAnimation();
   const isInView = useInView(ref);
 

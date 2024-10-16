@@ -1,13 +1,13 @@
 "use client";
 
-import * as React from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { Menu } from "./Menu";
 import { Divide as Hamburger } from "hamburger-react";
+import { useEffect, useState } from "react";
 
 export const Sidebar = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean | any>(false);
-  const [isHoverHamburger, setIsHoverHamburger] = React.useState<boolean | any>(false);
+  const [isOpen, setIsOpen] = useState<boolean | any>(false);
+  const [isHoverHamburger, setIsHoverHamburger] = useState<boolean | any>(false);
   const scope = useMenuAnimation(isOpen);
 
   return (
@@ -26,7 +26,7 @@ export const Sidebar = () => {
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const menuAnimations: any = isOpen
       ? [
           ["nav", { transform: "translateX(0)" }, { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 }],

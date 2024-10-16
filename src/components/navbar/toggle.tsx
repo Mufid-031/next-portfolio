@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { useDarkModeContext } from "@/contexts/darkModeContext";
 import { FaRegMoon } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";

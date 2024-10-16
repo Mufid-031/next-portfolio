@@ -1,6 +1,3 @@
-"use client";
-
-import * as React from "react";
 import { NameTag } from "./NameTag";
 import { Sidebar } from "./Sidebar";
 

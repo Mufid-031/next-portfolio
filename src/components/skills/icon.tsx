@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";

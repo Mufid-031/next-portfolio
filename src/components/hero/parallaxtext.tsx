@@ -1,6 +1,5 @@
 "use client";
 
-import "../../app/globals.css";
 import { useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";

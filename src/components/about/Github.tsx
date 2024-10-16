@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { useAnimation, useInView, motion } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
@@ -10,11 +9,12 @@ import GithubCalendar from "react-github-calendar";
 import { useDarkModeContext } from "@/contexts/darkModeContext";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
 export const Github = () => {
   const { darkMode } = useDarkModeContext();
 
-  const ref = React.useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const ctrls = useAnimation();
   const isInView = useInView(ref);
 
