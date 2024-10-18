@@ -10,6 +10,7 @@ export const HeroImage = ({ width, height, className }: { width: number; height:
   const animationProps: VariantAnimationProps = {
     isScale: true,
     value: 0,
+    delay: 0.5,
   };
 
   const animation = useVariantAnimation(animationProps);

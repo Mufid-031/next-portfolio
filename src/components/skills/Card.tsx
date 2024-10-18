@@ -14,9 +14,9 @@ export const Card = ({ ctrls, animation }: { ctrls: AnimationControls; animation
           initial="hidden"
           animate={ctrls}
           variants={animation}
-          className="card-skills w-[50%] h-[30%] md:w-[55%] md:h-[30%] relative flex place-content-center place-items-center overflow-hidden rounded-[20px] before:content-[''] before:absolute before:w-[100px] before:h-[230%] before:animate-[rotBGimg_3s_linear_infinite] before:transition-all before:duration-[0.2s] before:ease-linear after:content-[''] after:absolute after:rounded-[15px] after:inset-[5px]"
+          className="card-skills w-[75%] h-[35%] md:w-[55%] md:h-[30%] relative flex place-content-center place-items-center overflow-hidden rounded-[20px] before:content-[''] before:absolute before:w-[100px] before:h-[230%] before:animate-[rotBGimg_3s_linear_infinite] before:transition-all before:duration-[0.2s] before:ease-linear after:content-[''] after:absolute after:rounded-[15px] after:inset-[5px]"
         >
-          <h2 className="text-white text-[30px] lg:text-[80px] font-extrabold z-20 after:absolute after:w-[90%] after:h-[30%] after:bg-[#2a2a2a] after:bottom-5 after:left-[50%] after:translate-x-[-50%] after:z-10 after:opacity-60">
+          <h2 className="text-white text-[45px] lg:text-[80px] font-extrabold z-20 after:absolute after:w-[90%] after:h-[30%] after:bg-[#2a2a2a] after:bottom-5 after:left-[50%] after:translate-x-[-50%] after:z-10 after:opacity-60">
             Skills
           </h2>
         </motion.div>

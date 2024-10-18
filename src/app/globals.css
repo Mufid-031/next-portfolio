@@ -6,6 +6,16 @@ html {
   scroll-snap-type: y mandatory;
 }
 
+.parallax {
+  @apply overflow-hidden tracking-[-2px] leading-[0.8] whitespace-nowrap flex flex-nowrap m-0;
+}
+.parallax .scroller {
+  @apply font-semibold uppercase text-[64px] flex whitespace-nowrap flex flex-nowrap;
+}
+.parallax span {
+  @apply block;
+}
+
 .card {
   background: #07182e;
   position: relative;

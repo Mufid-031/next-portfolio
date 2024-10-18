@@ -47,7 +47,9 @@ export const Icon = ({ darkMode, isInView, iconOne, iconTwo, refOne, refTwo, hov
         initial="hidden"
         animate={ctrls}
         variants={iconOneAnimation}
-        className={`w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full relative flex justify-center items-center ${darkMode ? (hoverOne === "white" ? "bg-[#0d0d0d]" : "bg-[#ecebeb]") : hoverOne === "black" ? "bg-[#ecebeb]" : "bg-[#0d0d0d]"}`}
+        className={`w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full relative flex justify-center items-center ${
+          darkMode ? (hoverOne === "white" ? "bg-[#0d0d0d]" : "bg-[#ecebeb]") : hoverOne === "black" ? "bg-[#ecebeb]" : "bg-[#0d0d0d]"
+        }`}
       >
         <div ref={refOne} className="absolute right-0"></div>
         {iconOne}
@@ -56,7 +58,9 @@ export const Icon = ({ darkMode, isInView, iconOne, iconTwo, refOne, refTwo, hov
         initial="hidden"
         animate={ctrls}
         variants={iconTwoAnimation}
-        className={`w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full relative flex justify-center items-center  ${darkMode ? (hoverTwo === "white" ? "bg-[#0d0d0d]" : "bg-[#ecebeb]") : hoverTwo === "black" ? "bg-[#ecebeb]" : "bg-[#0d0d0d]"} `}
+        className={`w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full relative flex justify-center items-center  ${
+          darkMode ? (hoverTwo === "white" ? "bg-[#0d0d0d]" : "bg-[#ecebeb]") : hoverTwo === "black" ? "bg-[#ecebeb]" : "bg-[#0d0d0d]"
+        } `}
       >
         <div ref={refTwo} className="absolute left-0"></div>
         {iconTwo}

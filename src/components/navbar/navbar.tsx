@@ -4,7 +4,7 @@ import { Sidebar } from "./Sidebar";
 export default function Navbar() {
 
   return (
-    <nav className={`flex items-center justify-between py-4 px-8 bg-transparent fixed top-0 left-0 right-0 z-50`}>
+    <nav className={`flex items-center justify-between py-4 px-8 bg-transparent fixed z-50 w-full`}>
       <NameTag />
       <Sidebar />
     </nav>

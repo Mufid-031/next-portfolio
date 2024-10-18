@@ -10,7 +10,7 @@ export default function Hero() {
   const { heroRef } = useSectionRefContext();
 
   return (
-    <div ref={heroRef} className="flex flex-col items-center justify-between px-10 py-20 relative">
+    <div ref={heroRef} className="flex flex-col items-center justify-between px-10 py-20 relative overflow-x-hidden">
       <div className="flex flex-col items-center">
         <Name>AHMAD</Name>
         <Name className="-mt-20 md:-mt-5">MUFID</Name>
