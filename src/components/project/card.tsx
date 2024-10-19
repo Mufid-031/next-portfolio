@@ -15,21 +15,21 @@ export const Card = () => {
           <Links github="https://github.com/Mufid-031" repo="https://github.com/Mufid-031" />
           <Title title="Epic Games" desc="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum voluptatibus cupiditate ex optio voluptatum sequi unde illo ab voluptates magni magnam placeat earum, impedit laudantium rem, itaque ratione exercitationem eum." />
         </motion.div>
-        <Image src="/epic-games.png" width={500} height={500} alt="hm-putra" className="w-full h-full object-left-bottom object-cover" />
+        <Image src="/epic-games.png" width={500} height={500} alt="hm-putra" className="w-full h-full object-left-bottom object-contain lg:object-cover" />
       </CardWithMovingBorder>
       <CardWithMovingBorder duration={10000}>
         <motion.div className="absolute top-10 left-10 flex flex-col">
           <Links github="https://github.com/Mufid-031" repo="https://github.com/Mufid-031" />
           <Title title="Next Panda Store" desc="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum voluptatibus cupiditate ex optio voluptatum sequi unde illo ab voluptates magni magnam placeat earum, impedit laudantium rem, itaque ratione exercitationem eum." />
         </motion.div>
-        <Image src="/next-panda-store.jpeg" width={500} height={500} alt="hm-putra" className="w-full h-full object-left-bottom object-cover" />
+        <Image src="/next-panda-store.jpeg" width={500} height={500} alt="hm-putra" className="w-full h-full object-left-bottom object-contain lg:object-cover" />
       </CardWithMovingBorder>
       <CardWithMovingBorder duration={10000}>
         <motion.div className="absolute top-10 left-10 flex flex-col">
           <Links github="https://github.com/Mufid-031" repo="https://github.com/Mufid-031" />
           <Title title="HM Putra" desc="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum voluptatibus cupiditate ex optio voluptatum sequi unde illo ab voluptates magni magnam placeat earum, impedit laudantium rem, itaque ratione exercitationem eum." />
         </motion.div>
-        <Image src="/hm-putra.png" width={500} height={500} alt="hm-putra" className="w-full h-full object-left-bottom object-cover" />
+        <Image src="/hm-putra.png" width={500} height={500} alt="hm-putra" className="w-full h-full object-left-bottom object-contain lg:object-cover" />
       </CardWithMovingBorder>
     </motion.section>
   );

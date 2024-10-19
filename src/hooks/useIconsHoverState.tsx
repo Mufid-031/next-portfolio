@@ -1,7 +1,7 @@
 "use client";
 
 import { useDarkModeContext } from "@/contexts/darkModeContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useIconsHoverState = () => {
   const { darkMode } = useDarkModeContext();
@@ -16,6 +16,19 @@ export const useIconsHoverState = () => {
   const [hoverTAIL, setHoverTAIL] = useState<string>(darkMode ? "white" : "black");
   const [hoverNuxt, setHoverNuxt] = useState<string>(darkMode ? "white" : "black");
   const [hoverBOOT, setHoverBOOT] = useState<string>(darkMode ? "white" : "black");
+
+  useEffect(() => {
+    darkMode ? setHoverHTML("white") : setHoverHTML("black");
+    darkMode ? setHoverCSS("white") : setHoverCSS("black");
+    darkMode ? setHoverJS("white") : setHoverJS("black");
+    darkMode ? setHoverTS("white") : setHoverTS("black");
+    darkMode ? setHoverREACT("white") : setHoverREACT("black");
+    darkMode ? setHoverNEXT("white") : setHoverNEXT("black");
+    darkMode ? setHoverVUE("white") : setHoverVUE("black");
+    darkMode ? setHoverTAIL("white") : setHoverTAIL("black");
+    darkMode ? setHoverNuxt("white") : setHoverNuxt("black");
+    darkMode ? setHoverBOOT("white") : setHoverBOOT("black");
+  }, [darkMode]);
 
   return {
     hoverHTML,

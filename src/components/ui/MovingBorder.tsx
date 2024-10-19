@@ -60,7 +60,7 @@ export function CardWithMovingBorder({
       variants={animation}
       animate={ctrls}
       className={cn(
-        "bg-transparent relative text-xl h-[500px] w-[90%] p-[1px] overflow-hidden ",
+        "bg-transparent relative text-xl h-[530px] lg:h-[500px] w-[95%] lg:w-[90%] p-[1px] overflow-hidden ",
         containerClassName
       )}
       style={{
@@ -84,7 +84,7 @@ export function CardWithMovingBorder({
 
       <div
         className={cn(
-          "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased overflow-hidden",
+          "relative bg-[#212429] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased overflow-hidden",
           className
         )}
         style={{

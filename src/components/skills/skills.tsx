@@ -65,57 +65,42 @@ export default function Skills() {
   const { htmlRef, cssRef, jsRef, tsRef, reactRef, nextRef, vueRef, tailRef, nuxtRef, bootRef } = useIconsRef();
 
   return (
-    <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#ecebeb] px-10 md:px-32 relative">
-      <div ref={ref} className="flex flex-col w-full mt-10 gap-0 md:gap-1 z-10">
+    <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#ecebeb] px-5 md:px-32 relative">
+      <div ref={ref} className="flex flex-col w-full mt-10 gap-0 z-10">
         <Icon
-          darkMode={darkMode}
           refOne={htmlRef}
           refTwo={cssRef}
-          hoverOne={hoverHTML}
-          hoverTwo={hoverCSS}
           isInView={isInView}
-          iconOne={<FaHtml5 size={50} color={hoverHTML} onMouseEnter={() => setHoverHTML("#E34F26")} onMouseLeave={() => setHoverHTML(darkMode ? "white" : "black")} />}
-          iconTwo={<FaCss3Alt size={50} color={hoverCSS} onMouseEnter={() => setHoverCSS("#1572B6")} onMouseLeave={() => setHoverCSS(darkMode ? "white" : "black")} />}
+          iconOne={<FaHtml5 className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={hoverHTML} />}
+          iconTwo={<FaCss3Alt className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={hoverCSS} />}
         />
         <Icon
-          darkMode={darkMode}
           refOne={jsRef}
           refTwo={tsRef}
-          hoverOne={hoverJS}
-          hoverTwo={hoverTS}
           isInView={isInView}
-          iconOne={<RiJavascriptFill size={50} color={hoverJS} onMouseEnter={() => setHoverJS("#F7DF1E")} onMouseLeave={() => setHoverJS(darkMode ? "white" : "black")} />}
-          iconTwo={<BiLogoTypescript size={50} color={hoverTS} onMouseEnter={() => setHoverTS("#3178C6")} onMouseLeave={() => setHoverTS(darkMode ? "white" : "black")} />}
+          iconOne={<RiJavascriptFill className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={hoverJS} />}
+          iconTwo={<BiLogoTypescript className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={hoverTS} />}
         />
         <Icon
-          darkMode={darkMode}
           refOne={reactRef}
           refTwo={nextRef}
-          hoverOne={hoverREACT}
-          hoverTwo={hoverNEXT}
           isInView={isInView}
-          iconOne={<SiReact size={50} color={hoverREACT} onMouseEnter={() => setHoverREACT("#61DAFB")} onMouseLeave={() => setHoverREACT(darkMode ? "white" : "black")} />}
-          iconTwo={<SiNextdotjs size={50} color={hoverNEXT} onMouseEnter={() => setHoverNEXT(darkMode ? "#000" : "white")} onMouseLeave={() => setHoverNEXT(darkMode ? "white" : "black")} />}
+          iconOne={<SiReact className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={hoverREACT} />}
+          iconTwo={<SiNextdotjs className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={hoverNEXT} />}
         />
         <Icon
-          darkMode={darkMode}
           refOne={vueRef}
           refTwo={nuxtRef}
-          hoverOne={hoverVUE}
-          hoverTwo={hoverNuxt}
           isInView={isInView}
-          iconOne={<RiVuejsFill size={50} color={hoverVUE} onMouseEnter={() => setHoverVUE("#41B883")} onMouseLeave={() => setHoverVUE(darkMode ? "white" : "black")} />}
-          iconTwo={<SiNuxtdotjs size={50} color={hoverNuxt} onMouseEnter={() => setHoverNuxt("#41B883")} onMouseLeave={() => setHoverNuxt(darkMode ? "white" : "black")} />}
+          iconOne={<RiVuejsFill className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={hoverVUE} />}
+          iconTwo={<SiNuxtdotjs className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={hoverNuxt} />}
         />
         <Icon
-          darkMode={darkMode}
           refOne={bootRef}
           refTwo={tailRef}
-          hoverOne={hoverBOOT}
-          hoverTwo={hoverTAIL}
           isInView={isInView}
-          iconOne={<FaBootstrap size={50} color={hoverBOOT} onMouseEnter={() => setHoverBOOT("#7952B3")} onMouseLeave={() => setHoverBOOT(darkMode ? "white" : "black")} />}
-          iconTwo={<BiLogoTailwindCss size={50} color={hoverTAIL} onMouseEnter={() => setHoverTAIL("#38B2AC")} onMouseLeave={() => setHoverTAIL(darkMode ? "white" : "black")} />}
+          iconOne={<FaBootstrap className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={hoverBOOT} />}
+          iconTwo={<BiLogoTailwindCss className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={hoverTAIL} />}
         />
       </div>
 

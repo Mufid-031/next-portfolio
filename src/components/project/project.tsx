@@ -9,7 +9,7 @@ export default function Project() {
   const { projectRef } = useSectionRefContext();
 
   return (
-    <section ref={projectRef} className="flex flex-col py-10 px-10 md:px-32 lg:px-40">
+    <section ref={projectRef} className="flex flex-col py-10 px-5 md:px-32 lg:px-40">
       <Desc />
       <Card />
       <ViewMore />

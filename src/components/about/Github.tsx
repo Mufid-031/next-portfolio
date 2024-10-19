@@ -37,7 +37,7 @@ export const Github = () => {
   return (
     <motion.div ref={ref} initial="hidden" variants={animation} animate={ctrls} className="flex flex-col items-center md:flex-row gap-4 mt-10 p-4 bg-[#1a1a1a] rounded-xl">
       <Link href="https://github.com/Mufid-031" className="w-full lg:w-[30%] flex items-center justify-center flex-col gap-4 p-4">
-        <Image src="/github.jpeg" alt="github" width={200} height={200} className="rounded-lg" />
+        <Image src="/github.jpeg" alt="github" width={200} height={200} className="rounded-lg w-full h-full" />
         <h3 className="text-white text-xl font-semibold cursor-pointer">Mufid-031</h3>
       </Link>
 
