@@ -4,6 +4,7 @@ import globe from "../../lottie/globe.json";
 export const Globe = () => {
   return (
     <Lottie
+      isClickToPauseDisabled
       style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}
       options={{
         loop: true,

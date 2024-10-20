@@ -1,7 +1,6 @@
 "use client";
 
 import { FiGithub } from "react-icons/fi";
-import { FaRobot } from "react-icons/fa";
 import { useDarkModeContext } from "@/contexts/darkModeContext";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -12,6 +11,7 @@ import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { FaInstagram } from "react-icons/fa";
 import { CgMail } from "react-icons/cg";
 import { FiLinkedin } from "react-icons/fi";
+import Item from "./Item";
 
 export default function Footer() {
   const { darkMode } = useDarkModeContext();
@@ -41,23 +41,15 @@ export default function Footer() {
         <motion.h3 initial="hidden" variants={animation} animate={ctrls} className="dark:text-black text-white font-semibold ml-4 text-lg">
           Github
         </motion.h3>
-        <motion.div initial="hidden" variants={animation} animate={ctrls} className="w-14 h-14 flex justify-center items-center cursor-pointer">
-          <FiGithub size={30} color="black" />
-        </motion.div>
+        <Item animation={animation} ctrls={ctrls} icon={<FiGithub size={30} color={darkMode ? "black" : "white"} />} link="https://github.com/Mufid-031" />
       </div>
 
       <div className="flex flex-col gap-1">
         <motion.h3 initial="hidden" variants={animation} animate={ctrls} className="dark:text-black text-white font-semibold ml-4 text-lg">Social Media</motion.h3>
         <div className="flex gap-1">
-          <motion.div initial="hidden" variants={animation} animate={ctrls} className="w-14 h-14 flex justify-center items-center cursor-pointer">
-            <FaInstagram size={30} color="black" />
-          </motion.div>
-          <motion.div initial="hidden" variants={animation} animate={ctrls} className="w-14 h-14 flex justify-center items-center cursor-pointer">
-            <CgMail size={30} color="black" />
-          </motion.div>
-          <motion.div initial="hidden" variants={animation} animate={ctrls} className="w-14 h-14 flex justify-center items-center cursor-pointer">
-            <FiLinkedin size={30} color="black" />
-          </motion.div>
+          <Item animation={animation} ctrls={ctrls} icon={<FaInstagram size={30} color={darkMode ? "black" : "white"} />} link="https://www.instagram.com/mufid_risqi" />
+          <Item animation={animation} ctrls={ctrls} icon={<CgMail size={30} color={darkMode ? "black" : "white"} />} link="mailto:risqimufid50@gmai.com" />
+          <Item animation={animation} ctrls={ctrls} icon={<FiLinkedin size={30} color={darkMode ? "black" : "white"} />} link="https://www.linkedin.com/in/coding-with-mufid" />
         </div>
       </div>
     </motion.div>

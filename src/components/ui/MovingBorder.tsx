@@ -1,18 +1,12 @@
 import {
   motion,
-  useAnimation,
   useAnimationFrame,
-  useInView,
   useMotionTemplate,
   useMotionValue,
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
-import { ControllsAnimationType } from "@/types/controllsAnimation.type";
-import { useControllsAnimation } from "@/hooks/useControllsAnimation";
-import { VariantAnimationProps } from "@/types/variantAnimation.type";
-import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 
 export function CardWithMovingBorder({
   borderRadius = "1rem",
@@ -33,32 +27,9 @@ export function CardWithMovingBorder({
   className?: string;
   [key: string]: any;
 }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const ctrls = useAnimation();
-  const isInView = useInView(ref);
-
-  const controllsAnimation: ControllsAnimationType = {
-    ctrls,
-    isInView,
-    once: true,
-  };
-
-  useControllsAnimation(controllsAnimation);
-
-  const animationProps: VariantAnimationProps = {
-    isX: false,
-    value: 50,
-    stanggerChildren: 1,
-  };
-
-  const animation = useVariantAnimation(animationProps);
 
   return (
     <Component
-      ref={ref}
-      initial="hidden"
-      variants={animation}
-      animate={ctrls}
       className={cn(
         "bg-transparent relative text-xl h-[530px] lg:h-[500px] w-[95%] lg:w-[90%] p-[1px] overflow-hidden ",
         containerClassName

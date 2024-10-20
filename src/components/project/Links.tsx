@@ -24,7 +24,6 @@ export const Links = ({ github, repo }: { github: string; repo: string }) => {
   const animationProps: VariantAnimationProps = {
     isX: false,
     value: -50,
-    delay: 1,
   };
 
   const animation = useVariantAnimation(animationProps);

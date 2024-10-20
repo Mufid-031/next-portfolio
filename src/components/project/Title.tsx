@@ -21,7 +21,7 @@ export const Title = ({ title, desc }: { title: string; desc: string }) => {
     const animationProps: VariantAnimationProps = {
         isX: true,
         value: -50,
-        delay: 1,
+        delay: 0.5,
     };
 
     const animation = useVariantAnimation(animationProps);
