@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 export const NameTag = () => {
-  const [isHover, setIsHover] = useState<boolean | any>(false);
+  const [isHover, setIsHover] = useState<boolean>(false);
 
   return (
     <motion.div onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className="flex items-center gap-1 cursor-pointer" initial={{ x: "-200%" }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>

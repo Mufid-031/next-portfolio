@@ -5,7 +5,7 @@ import { useSectionRefContext } from "@/contexts/sectionRefContext";
 
 interface NavigationType {
   name: string;
-  ref: React.RefObject<HTMLDivElement | any>;
+  ref: React.RefObject<HTMLDivElement>;
 }
 
 export const Navigation = ({ setIsOpen }: { setIsOpen: React.Dispatch<React.SetStateAction<boolean>> }) => {

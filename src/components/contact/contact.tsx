@@ -9,7 +9,8 @@ import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { VariantAnimationProps } from "@/types/variantAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { useSectionRefContext } from "@/contexts/sectionRefContext";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const { contactRef } = useSectionRefContext();
@@ -19,9 +20,38 @@ export default function Contact() {
   const [message, setMessage] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  const publicKey = process.env.PUBLIC_KEY;
+  const serviceId = process.env.SERVICE_ID;
+  const templateId = process.env.TEMPLATE_ID;
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    emailjs.sendForm(serviceId!, templateId!, form.current!, {
+      publicKey: publicKey,
+    })
+      .then(() => {
+        console.log("Email sent!");
+        setIsLoading(false);
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      },
+      (error) => {
+        console.log(error);
+        setIsLoading(false);
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }
+    );
+  };
+
   const isInView = useInView(contactRef);
   const ctrls = useAnimation();
-  const form = useRef<any>(null);
+  const form = useRef<HTMLFormElement | null>(null);
 
   const controllsAnimation: ControllsAnimationType = {
     ctrls,
@@ -44,7 +74,7 @@ export default function Contact() {
       {isInView && <Card3D />}
       <motion.div initial="hidden" variants={animation} animate={ctrls} className="flex flex-col justify-center h-screen w-[80%] mx-auto md:mx-0">
         <h1 className="text-[60px] dark:text-black text-white font-bold">Contact</h1>
-        <form ref={form} className="w-full max-w-xl mt-20">
+        <form ref={form} onSubmit={sendEmail} className="w-full max-w-xl mt-20">
           <Input label="Your name" input type="text" id="name" state={name} setState={setName} />
           <Input label="Your email" input type="email" id="email" state={email} setState={setEmail} />
           <Input label="Subject" input type="text" id="subject" state={subject} setState={setSubject} />

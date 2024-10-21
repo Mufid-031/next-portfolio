@@ -6,8 +6,8 @@ import { Divide as Hamburger } from "hamburger-react";
 import { useEffect, useState } from "react";
 
 export const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState<boolean | any>(false);
-  const [isHoverHamburger, setIsHoverHamburger] = useState<boolean | any>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isHoverHamburger, setIsHoverHamburger] = useState<boolean>(false);
   const scope = useMenuAnimation(isOpen);
 
   return (
