@@ -10,7 +10,7 @@ import { VariantAnimationProps } from "@/types/variantAnimation.type";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { useSectionRefContext } from "@/contexts/sectionRefContext";
 import React, { useRef, useState } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const { contactRef } = useSectionRefContext();
@@ -27,26 +27,32 @@ export default function Contact() {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    emailjs.sendForm(serviceId!, templateId!, form.current!, {
-      publicKey: publicKey,
-    })
-      .then(() => {
-        console.log("Email sent!");
-        setIsLoading(false);
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
-      },
-      (error) => {
-        console.log(error);
-        setIsLoading(false);
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
-      }
-    );
+    if (name && email && subject && message) {
+      emailjs
+        .sendForm(serviceId!, templateId!, form.current!, {
+          publicKey: publicKey,
+        })
+        .then(
+          () => {
+            console.log("Email sent!");
+            setIsLoading(false);
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
+          },
+          (error) => {
+            console.log(error);
+            setIsLoading(false);
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
+          }
+        );
+    } else {
+      setIsLoading(false);
+    }
   };
 
   const isInView = useInView(contactRef);
@@ -87,5 +93,4 @@ export default function Contact() {
       </motion.div>
     </section>
   );
-};
-
+}

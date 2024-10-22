@@ -25,6 +25,7 @@ export const Input = ({
           type={type}
           name={id}
           id={id}
+          value={state}
           onChange={(e) => setState(e.target.value)}
         />
         <label className={`absolute -bottom-4 text-2xl dark:text-black text-white transform -translate-y-6 scale-75 -z-10 ${state ? "opacity-0" : "opacity-100"}`} htmlFor={id}>
@@ -40,6 +41,7 @@ export const Input = ({
           className="block py-2.5 px-0 w-full text-sm dark:text-black text-white bg-transparent border-0 border-b-2 dark:border-black border-white appearance-none focus:outline-none focus:ring-0"
           name={id}
           id={id}
+          value={state}
           onChange={(e) => setState(e.target.value)}
         />
         <label className={`absolute top-6 text-2xl dark:text-black text-white transform -translate-y-6 scale-75 -z-10 ${state ? "opacity-0" : "opacity-100"}`} htmlFor={id}>

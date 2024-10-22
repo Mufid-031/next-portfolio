@@ -1,3 +1,5 @@
+"use client";
+
 import {
   motion,
   useAnimationFrame,
@@ -31,7 +33,7 @@ export function CardWithMovingBorder({
   return (
     <Component
       className={cn(
-        "bg-transparent relative text-xl h-[530px] lg:h-[500px] w-[95%] lg:w-[90%] p-[1px] overflow-hidden ",
+        "bg-transparent relative text-xl p-[1px] overflow-hidden ",
         containerClassName
       )}
       style={{

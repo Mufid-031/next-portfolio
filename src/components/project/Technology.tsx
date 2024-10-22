@@ -1,3 +1,5 @@
+"use client";
+
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";

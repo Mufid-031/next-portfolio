@@ -3,13 +3,12 @@
 import { motion, useInView, useAnimation, AnimationControls } from "framer-motion";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
-import { useParallaxAnimation } from "@/hooks/useParallaxAnimation";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { VariantAnimationProps, VariantAnimationType } from "@/types/variantAnimation.type";
 import { BiLogoTypescript } from "react-icons/bi";
 import { RiJavascriptFill, RiVuejsFill } from "react-icons/ri";
 import { InfiniteMovingCards } from "../ui/InfiniteMovingCards";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 interface ParallaxProps {
   baseVelocity: number;

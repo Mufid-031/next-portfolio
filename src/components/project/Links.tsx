@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, useAnimation, useInView } from "framer-motion";
 import Link from "next/link";
 import { PiLinkSimpleBold } from "react-icons/pi";
