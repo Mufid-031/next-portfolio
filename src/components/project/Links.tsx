@@ -9,8 +9,9 @@ import { ControllsAnimationType } from "@/types/controllsAnimation.type";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";
 import { VariantAnimationProps } from "@/types/variantAnimation.type";
+import { cn } from "@/lib/utils";
 
-export const Links = ({ github, repo }: { github: string; repo: string }) => {
+export const Links = ({ github, repo, containerClassName, size }: { github: string; repo: string; containerClassName?: string; size: number }) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const ctrls = useAnimation();
   const isInView = useInView(ref);
@@ -32,11 +33,11 @@ export const Links = ({ github, repo }: { github: string; repo: string }) => {
 
   return (
     <motion.div ref={ref} initial="hidden" variants={animation} animate={ctrls} className="flex gap-5">
-      <Link href={github} className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full hover:bg-slate-400 cursor-pointer">
-        <FiGithub size={30} color="black" />
+      <Link href={github} className={cn('bg-slate-200 flex justify-center items-center rounded-full hover:bg-slate-400 cursor-pointer', containerClassName)}>
+        <FiGithub size={size} color="black" />
       </Link>
-      <Link href={repo} className="w-14 h-14 bg-slate-200 flex justify-center items-center rounded-full hover:bg-slate-400 cursor-pointer">
-        <PiLinkSimpleBold size={30} color="black" />
+      <Link href={repo} className={cn('bg-slate-200 flex justify-center items-center rounded-full hover:bg-slate-400 cursor-pointer', containerClassName)}>
+        <PiLinkSimpleBold size={size} color="black" />
       </Link>
     </motion.div>
   );

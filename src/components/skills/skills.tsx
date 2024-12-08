@@ -1,10 +1,10 @@
 "use client";
 
 import { useInView, useAnimation } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaBootstrap } from "react-icons/fa";
+import { FaBootstrap } from "react-icons/fa";
 import { RiJavascriptFill, RiVuejsFill } from "react-icons/ri";
 import { BiLogoTypescript, BiLogoTailwindCss } from "react-icons/bi";
-import { SiReact, SiNextdotjs, SiNuxtdotjs } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiNestjs, SiDart, SiFlutter } from "react-icons/si";
 import { Icon } from "./Icon";
 import { useDarkModeContext } from "@/contexts/darkModeContext";
 import { ControllsAnimationType } from "@/types/controllsAnimation.type";
@@ -38,17 +38,17 @@ export default function Skills() {
 
   const animation = useVariantAnimation(animationProps);
 
-  const { htmlRef, cssRef, jsRef, tsRef, reactRef, nextRef, vueRef, tailRef, nuxtRef, bootRef } = useIconsRef();
+  const { dartRef, flutterRef, jsRef, tsRef, reactRef, nextRef, vueRef, tailRef, nestRef, bootRef } = useIconsRef();
 
   return (
     <section className="pb-20 flex flex-col dark:bg-[#0d0d0d] bg-[#ecebeb] px-5 md:px-32 relative">
       <div ref={ref} className="flex flex-col w-full mt-10 gap-0 z-10">
         <Icon
-          refOne={htmlRef}
-          refTwo={cssRef}
+          refOne={dartRef}
+          refTwo={flutterRef}
           isInView={isInView}
-          iconOne={<FaHtml5 className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={darkMode ? "white" : "black"} />}
-          iconTwo={<FaCss3Alt className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={darkMode ? "white" : "black"} />}
+          iconOne={<SiDart className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={darkMode ? "white" : "black"} />}
+          iconTwo={<SiFlutter className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={darkMode ? "white" : "black"} />}
         />
         <Icon
           refOne={jsRef}
@@ -66,10 +66,10 @@ export default function Skills() {
         />
         <Icon
           refOne={vueRef}
-          refTwo={nuxtRef}
+          refTwo={nestRef}
           isInView={isInView}
           iconOne={<RiVuejsFill className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={darkMode ? "white" : "black"} />}
-          iconTwo={<SiNuxtdotjs className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={darkMode ? "white" : "black"} />}
+          iconTwo={<SiNestjs className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" color={darkMode ? "white" : "black"} />}
         />
         <Icon
           refOne={bootRef}
@@ -80,7 +80,7 @@ export default function Skills() {
         />
       </div>
 
-      <Xarrows ctrls={ctrls} animation={animation} htmlRef={htmlRef} cssRef={cssRef} jsRef={jsRef} tsRef={tsRef} reactRef={reactRef} nextRef={nextRef} vueRef={vueRef} tailRef={tailRef} nuxtRef={nuxtRef} bootRef={bootRef} />
+      <Xarrows ctrls={ctrls} animation={animation} dartRef={dartRef} flutterRef={flutterRef} jsRef={jsRef} tsRef={tsRef} reactRef={reactRef} nextRef={nextRef} vueRef={vueRef} tailRef={tailRef} nestRef={nestRef} bootRef={bootRef} />
 
       <Card ctrls={ctrls} animation={animation} />
     </section>
