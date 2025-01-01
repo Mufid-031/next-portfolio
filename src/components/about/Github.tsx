@@ -4,7 +4,7 @@ import { useAnimation, useInView, motion } from "framer-motion";
 import { useDarkModeContext } from "@/contexts/darkModeContext";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useRef } from "react";
 import dynamic from "next/dynamic";
 import { useControllsAnimation } from "@/hooks/useControllsAnimation";
 import { useVariantAnimation } from "@/hooks/useVariantAnimation";

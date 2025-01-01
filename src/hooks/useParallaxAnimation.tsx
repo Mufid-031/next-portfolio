@@ -18,8 +18,8 @@ export const useParallaxAnimation = ({ baseVelocity = 100, isHover, infinite }: 
 
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400,
+    damping: 100,
+    stiffness: 100,
   });
 
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
