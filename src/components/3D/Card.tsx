@@ -53,6 +53,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
       }
     }
   }, [hovered, dragged])
+  
 
   useFrame((state, delta) => {
     if (dragged) {
