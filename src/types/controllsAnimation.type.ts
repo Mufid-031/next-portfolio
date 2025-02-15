@@ -1,7 +1,7 @@
-import { AnimationControls } from "framer-motion"
+import { AnimationControls } from "framer-motion";
 
 export type ControllsAnimationType = {
-    ctrls: AnimationControls
-    isInView: boolean
-    once?: boolean
-}
+  ctrls: AnimationControls;
+  isInView: boolean;
+  once?: boolean;
+};
